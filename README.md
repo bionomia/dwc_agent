@@ -4,9 +4,8 @@ DwC Agent
 Ruby 2.4 gem to parse messy content in Darwin Core terms that contain people names such as identifiedBy or recordedBy.
 
 [![Gem Version][1]][2]
-[![Gem Downloads][10]][11]
+[![Gem Downloads][8]][9]
 [![Continuous Integration Status][3]][4]
-[![Dependency Status][8]][9]
 
 Usage
 -----
@@ -41,7 +40,5 @@ Copyright (c) 2018 Canadian Museum of Nature
 [5]: http://www.opensource.org/licenses/MIT
 [6]: https://github.com/dshorthouse/dwc_agent/issues
 [7]: https://github.com/dshorthouse
-[8]: https://gemnasium.com/dshorthouse/dwc_agent.svg
-[9]: https://gemnasium.com/dshorthouse/dwc_agent
-[10]: https://img.shields.io/gem/dt/dwc_agent.svg
-[11]: https://rubygems.org/gems/dwc_agent
+[8]: https://img.shields.io/gem/dt/dwc_agent.svg
+[9]: https://rubygems.org/gems/dwc_agent
