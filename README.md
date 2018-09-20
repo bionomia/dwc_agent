@@ -1,7 +1,7 @@
 DwC Agent
 =========
 
-Ruby 2.4 gem to parse messy content in Darwin Core terms that contain people names such as identifiedBy or recordedBy.
+Ruby 2.4 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [identifiedBy][11] prior to passing to its dependent Namae gem, which executes the parsing.
 
 [![Gem Version][1]][2]
 [![Gem Downloads][8]][9]
@@ -42,3 +42,5 @@ Copyright (c) 2018 Canadian Museum of Nature
 [7]: https://github.com/dshorthouse
 [8]: https://img.shields.io/gem/dt/dwc_agent.svg
 [9]: https://rubygems.org/gems/dwc_agent
+[10]: http://rs.tdwg.org/dwc/terms/#recordedBy
+[11]: http://rs.tdwg.org/dwc/terms/#identifiedBy

@@ -174,21 +174,21 @@ describe "Parse people names from DwC terms" do
     expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
   end
 
-  it "should properly deal with Miss" do
+  it "should properly deal with Miss Penelope Cruz" do
     input = "Miss Penelope Cruz"
     parsed = DwcAgent.parse(input)
     expect(parsed.size).to eq(1)
     expect(parsed[0].values_at(:given, :family)).to eq(['Penelope', 'Cruz'])
   end
 
-  it "should properly deal with Mrs." do
+  it "should properly deal with Mrs. Penelope Cruz" do
     input = "Mrs. Penelope Cruz"
     parsed = DwcAgent.parse(input)
     expect(parsed.size).to eq(1)
     expect(parsed[0].values_at(:given, :family)).to eq(['Penelope', 'Cruz'])
   end
 
-  it "should properly deal with Ms" do
+  it "should properly deal with Ms Penelope Cruz" do
     input = "Ms Penelope Cruz"
     parsed = DwcAgent.parse(input)
     expect(parsed.size).to eq(1)
