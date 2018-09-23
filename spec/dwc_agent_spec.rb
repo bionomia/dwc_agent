@@ -302,6 +302,15 @@ describe "Parse people names from DwC terms" do
     expect(parsed[1].values_at(:given, :family)).to eq(['Carlos', 'Santos'])
   end
 
+  it "should explode by & with a comma" do
+    input = "W. C. Gagne, G. Young, & G. Nishida"
+    parsed = DwcAgent.parse(input)
+    expect(parsed.size).to eq(3)
+    expect(parsed[0].values_at(:given, :family)).to eq(['W. C.', 'Gagne'])
+    expect(parsed[1].values_at(:given, :family)).to eq(['G.', 'Young'])
+    expect(parsed[2].values_at(:given, :family)).to eq(['G.', 'Nishida'])
+  end
+
   it "should not explode by E" do
     input = "Jack E Smith"
     parsed = DwcAgent.parse(input)
