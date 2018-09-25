@@ -19,6 +19,7 @@ names = DwcAgent.parse '13267 (male) W.J. Cody; 13268 (female) W.E. Kemp'
 Or, from the command-line:
 
 ```bash
+gem install dwc_agent
 dwcagent "13267 (male) W.J. Cody; 13268 (female) W.E. Kemp"
 => [{"given":"W.J.","family":"Cody"},{"given":"W.E.","family":"Kemp"}]
 ```
