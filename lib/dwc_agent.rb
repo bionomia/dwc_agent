@@ -177,6 +177,7 @@ class DwcAgent
   Namae.options[:title] = TITLE
 
   def self.parse(name)
+    return [] if name.nil? || name == ""
     cleaned = name.gsub(STRIP_OUT, ' ')
                   .gsub(/[#{CHAR_SUBS.keys.join('\\')}]/, CHAR_SUBS)
                   .gsub(/([A-Z]{1}\.)([[:alpha:]]{2,})/, '\1 \2')

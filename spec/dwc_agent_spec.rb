@@ -3,6 +3,18 @@ require "dwc_agent"
 
 describe "Parse people names from DwC terms" do
 
+  it "should return an empty array if nil is passed" do
+    input = nil
+    parsed = DwcAgent.parse(input)
+    expect(parsed).to eq([])
+  end
+
+  it "should return an empty array if an empty string is passed" do
+    input = ""
+    parsed = DwcAgent.parse(input)
+    expect(parsed).to eq([])
+  end
+  
   it "should reject a name that has 'Canadian Museum of Nature'" do
     input = "Jeff Saarela; Canadian Museum of Nature"
     parsed = DwcAgent.parse(input)
