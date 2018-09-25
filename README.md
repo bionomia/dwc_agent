@@ -16,6 +16,13 @@ names = DwcAgent.parse '13267 (male) W.J. Cody; 13268 (female) W.E. Kemp'
 => [#<Name family="Cody" given="W.J.">, #<Name family="Kemp" given="W.E.">]
 ```
 
+Or, from the command-line:
+
+```bash
+dwcagent "13267 (male) W.J. Cody; 13268 (female) W.E. Kemp"
+=> [{"given":"W.J.","family":"Cody"},{"given":"W.E.","family":"Kemp"}]
+```
+
 License
 -------
 

@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'dwc_agent'
+require 'json'
+
+names = []
+DwcAgent.parse(ARGV[0]).each do |r|
+  name = DwcAgent.clean(r)
+  if !name[:family].nil? && name[:family].length >= 3
+    names << name
+  end
+end
+puts names.uniq.to_json

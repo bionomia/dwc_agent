@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/dshorthouse/dwc_agent'
 
   s.files        = Dir['MIT-LICENSE', 'README.rdoc', 'lib/**/*']
+  s.executables  = ["dwcagent"]
   s.require_path = 'lib'
   s.rdoc_options.concat ['--encoding',  'UTF-8']
   s.add_runtime_dependency "namae", "~> 1"

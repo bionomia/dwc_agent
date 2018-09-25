@@ -90,6 +90,12 @@ describe "Parse people names from DwC terms" do
     expect(parsed[0].values_at(:given, :family)).to eq(["Ian D.", "MacDonald"])
   end
 
+  it "should remove 'interim'" do
+    input = "interim"
+    parsed = DwcAgent.parse(input)
+    expect(parsed.size).to eq(0)
+  end
+  
   it "should normalize a name all in caps" do
     input = "WILLIAM BEEBE"
     parsed = DwcAgent.parse(input)

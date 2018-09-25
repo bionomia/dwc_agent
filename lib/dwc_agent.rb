@@ -14,7 +14,7 @@ class DwcAgent
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*(?i:undetermined|indeterminable|dummy)\b|
+    \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim)\b|
     \b[,;]?\s*(?i:importer)\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     (?i:no\s+(data|disponible))|
