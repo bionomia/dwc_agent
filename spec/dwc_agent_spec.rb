@@ -45,6 +45,14 @@ describe "Parse people names from DwC terms" do
     expect(DwcAgent.clean(parsed[0]).to_h).to eq({given:'C.', family: 'Tanner'})
   end
 
+  it "should remove extraneous capitalized letters within brackets" do
+    input = "!B. P. J. Molloy (CHR)"
+    parsed = DwcAgent.parse(input)
+    expect(parsed.size).to eq(1)
+    expect(parsed[0].values_at(:given, :family)).to eq(['B. P. J.', 'Molloy'])
+    expect(DwcAgent.clean(parsed[0]).to_h).to eq({given:'B.P.J.', family: 'Molloy'})
+  end
+
   it "should recognize a single name in reverse order with a comma" do
     input = "Tanner, C.A."
     parsed = DwcAgent.parse(input)

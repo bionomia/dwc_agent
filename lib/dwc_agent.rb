@@ -74,7 +74,8 @@ class DwcAgent
     ^\w{0,2}\z|
     ^[A-Z]{2,}\z|
     \s+(?i:stet)\s*!?\s*\z|
-    \s+(?i:prep)\.?\s*\z
+    \s+(?i:prep)\.?\s*\z|
+    \b\s*\([A-Z]{2,}\)
   }x
 
   SPLIT_BY = %r{
