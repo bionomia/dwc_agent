@@ -177,6 +177,10 @@ class DwcAgent
   Namae.options[:separator] = SPLIT_BY
   Namae.options[:title] = TITLE
 
+  # Parses the passed-in string and returns a list of names.
+  #
+  # @param names [String] the name or names to be parsed
+  # @return [Array] the list of parsed names
   def self.parse(name)
     return [] if name.nil? || name == ""
     cleaned = name.gsub(STRIP_OUT, ' ')
@@ -188,6 +192,11 @@ class DwcAgent
     Namae.parse(cleaned)
   end
 
+  # Cleans the passed-in namae object from the parse method and
+  # re-organizes it to better match expected Darwin Core output.
+  #
+  # @param parsed_namae [Object] the namae object
+  # @return [Hash] the given, family hash
   def self.clean(parsed_namae)
     blank_name = { given: nil, family: nil }
 
@@ -270,6 +279,11 @@ class DwcAgent
     { given: given, family: family }
   end
 
+  # Produces a similarity score of two given names
+  #
+  # @param given1 [String] one given name
+  # @param given2 [String] a second given name
+  # @return [Float] the similarity score
   def self.similarity_score(given1, given2)
     given1_parts = given1.gsub(/\.\s+/,".").split(/[\.\s]/)
     given2_parts = given2.gsub(/\.\s+/,".").split(/[\.\s]/)
