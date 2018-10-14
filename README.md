@@ -20,6 +20,7 @@ names = DwcAgent.parse '13267 (male) W.J. Cody; 13268 (female) W.E. Kemp'
 require "dwc_agent"
 score = DwCAgent.similarity_score('John C.', 'John')
 => 1.1
+```
 
 Or, from the command-line:
 
