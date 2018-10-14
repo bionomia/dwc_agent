@@ -280,6 +280,8 @@ class DwcAgent
   end
 
   # Produces a similarity score of two given names
+  # Logic inspired by R.D.M. Page, https://orcid.org/0000-0002-7101-9767
+  # At https://linen-baseball.glitch.me/
   #
   # @param given1 [String] one given name
   # @param given2 [String] a second given name
