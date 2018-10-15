@@ -5,7 +5,7 @@ require "dwc_agent/version"
 Gem::Specification.new do |s|
   s.required_ruby_version = '~> 2.4'
   s.name        = 'dwc_agent'
-  s.version     = DwcAgent::VERSION
+  s.version     = DwcAgent::Version.version
   s.license     = 'MIT'
   s.date        = '2018-09-19'
   s.summary     = "Parse Darwin Core agent terms such as recordedBy and identifiedBy"
