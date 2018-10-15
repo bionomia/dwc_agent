@@ -30,6 +30,12 @@ dwcagent "13267 (male) W.J. Cody; 13268 (female) W.E. Kemp"
 => [{"given":"W.J.","family":"Cody"},{"given":"W.E.","family":"Kemp"}]
 ```
 
+```bash
+gem install dwc_agent
+dwcagent-similarity "John C." "John"
+=> 1.1
+```
+
 License
 -------
 
