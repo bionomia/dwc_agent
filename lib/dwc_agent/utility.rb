@@ -10,8 +10,8 @@ module DwcAgent
     Cleaner.clean(parsed_namae)
   end
 
-  def similarity(given1, given2)
-    Similarity.similarity(given1, given2)
+  def similarity_score(given1, given2)
+    Similarity.similarity_score(given1, given2)
   end
 
 end
