@@ -1225,6 +1225,28 @@ module DwcAgent
         expect(parsed[3].values_at(:given, :family)).to eq(["C.", "Lee"])
       end
 
+      it "should separate a short list of names separated by commas" do
+        input = "A A Court, D J Court"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A A", "Court"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["D J", "Court"])
+      end
+
+      it "should separate a long list of names separated by commas" do
+        input = "J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(8)
+        expect(parsed[0].values_at(:given, :family)).to eq(["J.W.", "Armbruster"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["C", "Armbruster"])
+        expect(parsed[2].values_at(:given, :family)).to eq(["A", "Armbruster"])
+        expect(parsed[3].values_at(:given, :family)).to eq(["B", "Armbruster"])
+        expect(parsed[4].values_at(:given, :family)).to eq(["L", "Armbruster"])
+        expect(parsed[5].values_at(:given, :family)).to eq(["R", "Armbruster"])
+        expect(parsed[6].values_at(:given, :family)).to eq(["J", "Thomas"])
+        expect(parsed[7].values_at(:given, :family)).to eq(["E", "Thomas"])
+      end
+
     end
 
   end

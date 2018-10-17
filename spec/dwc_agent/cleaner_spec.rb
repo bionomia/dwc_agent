@@ -227,6 +227,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'MacLennan', family:'Sosiak'})
       end
 
+      it "should clean a name whose given initials lack punctuation" do
+        input = "A A Court"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.A.', family:'Court'})
+      end
+
     end
 
   end
