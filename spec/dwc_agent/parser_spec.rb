@@ -1,6 +1,6 @@
 module DwcAgent
   describe 'Parser' do
-    let(:parser) { Parser }
+    let(:parser) { Parser.instance }
 
     describe "Parse people names from DwC terms" do
 
@@ -1233,6 +1233,14 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(["D J", "Court"])
       end
 
+      it "should parse another short list of names separated by commas" do
+        input = "A B  Rose, J W  Trudgeon"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A B", "Rose"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["J W", "Trudgeon"])
+      end
+
       it "should separate a long list of names separated by commas" do
         input = "J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas"
         parsed = parser.parse(input)
@@ -1245,6 +1253,14 @@ module DwcAgent
         expect(parsed[5].values_at(:given, :family)).to eq(["R", "Armbruster"])
         expect(parsed[6].values_at(:given, :family)).to eq(["J", "Thomas"])
         expect(parsed[7].values_at(:given, :family)).to eq(["E", "Thomas"])
+      end
+
+      it "should separate some names with commas as separators and misc punctuation on initials" do
+        input = "A C. Sanders, G. Helmkamp"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A C.", "Sanders"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["G.", "Helmkamp"])
       end
 
     end

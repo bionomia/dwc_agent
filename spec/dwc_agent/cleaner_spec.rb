@@ -1,7 +1,7 @@
 module DwcAgent
   describe 'Cleaner' do
-    let(:parser) { Parser }
-    let(:cleaner) { Cleaner }
+    let(:parser) { Parser.instance }
+    let(:cleaner) { Cleaner.instance }
 
     describe "Clean results from the Parser" do
 

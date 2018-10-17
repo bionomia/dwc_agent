@@ -1,12 +1,18 @@
 module DwcAgent
   class Cleaner
 
+    class << self
+      def instance
+        Thread.current[:dwc_agent_cleaner] ||= new
+      end
+    end
+
     # Cleans the passed-in namae object from the parse method and
     # re-organizes it to better match expected Darwin Core output.
     #
     # @param parsed_namae [Object] the namae object
     # @return [Hash] the given, family hash
-    def self.clean(parsed_namae)
+    def clean(parsed_namae)
       blank_name = { given: nil, family: nil }
 
       if parsed_namae.family && parsed_namae.family.length < 3

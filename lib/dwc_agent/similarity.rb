@@ -1,6 +1,12 @@
 module DwcAgent
   class Similarity
 
+    class << self
+      def instance
+        Thread.current[:dwc_agent_similarity] ||= new
+      end
+    end
+
     # Produces a similarity score of two given names
     # Logic inspired by R.D.M. Page, https://orcid.org/0000-0002-7101-9767
     # At https://linen-baseball.glitch.me/
@@ -8,7 +14,7 @@ module DwcAgent
     # @param given1 [String] one given name
     # @param given2 [String] a second given name
     # @return [Float] the similarity score
-    def self.similarity_score(given1, given2)
+    def similarity_score(given1, given2)
       given1_parts = given1.gsub(/\.\s+/,".").split(/[\.\s]/)
       given2_parts = given2.gsub(/\.\s+/,".").split(/[\.\s]/)
       largest = [given1_parts,given2_parts].max

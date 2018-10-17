@@ -1,6 +1,6 @@
 module DwcAgent
   describe 'Similarity' do
-    let(:similarity) { Similarity }
+    let(:similarity) { Similarity.instance }
 
     describe "Test the similarity of given names" do
 

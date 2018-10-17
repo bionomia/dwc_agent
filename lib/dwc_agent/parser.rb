@@ -1,11 +1,17 @@
 module DwcAgent
   class Parser
 
+    class << self
+      def instance
+        Thread.current[:dwc_agent_parser] ||= new
+      end
+    end
+
     # Parses the passed-in string and returns a list of names.
     #
     # @param names [String] the name or names to be parsed
     # @return [Array] the list of parsed names
-    def self.parse(name)
+    def parse(name)
       return [] if name.nil? || name == ""
       cleaned = name.gsub(STRIP_OUT, ' ')
                     .gsub(/[#{CHAR_SUBS.keys.join('\\')}]/, CHAR_SUBS)
