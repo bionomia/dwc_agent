@@ -11,6 +11,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family:nil})
       end
 
+      it "should clean a name with two given names" do
+        input = "William Leo Smith"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "William Leo", family: "Smith"})
+      end
+
       it "should reject a name that has 'Department' in it" do
         input = "Oregon Department of Agriculture"
         parsed = parser.parse(input)
@@ -152,8 +158,7 @@ module DwcAgent
       it "should ignore names with 'the'" do
         input = "The old bird was dead"
         parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(["The", "dead"])
-        #expect(parser.clean(parsed[0]).to_h).to eq({ family: nil, given: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: nil, given: nil })
       end
 
       it "should ignore names with 'unidentified'" do
@@ -202,6 +207,24 @@ module DwcAgent
         input = "Paula Maybee maybe"
         parsed = parser.parse(input)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Paula", family: "Maybee"})
+      end
+
+      it "should ignore a family name with CAPs at end" do
+        input = "Jack SmitH"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore ignore a family name with two CAPs at the beginning" do
+        input = "RGBennett"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should normalize a name all in caps, written in reverse order" do
+        input = "SOSIAK, MACLENNAN"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'MacLennan', family:'Sosiak'})
       end
 
     end

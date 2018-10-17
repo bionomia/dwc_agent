@@ -30,13 +30,6 @@ module DwcAgent
         expect(parsed[0].values_at(:particle, :given, :family)).to eq(["r.C.", nil, "Smith"])
       end
 
-      it "should clean family names with extraneous period" do
-        input = "C. Tanner."
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['C.', 'Tanner.'])
-      end
-
       it "should remove extraneous capitalized letters within brackets" do
         input = "!B. P. J. Molloy (CHR)"
         parsed = parser.parse(input)
@@ -49,14 +42,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['C.A.', 'Tanner'])
-        #expect(parser.clean(parsed[0]).to_h).to eq({given:'C.A.', family: 'Tanner'})
       end
 
       it "should recognize a single name as a family name" do
         input = "Tanner"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Tanner', nil]) #expect this because parser doesn't get it right
+        expect(parsed[0].values_at(:given, :family)).to eq(['Tanner', nil]) #expect this before cleaning
       end
 
       it "should remove numerical values and lowercase letter" do
@@ -106,7 +98,6 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["MACLENNAN", "SOSIAK"])
-        #expect(parser.clean(parsed[0]).to_h).to eq({given: 'MacLennan', family:'Sosiak'})
       end
 
       #TODO Latin American names not parsed properly when Namae.options[:prefer_comma_as_separator] = true
@@ -164,7 +155,6 @@ module DwcAgent
         input = "J.R.Smith"
         parsed = parser.parse(input)
         expect(parsed[0].values_at(:given, :family)).to eq(['J.R.', 'Smith'])
-        #expect(parser.clean(parsed[0]).to_h).to eq({given: 'J.R.', family:'Smith'})
       end
 
       it "should separate multiple concatenated names" do
@@ -1181,14 +1171,12 @@ module DwcAgent
         input = "Jack SmitH"
         parsed = parser.parse(input)
         expect(parsed[0].values_at(:given, :family)).to eq(["Jack", "SmitH"])
-        #expect(parser.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
       end
 
       it "should ignore ignore a family name with two CAPs at the beginning" do
         input = "RGBennett"
         parsed = parser.parse(input)
         expect(parsed[0].values_at(:given, :family)).to eq(["RGBennett", nil])
-        #expect(parser.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
       end
 
       it "should split a string of names with a." do

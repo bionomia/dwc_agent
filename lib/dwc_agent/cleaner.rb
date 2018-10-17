@@ -24,9 +24,6 @@ module DwcAgent
       if parsed_namae.family && /[a-zA-Z]{2,}\.?\s+[a-zA-Z]{2,}/.match(parsed_namae.family)
         return blank_name
       end
-      if parsed_namae.given && /[a-zA-Z]{2,}\.?\s+[a-zA-Z]{2,}/.match(parsed_namae.given)
-        return blank_name
-      end
       if parsed_namae.display_order =~ BLACKLIST
         return blank_name
       end
