@@ -9,7 +9,7 @@ module DwcAgent
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim)\b|
+    \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim|accession)\b|
     \b[,;]?\s*(?i:importer)\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     (?i:no\s+(data|disponible))|
@@ -59,7 +59,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|\(MT\)|(?i:\(KEW\))|
+    FNA|DAO|HUH|FDNMB|\(MT\)|(?i:\(KEW\))|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
     [":!]|
@@ -77,7 +77,8 @@ module DwcAgent
     [–|&+/;]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(?i:and|et|with|per|y)\s+|
+    \b(?i:and|et|with|per)\s+|
+    \s+y\s*\b|
     \be\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|

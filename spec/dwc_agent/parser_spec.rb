@@ -1272,6 +1272,13 @@ module DwcAgent
         expect(parsed[2].values_at(:given, :family)).to eq(["A", "Ferreira"])
       end
 
+      it "should not treat a single Y as a separator" do
+        input = "A Y Jackson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A Y", "Jackson"])
+      end
+
     end
 
   end
