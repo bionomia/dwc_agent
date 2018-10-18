@@ -77,7 +77,7 @@ module DwcAgent
     [–|&+/;]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(?i:and|et|with|per)\s+|
+    \b(?i:and|et|with|per|y)\s+|
     \be\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|

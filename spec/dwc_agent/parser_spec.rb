@@ -1263,6 +1263,15 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(["G.", "Helmkamp"])
       end
 
+      it "should separate names with 'y'" do
+        input = "N. Navarro, G. Gómez y A Ferreira"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(3)
+        expect(parsed[0].values_at(:given, :family)).to eq(["N.", "Navarro"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["G.", "Gómez"])
+        expect(parsed[2].values_at(:given, :family)).to eq(["A", "Ferreira"])
+      end
+
     end
 
   end
