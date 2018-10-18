@@ -19,7 +19,13 @@ module DwcAgent
                     .gsub(COMPLEX_SEPARATORS, '\1 | \2')
                     .gsub(/,\z/, '')
                     .squeeze(' ').strip
-      Namae.parse(cleaned)
+      options = { 
+        prefer_comma_as_separator: true,
+        separator: SPLIT_BY,
+        title: TITLE
+      }
+      namae = Namae::Parser.new(options)
+      namae.parse(cleaned)
     end
 
   end

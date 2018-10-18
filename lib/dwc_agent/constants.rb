@@ -168,7 +168,4 @@ module DwcAgent
 
   TITLE = /\s*\b(sir|lord|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor)(\s+|$)/i
 
-  Namae.options[:prefer_comma_as_separator] = true
-  Namae.options[:separator] = SPLIT_BY
-  Namae.options[:title] = TITLE
 end
