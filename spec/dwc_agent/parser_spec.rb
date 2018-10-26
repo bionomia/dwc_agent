@@ -23,13 +23,6 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Jeff", "Saarela"])
       end
 
-      it "should capitalize mistaken lowercase first initials" do
-        input = "r.C. Smith"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:particle, :given, :family)).to eq(["r.C.", nil, "Smith"])
-      end
-
       it "should remove extraneous capitalized letters within brackets" do
         input = "!B. P. J. Molloy (CHR)"
         parsed = parser.parse(input)
@@ -42,13 +35,6 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['C.A.', 'Tanner'])
-      end
-
-      it "should recognize a single name as a family name" do
-        input = "Tanner"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Tanner', nil]) #expect this before cleaning
       end
 
       it "should remove numerical values and lowercase letter" do
@@ -84,20 +70,6 @@ module DwcAgent
         input = "interim"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(0)
-      end
-  
-      it "should normalize a name all in caps" do
-        input = "WILLIAM BEEBE"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["WILLIAM", "BEEBE"])
-      end
-
-      it "should normalize a name all in caps, written in reverse order" do
-        input = "SOSIAK, MACLENNAN"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["MACLENNAN", "SOSIAK"])
       end
 
       #TODO Latin American names not parsed properly when Namae.options[:prefer_comma_as_separator] = true
@@ -870,7 +842,7 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Gustav G. Arsène", "Brouard"])
       end
 
-      it "should not remove stet from the end of a name" do
+      it "should strip out stet from the end of a name" do
         input = "Christian Kronenstet !"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
@@ -944,12 +916,6 @@ module DwcAgent
         expect(parsed.size).to eq(2)
         expect(parsed[0].values_at(:given, :family)).to eq(['Carolyn J.', 'Bird'])
         expect(parsed[1].values_at(:given, :family)).to eq(['J.G.', 'Lindsay'])
-      end
-
-      it "should strip out 'synonymie'" do
-        input = "Université Laval - synonymie"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
       end
 
       it "should explode names with Jan. 14, 2013 included in string" do
@@ -1037,20 +1003,6 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(['L.', 'Katz'])
         expect(parsed[2].values_at(:given, :family)).to eq(['CI', 'team'])
       end
-
-      it "should reject an empty name" do
-        input = "Norman Johnson and P"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(2)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Norman', 'Johnson'])
-        expect(parsed[1].values_at(:given, :family)).to eq(["P", nil])
-      end
-
-      it "should ignore 'non précisé'" do
-        input = "non précisé"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-      end
   
       it "should parse name with given initials without period(s)" do
         input = "JH Picard"
@@ -1073,28 +1025,28 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(['J.Z.', 'Cao'])
       end
 
-      it "should capitalize surnames like 'Jack smith'" do
+      it "should retain lowercase surnames like 'Jack smith'" do
         input = "Jack smith"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'smith'])
       end
 
-      it "should capitalize names like 'C. YOUNG'" do
+      it "should retain capitalized names like 'C. YOUNG'" do
         input = "C. YOUNG"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['C.', 'YOUNG'])
       end
 
-      it "should capitalize names like 'Chris R.T. YOUNG'" do
+      it "should retain capitalized names like 'Chris R.T. YOUNG'" do
         input = "Chris R.T. YOUNG"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['Chris R.T.', 'YOUNG'])
       end
 
-      it "should capitalize names like 'CHRIS R.T. YOUNG'" do
+      it "should retain capitalized names like 'CHRIS R.T. YOUNG'" do
         input = "CHRIS R.T. YOUNG"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
@@ -1120,18 +1072,6 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(5)
         expect(parsed[4].values_at(:given, :family)).to eq(['Hsuan-Ching', 'Ho'])
-      end
-
-      it "should ignore names with 'the'" do
-        input = "The old bird was dead"
-        parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(["The", "dead"])
-      end
-
-      it "should ignore names with 'unidentified'" do
-        input = "Unidentified Beetle"
-        parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Unidentified", "Beetle"])
       end
 
       it "should remove '(source)'" do
@@ -1277,6 +1217,34 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["A Y", "Jackson"])
+      end
+
+      it "should not treat a single Y as a separator" do
+        input = "A Y Jackson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A Y", "Jackson"])
+      end
+
+      it "should ignore 'leg.'" do
+        input = "leg. A. Chuvilin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Chuvilin"])
+      end
+
+      it "should ignore 'Leg:'" do
+        input = "Leg: A. Chuvilin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Chuvilin"])
+      end
+
+      it "should not ignore 'LEG'" do
+        input = "LEG Chuvilin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["LEG", "Chuvilin"])
       end
 
     end

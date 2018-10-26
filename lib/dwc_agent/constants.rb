@@ -53,6 +53,7 @@ module DwcAgent
     (?i:crossed\s+out)|
     \(?(?i:source)\(?|
     (?i:according\s+to)|
+    (?i:museum\s+victoria)|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
     -?\s*(?i:synonym(y|ie))|
@@ -60,6 +61,7 @@ module DwcAgent
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
     FNA|DAO|HUH|FDNMB|\(MT\)|(?i:\(KEW\))|
+    (?i:university|museum|exhibits?)|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
     [":!]|
@@ -68,18 +70,19 @@ module DwcAgent
     [,;]\z|
     ^\w{0,2}\z|
     ^[A-Z]{2,}\z|
+    (?i:annot\.?)\b|
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
-    \b\s*\([A-Z]{2,}\)
+    \b\s*\([A-Z]{2,}\)|
+    \b[lL]eg[\.:]\s*\b
   }x
 
   SPLIT_BY = %r{
     [–|&+/;]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(?i:and|et|with|per)\s+|
-    \s+y\s*\b|
-    \be\s*\b|
+    \b(e|y|en|et|or|per|for)\s*\b|
+    \b(?i:and|with)\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|
     \b(?i:communicate?d(\s+to)?)\s*\b|
@@ -90,7 +93,6 @@ module DwcAgent
     \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
     \b(?i:in?dentified(\s+by)?)\s*\b|
     \b(?i:in\s+part(\s+by)?)\s*\b|
-    \b(?i:or)\s+|
     \b(?i:prep\.?\s+(?i:by)?)\s*\b|
     \b(?i:redet\.?(\s+by?)?)\s*\b|
     \b(?i:reidentified(\s+by)?)\s*\b|
@@ -113,7 +115,11 @@ module DwcAgent
     '#' => '',
     '/' => ' / ',
     '&' => ' & ',
-    '*' => ''
+    '*' => '',
+    '>' => '',
+    '<' => '',
+    '{' => '',
+    '}' => ''
   }
 
   COMPLEX_SEPARATORS = %r{
@@ -143,7 +149,7 @@ module DwcAgent
     (?i:ent(o|y)mology)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
-    (?i:graduate|student|estudantes|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
+    (?i:graduate|student|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
     (?i:non\s+pr(é|e)cis(é|e))|
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:recreation|culture)|
@@ -160,6 +166,7 @@ module DwcAgent
     \s*(?i:too)\s+|\s*(?i:the)\s+|
     (?i:taxiderm(ies|y))|
     (?i:though)|
+    (?:tropical)|
     (?i:toward|seen at)|
     (?i:unidentified|unspecified|unk?nown|unnamed|unread|unmistak|no agent)|
     (?i:urn\:)|
