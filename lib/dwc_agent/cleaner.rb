@@ -15,7 +15,7 @@ module DwcAgent
     def clean(parsed_namae)
       blank_name = { given: nil, family: nil }
 
-      if parsed_namae.family && parsed_namae.family.length < 3
+      if parsed_namae.family && parsed_namae.family.length < 3 && parsed_namae.family.count('.') == 0
         return blank_name
       end
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1

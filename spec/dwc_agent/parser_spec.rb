@@ -434,6 +434,15 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(['Yves', 'Archambault'])
       end
 
+      it "should explode names with spaces and given initials with full stops" do
+        input = "Groom Q., Desmet P."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        #Order here is expected until we clean it
+        expect(parsed[0].values_at(:given, :family)).to eq(['Groom', 'Q.'])
+        expect(parsed[1].values_at(:given, :family)).to eq(['Desmet', 'P.'])
+      end
+
       it "should explode names with '|'" do
         input = "Jack Smith|Yves Archambault"
         parsed = parser.parse(input)

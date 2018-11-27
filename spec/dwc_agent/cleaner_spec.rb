@@ -131,6 +131,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Young", given: "C."})
       end
 
+      it "should flip a name like 'Groom Q.'" do
+        input = "Groom Q."
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Groom", given: "Q." })
+      end
+
       it "should capitalize names like 'Chris R.T. YOUNG'" do
         input = "Chris R.T. YOUNG"
         parsed = parser.parse(input)
