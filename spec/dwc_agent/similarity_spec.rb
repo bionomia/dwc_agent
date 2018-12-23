@@ -4,6 +4,12 @@ module DwcAgent
 
     describe "Test the similarity of given names" do
 
+      it "should give Ed and Edward a score of 1" do
+        given1 = "Ed"
+        given2 = "Edward"
+        expect(similarity.similarity_score(given1,given2)).to eq 1
+      end
+
       it "should give J. and John a score of 1" do
         given1 = "J."
         given2 = "John"

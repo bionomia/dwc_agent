@@ -28,7 +28,7 @@ module DwcAgent
           else
             return 0
           end
-          if val.length > 1 && smallest[index].length > 1 && val != smallest[index]
+          if val.length > 1 && smallest[index].length > 1 && !val.include?(smallest[index])
             return 0
           end
         else
