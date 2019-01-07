@@ -12,6 +12,8 @@ module DwcAgent
     \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim|accession)\b|
     \b[,;]?\s*(?i:importer)\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
+    \b[,;]?\s*(?i:string)\b|
+    \b[,;]?\s*(?i:person\s*string)\b|
     (?i:no\s+(data|disponible))|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
@@ -74,7 +76,7 @@ module DwcAgent
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
     \b\s*\([A-Z]{2,}\)|
-    \b[lL]eg[\.:]\s*\b
+    \b(?i:leg)[\.:]?\s*\b
   }x
 
   SPLIT_BY = %r{

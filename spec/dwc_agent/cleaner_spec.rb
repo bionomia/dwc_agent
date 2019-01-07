@@ -221,7 +221,7 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
       end
 
-      it "should ignore ignore a family name with two CAPs at the beginning" do
+      it "should ignore a family name with two CAPs at the beginning" do
         input = "RGBennett"
         parsed = parser.parse(input)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})

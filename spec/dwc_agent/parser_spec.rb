@@ -1249,11 +1249,23 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Chuvilin"])
       end
 
-      it "should not ignore 'LEG'" do
+      it "should ignore 'LEG'" do
         input = "LEG Chuvilin"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["LEG", "Chuvilin"])
+        expect(parsed[0].values_at(:given, :family)).to eq(["Chuvilin",nil])
+      end
+
+      it "should reject a portion of a name that has 'Person String'" do
+        input = "Jeff Saarela; Person String"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+      end
+
+      it "should reject a name that has 'Person String'" do
+        input = "Person String"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
       end
 
     end
