@@ -239,6 +239,48 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.A.', family:'Court'})
       end
 
+      it "should remove anything between brackets" do
+        input = "Michael (Mike) Smith"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Michael', family: 'Smith'})
+      end
+
+      it "should remove Ded:" do
+        input = "Ded: A.E. Nordenskiöld (V"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.E.', family: 'Nordenskiöld'})
+      end
+
+      it "should remove another variant of ded" do
+        input = "Lagerström, H (Ded.)"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'H.', family: 'Lagerström'})
+      end
+
+      it "should remove yet another variant of ded and parse the remains" do
+        input = "Richt, L & S Jansson (ded"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: 'S.', family: 'Jansson'})
+      end
+
+      it "should remove extraneous information with brackets at end of string" do
+        input = "J. Lindahl (Ingegerd & Gl"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'J.', family: 'Lindahl'})
+      end
+
+      it "should remove Coll in brackets" do
+        input = "D.Podlech (Coll. M, MSB)"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'D.', family: 'Podlech'})
+      end
+
+      it "should remove nickname in brackets at end of string" do
+        input = "Michael Smith (Mike)"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Michael', family: 'Smith'})
+      end
+
     end
 
   end

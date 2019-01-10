@@ -62,7 +62,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|\(MT\)|(?i:\(KEW\))|
+    FNA|DAO|HUH|FDNMB|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
@@ -75,8 +75,10 @@ module DwcAgent
     (?i:annot\.?)\b|
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
-    \b\s*\([A-Z]{2,}\)|
-    \b(?i:leg)[\.:]?\s*\b
+    \(.{1,}\)|
+    \(.{1,}\z|
+    \b(?i:leg)[\.:]?\s*\b|
+    (?i:ded)\:
   }x
 
   SPLIT_BY = %r{
