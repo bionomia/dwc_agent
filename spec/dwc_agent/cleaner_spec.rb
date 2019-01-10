@@ -281,6 +281,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Michael', family: 'Smith'})
       end
 
+      it "should remove extra content in brackets" do
+        input = "Triplehorn, W. E. (Wanda Elaine) & Triplehorn, C."
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'W.E.', family: 'Triplehorn'})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: 'C.', family: 'Triplehorn'})
+      end
+
     end
 
   end
