@@ -1,5 +1,6 @@
 module DwcAgent
   STRIP_OUT = %r{
+    \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\s+al)\.?|
     \bu\.\s*a\.|
@@ -75,10 +76,12 @@ module DwcAgent
     (?i:annot\.?)\b|
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
-    \(.{1,}\)|
-    \(.{1,}\z|
+    (\(|\{|\[).{1,}(\)|\]|\})|
+    (\(|\[|\{).{1,}\z|
     \b(?i:leg)[\.:]?\s*\b|
-    (?i:ded)\:
+    (?i:ded)\:|
+    ^[-,.\s\;*\d]{1,}|
+    -\d?\z
   }x
 
   SPLIT_BY = %r{

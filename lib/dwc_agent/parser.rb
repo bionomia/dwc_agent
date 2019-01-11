@@ -13,11 +13,12 @@ module DwcAgent
     # @return [Array] the list of parsed names
     def parse(name)
       return [] if name.nil? || name == ""
+      residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
       cleaned = name.gsub(STRIP_OUT, ' ')
                     .gsub(/[#{CHAR_SUBS.keys.join('\\')}]/, CHAR_SUBS)
                     .gsub(/([A-Z]{1}\.)([[:alpha:]]{2,})/, '\1 \2')
                     .gsub(COMPLEX_SEPARATORS, '\1 | \2')
-                    .gsub(/,\z/, '')
+                    .gsub(residual_terminators_regex, '')
                     .squeeze(' ').strip
       options = { 
         prefer_comma_as_separator: true,

@@ -316,8 +316,7 @@ module DwcAgent
       it "should remove extraneous material" do
         input = "Unknown [J. S. Erskine?]"
         parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['J. S.', 'Erskine'])
+        expect(parsed.size).to eq(0)
       end
 
       it "should remove [no data]" do
@@ -350,7 +349,7 @@ module DwcAgent
         input = "Jack [John]: Smith12345"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Jack John', 'Smith'])
+        expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
       end
 
       it "should explode names with '/'" do

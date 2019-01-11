@@ -288,6 +288,48 @@ module DwcAgent
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: 'C.', family: 'Triplehorn'})
       end
 
+      it "should remove content within square brackets" do
+        input = "A. ORTEGA [INTERCAMBIO MA-VIT]"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.', family: 'Ortega'})
+      end
+
+      it "should remove stray dashes and dots at the beginning of a string" do
+        input = "-. Alfonso"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: 'Alfonso'})
+      end
+
+      it "should remove stray asterisks at the beginnning of a string" do
+        input = "* SCHUCH"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: 'Schuch'})
+      end
+
+      it "should remove content prefixed by curly brackets" do
+        input = "{Illegible]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
+      it "should remove any period after a number" do
+        input = "B. Maguire 2375.4"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire'})
+      end
+
+      it "should remove any period after a number and then remove trailing semicolon" do
+        input = "B. Maguire; 2375.4"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire'})
+      end
+
+      it "should remove via at end of string" do
+        input = "B. Maguire via"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire'})
+      end
+
     end
 
   end
