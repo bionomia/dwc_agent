@@ -330,6 +330,19 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire'})
       end
 
+      it "should remove semicolon at start and messes elsewhere" do
+        input = "; annot. J. Walter (W) 2017-04"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.", family: 'Walter'})
+      end
+
+      it "should ignore dashes in weird places" do
+        input = "-. Borja; -- Rivet & Galiano"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(3)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Borja"})
+      end
+
     end
 
   end
