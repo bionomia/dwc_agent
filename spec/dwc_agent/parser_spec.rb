@@ -102,6 +102,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
       end
 
+      it "should remove 'et. al.'" do
+        input = "Jack Smith et. al."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
+      end
+
       it "should remove Collector(s):" do
         input = "Collector(s): Richard D. Worthington"
         parsed = parser.parse(input)

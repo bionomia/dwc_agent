@@ -2,7 +2,7 @@ module DwcAgent
   STRIP_OUT = %r{
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
-    \b[,;]?\s*(?i:et\s+al)\.?|
+    \b[,;]?\s*(?i:et\.?\s+al)\.?|
     \bu\.\s*a\.|
     \b[,;]?\s*(?i:and|&)?\s*(?i:others)\s*\b|
     \b[,;]?\s*(?i:etc)\.?|
