@@ -16,6 +16,7 @@ module DwcAgent
       residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
       cleaned = name.gsub(STRIP_OUT, ' ')
                     .gsub(/[#{CHAR_SUBS.keys.join('\\')}]/, CHAR_SUBS)
+                    .gsub(/(#{PHRASE_SUBS.keys.join('|')})/, PHRASE_SUBS)
                     .gsub(/([A-Z]{1}\.)([[:alpha:]]{2,})/, '\1 \2')
                     .gsub(COMPLEX_SEPARATORS, '\1 | \2')
                     .gsub(residual_terminators_regex, '')

@@ -1274,6 +1274,12 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
+      it "should recognize a title when no space between it and name" do
+        input = "Dr.R.K. Johnson,1972"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(["R.K.", "Johnson"])
+      end
+
     end
 
   end

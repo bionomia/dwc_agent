@@ -127,7 +127,15 @@ module DwcAgent
     '>' => '',
     '<' => '',
     '{' => '',
-    '}' => ''
+    '}' => '',
+    '@' => '',
+    '%' => ''
+  }
+
+  PHRASE_SUBS = {
+    'Dr\.' => 'Dr. ',
+    'Mr\.' => 'Mr. ',
+    'Mrs\.' => 'Mrs. '
   }
 
   COMPLEX_SEPARATORS = %r{
