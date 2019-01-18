@@ -48,12 +48,12 @@ module DwcAgent
         (parsed_namae.given == parsed_namae.given.upcase || 
         parsed_namae.given == parsed_namae.given.downcase) && 
         !parsed_namae.given.include?(".") &&
-        parsed_namae.given.length >= 4
+        parsed_namae.given.gsub(".","").length >= 4
           parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given)
       end
 
       if parsed_namae.given && /[A-Za-z]\./.match(parsed_namae.given)
-        parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given).sub(/[a-z]\./, &:upcase)
+        parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given).gsub(/[a-z]\./, &:upcase)
       end
 
       parsed_namae.normalize_initials

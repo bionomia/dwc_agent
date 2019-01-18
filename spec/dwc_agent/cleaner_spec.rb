@@ -343,6 +343,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Borja"})
       end
 
+      it "should not mess with initials when there are three" do
+        input = "A.J.E.Smith"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "A.J.E.", family: "Smith"})
+      end
+
     end
 
   end
