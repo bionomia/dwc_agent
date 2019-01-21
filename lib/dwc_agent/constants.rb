@@ -11,10 +11,12 @@ module DwcAgent
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
     \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim|accession)\b|
-    \b[,;]?\s*(?i:importer)\b|
+    \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     \b[,;]?\s*(?i:string)\b|
     \b[,;]?\s*(?i:person\s*string)\b|
+    \b[,;]?\s*(?i:colls)\.(\b|\z)|
+    \b[,;]?\s*(?i:colln?)[:.]?(\b|\z)|
     (?i:no\s+(data|disponible))|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
@@ -45,7 +47,8 @@ module DwcAgent
     \d+\s+(?i:Nov|Novemb(er|re))\.?\b|
     \d+\s+(?i:Dec|D(e|é)cemb(er|re))\.?\b|
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
-    \b\s*maybe\s*\b|
+    \b\s*(?i:maybe)\s*\b|
+    \b\s*(?i:prob)\.\s*\b|
     \(?(?i:collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
     (?i:fide)\:?\s*\b|
     (?i:game\s+dept)\.?\s*\b|
@@ -82,14 +85,15 @@ module DwcAgent
     (?i:ded)\:|
     ^[-,.\s;*\d]+\s?|
     -\d?\z|
-    \s*?-{2,}\s*?
+    \s*?-{2,}\s*?|
+    ^(?i:exc?p?)[:.]\s*
   }x
 
   SPLIT_BY = %r{
     [–|&+/;]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(e|y|en|et|or|per|for)\s*\b|
+    \b(e|y|i|en|et|or|per|for)\s*\b|
     \b(?i:and|with)\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|
@@ -156,13 +160,16 @@ module DwcAgent
     \b\s*(?i:help)\s*\b|
     (?i:description|drawing|identification|remark|original|illustration|checklist|intermedia|measurement|indisting|series|imperfect)|
     (?i:desconocido)|
+    (?i:exc?s?icc?at(a|i))|
     (?i:evidence)|
+    (?i:exporter)|
     (?i:inconn?u)|
-    (?i:internation|gou?vern|ministry|unit|district|provincial|na(c|t)ional|military|region|environ|natur(e|al)|naturelles|division|program|direction|national)|
+    (?i:internation|gou?vern|ministry|extension|unit|district|provincial|na(c|t)ional|military|region|environ|natur(e|al)|naturelles|division|program|direction|national)|
     (?i:label)|
     (?i:o?\.?m\.?n\.?r\.?)|
     (?i:measurement)|
     (?i:ent(o|y)mology)|
+    (?i:geographic)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
     (?i:graduate|student|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
@@ -170,11 +177,11 @@ module DwcAgent
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:recreation|culture)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
-    (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|alliance|protective|circle)|
+    (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|exposit|alliance|protective|circle)|
     (?i:commercial|company|control|product)|
     (?i:size|large|colou?r)\s+|
     (?i:skeleton)|
-    (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|expedi(c|t)ion|festival|generation|inventory|marine|service)|
+    (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|exchange|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
     (?i:submersible)|
     (?i:synonymy?)|(topo|syn|holo)type|
     (?i:systematic|perspective)|

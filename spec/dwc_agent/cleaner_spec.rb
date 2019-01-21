@@ -173,6 +173,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ family: nil, given: nil })
       end
 
+      it "should ignore instances of word 'exchange'" do
+        input = "Butcher, N.; Dominion exchange"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Butcher", given: "N." })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ family: nil, given: nil })
+      end
+
       it "should remove asterisks from a name" do
         input = "White*"
         parsed = parser.parse(input)
@@ -237,6 +244,12 @@ module DwcAgent
         input = "A A Court"
         parsed = parser.parse(input)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.A.', family:'Court'})
+      end
+
+      it "should clean a name whose given initials lack punctuation" do
+        input = "Abreu, M.C"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'M.C.', family:'Abreu'})
       end
 
       it "should remove anything between brackets" do

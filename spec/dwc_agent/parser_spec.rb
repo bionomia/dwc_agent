@@ -214,6 +214,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(['C.J.', 'Guiguet'])
       end
 
+      it "should remove 'prob.'" do
+        input = "prob. A C Ziegler"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['A C', 'Ziegler'])
+      end
+
       it "should explode by 'prep. by' at the start of the string" do
         input = "prep. C.J. Guiguet"
         parsed = parser.parse(input)
@@ -314,6 +321,42 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(['O.', 'Lucanus'])
       end
 
+      it "should remove 'coll'" do
+        input = "coll A Gyzen"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['A', 'Gyzen'])
+      end
+
+      it "should remove 'Coll.'" do
+        input = "A.B. Joly Coll."
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['A.B.', 'Joly'])
+      end
+
+      it "should remove 'Colln.'" do
+        input = "Streng Colln."
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['Streng', nil]) #OK for now, would be later swapped with clean method
+      end
+
+      it "should remove 'COLLN'" do
+        input = "J G MILLIAS COLLN"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['J G', "MILLIAS"])
+      end
+
+      it "should remove 'Colls.'" do
+        input = "O. Conle & F. Hennemann Colls."
+        parsed = parser.parse(input)
+        expect(parsed[1].values_at(:given, :family)).to eq(['F.', 'Hennemann'])
+      end
+
+      it "should not strip out Colls" do
+        input = "D.G. Colls"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['D.G.', 'Colls'])
+      end
+
       it "should not parse what does not resemble a name" do
         input = "EB"
         parsed = parser.parse(input)
@@ -365,6 +408,14 @@ module DwcAgent
         expect(parsed.size).to eq(2)
         expect(parsed[0].values_at(:given, :family)).to eq(['O.', 'Bennedict'])
         expect(parsed[1].values_at(:given, :family)).to eq(['G.J.', 'Spencer'])
+      end
+
+      it "should explode names with ' i '" do
+        input = "A. Pedrola i A. Aguilella"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(['A.', 'Pedrola'])
+        expect(parsed[1].values_at(:given, :family)).to eq(['A.', 'Aguilella'])
       end
 
       it "should explode names with ' - '" do
@@ -1260,6 +1311,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["Chuvilin",nil])
+      end
+
+      it "should ignore 'gift:'" do
+        input = "gift: A. Chuvilin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Chuvilin"])
       end
 
       it "should reject a portion of a name that has 'Person String'" do

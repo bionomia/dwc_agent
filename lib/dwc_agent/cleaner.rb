@@ -52,6 +52,10 @@ module DwcAgent
           parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given)
       end
 
+      if parsed_namae.given && /\.[A-Z]$/.match(parsed_namae.given)
+        parsed_namae.given += "."
+      end
+
       if parsed_namae.given && /[A-Za-z]\./.match(parsed_namae.given)
         parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given).gsub(/[a-z]\./, &:upcase)
       end
