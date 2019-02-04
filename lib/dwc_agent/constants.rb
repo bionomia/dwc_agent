@@ -62,6 +62,9 @@ module DwcAgent
     (?i:lanuv)\d+|
     (?i:nswobs)|
     ORCID|
+    MRI(\s|-)PAS|
+    urn\:qm\.qld\.gov\.au\:collector|
+    (?i:University\s+of\s+California)\,?\s+?(?i:Berkeley)?|
     (?i:museum\s+victoria)|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
@@ -153,12 +156,14 @@ module DwcAgent
     (?i:abundant)|
     (?i:adult|juvenile)|
     (?i:anon)|
+    (?i:australian?)|
     (?i:average)|
     (?i:believe|unclear|illegible|none|suggested|(dis)?agrees?)|approach|
     (?i:barcod)|
     (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
     (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
     (?i:carex|salix)|
+    (?:catalog)|
     (?i:herbarium|herbier|collection|collected|publication|specimen|species|describe|an(a|o)morph|isolated|recorded|inspection|define|status|lighthouse)|
     \b\s*(?i:help)\s*\b|
     (?i:description|drawing|identification|remark|original|illustration|checklist|intermedia|measurement|indisting|series|imperfect)|
@@ -166,6 +171,7 @@ module DwcAgent
     (?i:exc?s?icc?at(a|i))|
     (?i:evidence)|
     (?i:exporter)|
+    (?i:ichthyology)|
     (?i:inconn?u)|
     (?i:internation|gou?vern|ministry|extension|unit|district|provincial|na(c|t)ional|military|region|environ|natur(e|al)|naturelles|division|program|direction|national)|
     (?i:label)|

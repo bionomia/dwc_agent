@@ -1351,6 +1351,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["J.", "Oscoz"])
       end
 
+      it "should strip out MRI PAS" do
+        input = "MRI PAS"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
     end
 
   end
