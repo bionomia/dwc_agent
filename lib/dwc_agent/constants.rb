@@ -59,6 +59,9 @@ module DwcAgent
     (?i:crossed\s+out)|
     \(?(?i:source)\(?|
     (?i:according\s+to)|
+    (?i:lanuv)\d+|
+    (?i:nswobs)|
+    ORCID|
     (?i:museum\s+victoria)|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|

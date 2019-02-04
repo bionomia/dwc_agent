@@ -1338,6 +1338,19 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["R.K.", "Johnson"])
       end
 
+      it "should strip out LANUV0071" do
+        input = "LANUV0071"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
+      it "should strip out ORCID" do
+        input = "J.Oscoz  (ORCID: 0000-0002-8464-9442)"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["J.", "Oscoz"])
+      end
+
     end
 
   end
