@@ -73,6 +73,7 @@ module DwcAgent
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
     FNA|DAO|HUH|FDNMB|
+    AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
@@ -206,6 +207,6 @@ module DwcAgent
     (?i:workshop|garden|farm|jardin|public)
   }x
 
-  TITLE = /\s*\b(sir|lord|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|lord|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
 
 end

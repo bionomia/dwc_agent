@@ -1357,6 +1357,12 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
+      it "should recognize Esq. as a title" do
+        input = "Charles R. Darwin Esq."
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Charles R.", "Darwin"])
+      end
+
     end
 
   end
