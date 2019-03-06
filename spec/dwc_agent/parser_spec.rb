@@ -1363,6 +1363,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Charles R.", "Darwin"])
       end
 
+      it "should recognize family names with only 2 characters" do
+        input = "Wen-Bin Yu"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Wen-Bin", "Yu"])
+      end
+
     end
 
   end

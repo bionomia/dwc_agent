@@ -363,6 +363,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "A.J.E.", family: "Smith"})
       end
 
+      it "should not mess with very small family names" do
+        input = "Wen-Bin Yu"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Wen-Bin", family: "Yu"})
+      end
+
     end
 
   end
