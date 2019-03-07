@@ -396,7 +396,7 @@ module DwcAgent
       end
 
       it "should remove more exteneous material" do
-        input = "Jack [John]: Smith12345"
+        input = "Jack [John] Smith12345"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
@@ -1367,6 +1367,13 @@ module DwcAgent
         input = "Wen-Bin Yu"
         parsed = parser.parse(input)
         expect(parsed[0].values_at(:given, :family)).to eq(["Wen-Bin", "Yu"])
+      end
+
+      it "should split names by a colon" do
+        input = "R. Bieler : Field Museum of Natural History"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["R.", "Bieler"])
       end
 
     end

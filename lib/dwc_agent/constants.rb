@@ -65,6 +65,9 @@ module DwcAgent
     MRI(\s|-)PAS|
     urn\:qm\.qld\.gov\.au\:collector|
     (?i:University\s+of\s+California)\,?\s+?(?i:Berkeley)?|
+    (?i:Field\s+Museum\s+of\s+Natural\s+History)|
+    (?i:American\s+Museum\s+of\s+Natural\s+History)|
+    (?i:The\s+Paleontological\s+Research\s+Institution)|
     (?i:museum\s+victoria)|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
@@ -77,7 +80,7 @@ module DwcAgent
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
-    [":!]|
+    ["!]|
     [,]?\d+|
     \s+\d+?(\/|\.)?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x)(\/|\.)\d+|
     [,;]\z|
@@ -97,7 +100,7 @@ module DwcAgent
   }x
 
   SPLIT_BY = %r{
-    [–|&+/;]|
+    [–|&+/;:]|
     \s+-\s+|
     \s+a\.\s+|
     \b(e|y|i|en|et|or|per|for)\s*\b|
