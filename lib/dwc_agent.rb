@@ -1,5 +1,5 @@
-require "capitalize_names"
 require "namae"
+require "namecase"
 
 require "dwc_agent/version"
 require "dwc_agent/constants"

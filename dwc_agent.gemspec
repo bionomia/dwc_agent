@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name        = 'dwc_agent'
   s.version     = DwcAgent::Version.version
   s.license     = 'MIT'
-  s.date        = '2019-03-06'
+  s.date        = '2019-03-08'
   s.summary     = "Parse Darwin Core agent terms such as recordedBy and identifiedBy"
   s.description = "Parses the typically messy content in Darwin Core terms that contain people names"
   s.authors     = ["David P. Shorthouse"]
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.rdoc_options.concat ['--encoding',  'UTF-8']
   s.add_runtime_dependency "namae", "~> 1"
-  s.add_runtime_dependency "capitalize-names", "~> 1"
+  s.add_runtime_dependency "namecase", "~> 2"
   s.add_development_dependency "rake", "~> 11.1"
   s.add_development_dependency "rspec", "~> 3.4"
   s.add_development_dependency "bundler", "~> 1.16"

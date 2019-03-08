@@ -49,7 +49,7 @@ module DwcAgent
         parsed_namae.given == parsed_namae.given.downcase) && 
         !parsed_namae.given.include?(".") &&
         parsed_namae.given.gsub(".","").length >= 4
-          parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given)
+          parsed_namae.given = NameCase(parsed_namae.given)
       end
 
       if parsed_namae.given && /\.[A-Z]$/.match(parsed_namae.given)
@@ -57,7 +57,7 @@ module DwcAgent
       end
 
       if parsed_namae.given && /[A-Za-z]\./.match(parsed_namae.given)
-        parsed_namae.given = CapitalizeNames.capitalize(parsed_namae.given).gsub(/[a-z]\./, &:upcase)
+        parsed_namae.given = NameCase(parsed_namae.given)
       end
 
       parsed_namae.normalize_initials
@@ -77,7 +77,7 @@ module DwcAgent
       end
 
       if !family.nil? && (family == family.upcase || family == family.downcase)
-        family = family.mb_chars.capitalize.to_s rescue nil
+        family = NameCase(family)
       end
 
       if !family.nil? && family.length <= 4 && family !~ /[aeiouy]/
