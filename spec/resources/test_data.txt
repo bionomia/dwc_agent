@@ -1,0 +1,376 @@
+####
+# Person name Parser Test
+# Input data are those typically found within Darwin Core terms: identifiedBy and recordedBy
+#
+# Test consists of a double pipe delimited input and parsed output in json format
+####
+
+EB || []
+
+Unknown [J. S. Erskine?] || []
+
+[no data] || []
+
+[no disponible] || []
+
+interim || []
+
+LANUV0071 || []
+
+MRI PAS || []
+
+Person String || []
+
+Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff"}, {"family":null, "given":null}]
+
+!B. P. J. Molloy (CHR) || [{"family":"Molloy", "given":"B.P.J."}]
+
+Tanner, C.A. || [{"family":"Tanner", "given":"C.A."}]
+
+23440a Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+
+13267 (male) W.J. Cody; 13268 (female) W.E. Kemp || [{"family":"Cody", "given":"W.J."}, {"family":"Kemp", "given":"W.E."}]
+
+23440G Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+
+23440(a) Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+
+Jack Smith et al || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith; et al || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith et al. || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith et. al. || [{"family":"Smith", "given":"Jack"}]
+
+Collector(s): Richard D. Worthington || [{"family":"Worthington", "given":"Richard D."}]
+
+Jack Smith and others || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith & others || [{"family":"Smith", "given":"Jack"}]
+
+J.R.Smith || [{"family":"Smith", "given":"J.R."}]
+
+J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R."}, {"family":"Sutherland", "given":"P."}]
+
+Rev. Jack Smith || [{"family":"Smith", "given":"Jack"}]
+
+Fr. Jack Smith || [{"family":"Smith", "given":"Jack"}]
+
+Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+
+Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+
+Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+
+Jack Smith etc || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith etc. || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith, 2009 || [{"family":"Smith", "given":"Jack"}]
+
+W.P. Coreneuk(?) || [{"family":"Coreneuk", "given":"W.P."}]
+
+Game Dept.  prep. C.J. Guiguet || [{"family":"Guiguet", "given":"C.J."}]
+
+prob. A C Ziegler || [{"family":"Ziegler", "given":"A.C."}]
+
+prep. C.J. Guiguet   || [{"family":"Guiguet", "given":"C.J."}]
+
+prep. by C.J. Guiguet || [{"family":"Guiguet", "given":"C.J."}]
+
+B. Pfeiffer prep. || [{"family":"Pfeiffer", "given":"B."}]
+
+R.H. Mackay  prep. I. McTaggart-Cowan || [{"family":"Mackay", "given":"R.H."}, {"family":"McTaggart-Cowan", "given":"I."}]
+
+via Serena Lowartz || [{"family":"Lowartz", "given":"Serena"}]
+
+D.B. Jepsen + T. L. McGuire || [{"family":"Jepsen", "given":"D.B."}, {"family":"McGuire", "given":"T.L."}]
+
+Jack Smith stet! || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith stet 1989 || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith stet, 1989 || [{"family":"Smith", "given":"Jack"}]
+
+Jack Smith e Carlos Santos || [{"family":"Smith", "given":"Jack"}, {"family":"Santos", "given": "Carlos"}]
+
+W. C. Gagne, G. Young, & G. Nishida || [{"family":"Gagne", "given":"W.C."}, {"family":"Young", "given":"G."}, {"family":"Nishida", "given":"G."}]
+
+Jack E Smith || [{"family":"Smith", "given":"Jack E."}]
+
+UNKNOWN || []
+
+Lucanus, O. (importer) || [{"family":"Lucanus", "given":"O."}]
+
+coll A Gyzen || [{"family":"Gyzen", "given":"A."}]
+
+A.B. Joly Coll. || [{"family":"Joly", "given":"A.B."}]
+
+Streng Colln. || [{"family":"Streng", "given":null}]
+
+J G MILLIAS COLLN || [{"family":"Millias", "given":"J.G."}]
+
+O. Conle & F. Hennemann Colls. || [{"family":"Conle", "given":"O."}, {"family":"Hennemann", "given":"F."}]
+
+D.G. Colls || [{"family":"Colls", "given":"D.G."}]
+
+FAH Sperling || [{"family":"Sperling", "given":"F.A.H."}]
+
+Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris"}]
+
+Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack"}]
+
+O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O."}, {"family":"Spencer", "given":"G.J."}]
+
+A. Pedrola i A. Aguilella || [{"family":"Pedrola", "given":"A."}, {"family":"Aguilella", "given":"A."}]
+
+Jack Smith - Yves St-Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"St-Archambault", "given":"Yves"}]
+
+Jack Smith   –   Yves St-Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"St-Archambault", "given":"Yves"}]
+
+Jack Smith and Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smithor or Orlando Archambault || [{"family":"Smithor", "given":"Jack"}, {"family":"Archambault", "given":"Orlando"}]
+
+Jack Smith AND Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith and Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}, {"family":"Johnson", "given":"Don"}]
+
+Jack Smith; Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Puttock, C.F. James, S.A. || [{"family":"Puttock", "given":"C.F."}, {"family":"James", "given":"S.A."}]
+
+Jack Smith | Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Groom Q., Desmet P. || [{"family":"Groom", "given":"Q."}, {"family":"Desmet", "given":"P."}]
+
+Jack Smith|Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith & Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V."}, {"family":"Savage", "given":"J."}, {"family":"Wheeler", "given":"T.A."}]
+
+Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K."}, {"family":"Dickinson", "given":"J.C."}, {"family":"Marshall", "given":"N."}]
+
+Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null}, {"family":"Dawson", "given":"J."}, {"family":"Wyatt", "given":"N."}, {"family":"Gerring", "given":"J."}]
+
+N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N."}, {"family":"Werneke", "given":"D."}, {"family":"Taphorn", "given":"D."}, {"family":"German", "given":"D."}, {"family":"Osorio", "given":"D."}]
+
+Jack Smith / Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith et Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith with Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith with Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}, {"family":"Johnson", "given":"Don"}]
+
+by P. Zika || [{"family":"Zika", "given":"P."}]
+
+annotated Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+
+annotated by Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson conf. Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson conf by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson conf. by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson confirmed by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+C.E. Garton 1980 checked:W.G. Argus 1980 || [{"family":"Garton", "given":"C.E."}, {"family":"Argus", "given":"W.G."}]
+
+Jack Johnson checked by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Checked By Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson dupl Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson dupl. Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson dup by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Johnson dup. by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Johnson ex. by Yves Archambault || [{"family":"Johnson", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron ex by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron examined by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron in part Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron in part by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Jack Smith redet. by Michael Jackson || [{"family":"Smith", "given":"Jack"}, {"family":"Jackson", "given":"Michael"}]
+
+Anna Roberts stet R. Scagel 1981 || [{"family":"Roberts", "given":"Anna"}, {"family":"Scagel", "given":"R."}]
+
+Rex Byron ver by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron ver. by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+Rex Byron verified by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+
+W.W. Diehl; Verif.: C.L. Shear || [{"family":"Diehl", "given":"W.W."}, {"family":"Shear", "given":"C.L."}]
+
+Vérifié Michelle Garneau || [{"family":"Garneau", "given":"Michelle"}]
+
+Gji; Verif. S. Churchill; 1980 || [{"family":"Gji", "given":null}, {"family":"Churchill", "given":"S."}]
+
+Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given":"Adam F."}, {"family":"Morton", "given":"J.K."}]
+
+S. Ross 12/i/1999 || [{"family":"Ross", "given":"S."}]
+
+S. Ross III.1990 || [{"family":"Ross", "given":"S."}]
+
+Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao"}]
+
+S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S."}, {"family":"Perrin", "given":"P."}]
+
+Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":null}]
+
+J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J."}]
+
+Bird,C.J. 9/Mar/1981: nom. rev. || [{"family":"Bird", "given":"C.J."}]
+
+Roy, Claude   Stet ! || [{"family":"Roy", "given":"Claude"}]
+
+A.E. Porsild; stet! Luc Brouillet (MT) 2003 || [{"family":"Porsild", "given":"A.E."}, {"family":"Brouillet", "given":"Luc"}]
+
+Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude"}]
+
+Roy, Claude (see note) || [{"family":"Roy", "given":"Claude"}]
+
+Brouard, Gustav G. Arsène, Bro. || [{"family":"Brouard", "given":"Gustav G. Arsène"}]
+
+Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian"}]
+
+Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C."}, {"family":"Brayshaw", "given":"Thomas C."}]
+
+4073 A.A. Beetle, with D.E. Beetle and Alva Hansen || [{"family":"Beetle", "given":"A.A."}, {"family":"Beetle", "given":"D.E."}, {"family":"Hansen", "given":"Alva"}]
+
+C. Tanner.; M.W. Hawkes || [{"family":"Tanner", "given":"C."}, {"family":"Hawkes", "given":"M.W."}]
+
+CJ Bird,21-12-1971 || [{"family":"Bird", "given":"C.J."}]
+
+CJ Bird,21 Dec. 1999 || [{"family":"Bird", "given":"C.J."}]
+
+Mortensen,Agnes Mols,2010 || [{"family":"Mortensen", "given":"Agnes Mols"}]
+
+Robert J. Bandoni (Photograph) || [{"family":"Bandoni", "given":"Robert J."}]
+
+S.A. Redhead- Sight Identification || [{"family":"Redhead", "given":"S.A."}]
+
+Jeffery M. Saarela 2005 (to subsp.)  || [{"family":"Saarela", "given":"Jeffery M."}]
+
+Bird, Carolyn J.; Fide: Lindsay, J.G. || [{"family":"Bird", "given":"Carolyn J."}, {"family":"Lindsay", "given":"J.G."}]
+
+Jan Jones Jan. 14, 2013 || [{"family":"Jones", "given":"Jan"}]
+
+G.J. Spencer per Sheila Lyons || [{"family":"Spencer", "given":"G.J."}, {"family":"Lyons", "given":"Sheila"}]
+
+Richard Robohm on 15 January 2013 || [{"family":"Robohm", "given":"Richard"}]
+
+C.J. Bird 20/Aug./1980 || [{"family":"Bird", "given":"C.J."}]
+
+K. January; January, 1979 || [{"family":"January", "given":"K."}]
+
+Michael May May 2013 || [{"family":"May", "given":"Michael"}]
+
+Jacques, Avril décembre 2013 || [{"family":"Jacques", "given":"Avril"}]
+
+Jacques, Avril avril 2013 || [{"family":"Jacques", "given":"Avril"}]
+
+Paul Kroeger 2006 May || [{"family":"Kroeger", "given":"Paul"}]
+
+Paul Kroeger 2006 may || [{"family":"Kroeger", "given":"Paul"}]
+
+Henrik Andersen&jon Feilberg || [{"family":"Andersen", "given":"Henrik"}, {"family":"Feilberg", "given":"Jon"}]
+
+Winterbottom, R.;Katz, L.;& CI team || [{"family":"Winterbottom", "given":"R."}, {"family":"Katz", "given":"L."}, {"family":null, "given":null}]
+
+JH Picard || [{"family":"Picard", "given":"J.H."}]
+
+Picard J.H. || [{"family":"Picard", "given":"J.H."}]
+
+J.Z. Cao || [{"family":"Cao", "given":"J.Z."}]
+
+Jack smith || [{"family":"Smith", "given":"Jack"}]
+
+C. YOUNG || [{"family":"Young", "given":"C."}]
+
+Chris R.T. YOUNG || [{"family":"Young", "given":"Chris R.T."}]
+
+CHRIS R.T. YOUNG || [{"family":"Young", "given":"Chris R.T."}]
+
+Sicard, Léas || [{"family":"Sicard", "given":"Léas"}]
+
+J. Green; R. Driskill; J. W. Markham L. D. Druehl || [{"family":"Green", "given":"J."}, {"family":"Driskill", "given":"R."}, {"family":null, "given":null}]
+
+Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, Matthew P; Ho, Hsuan-Ching || [{"family":"Smith", "given":"William Leo"}, {"family":"Bentley", "given":"Andrew C."}, {"family":"Girard", "given":"Matthew G."}, {"family":"Davis", "given":"Matthew P."}, {"family":"Ho", "given":"Hsuan-Ching"}]
+
+Tuck, Leslie M.; Vladykov, Vadim D. (source) || [{"family":"Tuck", "given":"Leslie M."}, {"family":"Vladykov", "given":"Vadim D."}]
+
+White* || [{"family":"White", "given":null}]
+
+Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber"}, {"family":"Taylor", "given":"Terry M."}]
+
+Jack Wft || [{"family":"Wft", "given":"Jack"}]
+
+Jack Wit || [{"family":"Wit", "given":"Jack"}]
+
+Jack SmitH || [{"family":null, "given":null}]
+
+RGBennett || [{"family":null, "given":null}]
+
+R.K. Godfrey a. R.D. Houk || [{"family":"Godfrey", "given":"R.K."}, {"family":"Houk", "given":"R.D."}]
+
+R.K. A. Godfrey || [{"family":"Godfrey", "given":"R.K.A."}]
+
+Paula Maybee || [{"family":"Maybee", "given":"Paula"}]
+
+Paula Maybee maybe || [{"family":"Maybee", "given":"Paula"}]
+
+Stephen Darbyshire 2005 (by correspondance) || [{"family":"Darbyshire", "given":"Stephen"}]
+
+Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder) || [{"family":"Holm", "given":"E."}, {"family":"Ng", "given":"J."}, {"family":"Litwiller", "given":"S."}, {"family":"Lee", "given":"C."}]
+
+A A Court, D J Court || [{"family":"Court", "given":"A.A."}, {"family":"Court", "given":"D.J."}]
+
+A B  Rose, J W  Trudgeon || [{"family":"Rose", "given":"A.B."}, {"family":"Trudgeon", "given":"J.W."}]
+
+J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas || [{"family":"Armbruster", "given":"J.W."}, {"family":"Armbruster", "given":"C."}, {"family":"Armbruster", "given":"A."}, {"family":"Armbruster", "given":"B."}, {"family":"Armbruster", "given":"L."}, {"family":"Armbruster", "given":"R."}, {"family":"Thomas", "given":"J."}, {"family":"Thomas", "given":"E."}]
+
+A C. Sanders, G. Helmkamp || [{"family":"Sanders", "given":"A.C."}, {"family":"Helmkamp", "given":"G."}]
+
+N. Navarro, G. Gómez y A Ferreira || [{"family":"Navarro", "given":"N."}, {"family":"Gómez", "given":"G."}, {"family":"Ferreira", "given":"A."}]
+
+A Y Jackson || [{"family":"Jackson", "given":"A.Y."}]
+
+A Y Jackson || [{"family":"Jackson", "given":"A.Y."}]
+
+leg. A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+
+Leg: A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+
+LEG Chuvilin || [{"family":"Chuvilin", "given":null}]
+
+gift: A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+
+Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff"}]
+
+Dr.R.K. Johnson,1972 || [{"family":"Johnson", "given":"R.K."}]
+
+J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J."}]
+
+Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R."}]
+
+Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin"}]
+
+R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R."}]

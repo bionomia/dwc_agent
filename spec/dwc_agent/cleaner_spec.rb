@@ -195,7 +195,7 @@ module DwcAgent
       it "should ignore a three letter family name without vowels" do
         input = "Jack Wft"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Jack", family: "Wft"})
       end
 
       it "should accept a three letter family name with a vowel" do

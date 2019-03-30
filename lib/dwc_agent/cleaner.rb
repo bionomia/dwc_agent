@@ -21,7 +21,7 @@ module DwcAgent
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
         return blank_name
       end
-      if parsed_namae.given && parsed_namae.given.length > 15
+      if parsed_namae.given && parsed_namae.given.length > 20
         return blank_name
       end
       if parsed_namae.given && parsed_namae.given.count('.') >= 3 && /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
@@ -66,6 +66,10 @@ module DwcAgent
       given = parsed_namae.given.strip rescue nil
       particle = parsed_namae.particle.strip rescue nil
 
+      if !given.nil? && given.match(/[A-Z]\.[A-Za-z]{2,}/)
+        given = given.gsub(".", ". ").strip
+      end
+
       if family.nil? && !given.nil? && !given.include?(".")
         family = given
         given = nil
@@ -78,10 +82,6 @@ module DwcAgent
 
       if !family.nil? && (family == family.upcase || family == family.downcase)
         family = NameCase(family)
-      end
-
-      if !family.nil? && family.length <= 4 && family !~ /[aeiouy]/
-        return blank_name
       end
 
       if !family.nil? && family.match(/[A-Z]$/)
