@@ -149,7 +149,8 @@ module DwcAgent
   PHRASE_SUBS = {
     'Dr\.' => 'Dr. ',
     'Mr\.' => 'Mr. ',
-    'Mrs\.' => 'Mrs. '
+    'Mrs\.' => 'Mrs. ',
+    'Prof\.' => 'Prof. '
   }
 
   COMPLEX_SEPARATORS = %r{
