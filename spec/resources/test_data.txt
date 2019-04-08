@@ -374,3 +374,8 @@ Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R."}]
 Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin"}]
 
 R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R."}]
+
+Adolphe-Théodore Brongniart || [{"family":"Brongniart", "given":"Adolphe-Théodore"}]
+
+# TODO: what do we do with particles like "de"
+Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl"}]

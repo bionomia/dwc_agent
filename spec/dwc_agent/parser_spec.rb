@@ -1376,6 +1376,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["R.", "Bieler"])
       end
 
+      it "should ignore particles" do
+        input = "Leo Anton Karl de Ball"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Leo Anton Karl", "Ball"])
+      end
+
     end
 
   end
