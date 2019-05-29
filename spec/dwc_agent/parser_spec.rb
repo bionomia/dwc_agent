@@ -15,7 +15,7 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed).to eq([])
       end
-  
+
       it "should reject a name that has 'Canadian Museum of Nature'" do
         input = "Jeff Saarela; Canadian Museum of Nature"
         parsed = parser.parse(input)
@@ -80,6 +80,27 @@ module DwcAgent
     #    expect(parsed[0].values_at(:given, :family)).to eq(["Ernesto", "Rázuri Gonzales"])
     #    expect(parser.clean(parsed[0]).to_h).to eq({given: 'Ernesto', family:'Rázuri Gonzales'})
     #  end
+
+      it "should remove 'bis'" do
+        input = "H.W. Lewis bis"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['H.W.', 'Lewis'])
+      end
+
+      it "should remove 'ter'" do
+        input = "H.W. Lewis ter"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['H.W.', 'Lewis'])
+      end
+
+      it "should not remove surname (or other) terminating by 'bis'" do
+        input = "Jack Anubis "
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Anubis'])
+      end
 
       it "should remove 'et al'" do
         input = "Jack Smith et al"
@@ -227,7 +248,7 @@ module DwcAgent
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['C.J.', 'Guiguet'])
       end
-  
+
       it "should explode by 'prep. by' at the start of the string" do
         input = "prep. by C.J. Guiguet"
         parsed = parser.parse(input)
@@ -380,7 +401,7 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed).to eq([])
       end
-  
+
       it "should parse name with many given initials" do
         input = "FAH Sperling"
         parsed = parser.parse(input)
@@ -1017,7 +1038,7 @@ module DwcAgent
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['K.', 'January'])
       end
-  
+
       it "should explode names with possibly conflicting months in the string" do
         input = "Michael May May 2013"
         parsed = parser.parse(input)
@@ -1069,7 +1090,7 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(['L.', 'Katz'])
         expect(parsed[2].values_at(:given, :family)).to eq(['CI', 'team'])
       end
-  
+
       it "should parse name with given initials without period(s)" do
         input = "JH Picard"
         parsed = parser.parse(input)
@@ -1374,6 +1395,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["R.", "Bieler"])
+      end
+
+      it "should ignore particles" do
+        input = "Leo Anton Karl de Ball"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Leo Anton Karl", "Ball"])
       end
 
     end
