@@ -21,13 +21,10 @@ module DwcAgent
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
         return blank_name
       end
-      if parsed_namae.given && parsed_namae.given.length > 20
+      if parsed_namae.given && parsed_namae.given.length > 25
         return blank_name
       end
       if parsed_namae.given && parsed_namae.given.count('.') >= 3 && /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
-        return blank_name
-      end
-      if parsed_namae.family && /[a-zA-Z]{2,}\.?\s+[a-zA-Z]{2,}/.match(parsed_namae.family)
         return blank_name
       end
       if parsed_namae.display_order =~ BLACKLIST

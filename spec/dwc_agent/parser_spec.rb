@@ -1404,6 +1404,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Leo Anton Karl", "Ball"])
       end
 
+      it "should parse a complex name" do
+        input = "Jean-Baptiste Leschenault de La Tour"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Jean-Baptiste Leschenault", "La Tour"])
+      end
+
     end
 
   end
