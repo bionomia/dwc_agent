@@ -7,6 +7,9 @@ module DwcAgent
       end
     end
 
+    def initialize
+    end
+
     # Cleans the passed-in namae object from the parse method and
     # re-organizes it to better match expected Darwin Core output.
     #
@@ -45,7 +48,7 @@ module DwcAgent
         (parsed_namae.given == parsed_namae.given.upcase || 
         parsed_namae.given == parsed_namae.given.downcase) && 
         !parsed_namae.given.include?(".") &&
-        parsed_namae.given.gsub(".","").length >= 4
+        parsed_namae.given.tr(".","").length >= 4
           parsed_namae.given = NameCase(parsed_namae.given)
       end
 

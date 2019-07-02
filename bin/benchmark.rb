@@ -7,9 +7,15 @@ namestring = "Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, M
 
 parsed = DwcAgent.parse(namestring)
 
-iterations = 3500
+iterations = 2500
 
 Benchmark.bm do |bm|
+
+  bm.report("uniq") do
+    iterations.times do
+      [{family: "Smith", given: "Michael"}, {family: "Smith", given: "M."}].uniq
+    end
+  end
 
   bm.report("dwc_agent") do
     iterations.times do

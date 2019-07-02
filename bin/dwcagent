@@ -7,7 +7,7 @@ require 'json'
 names = []
 DwcAgent.parse(ARGV[0]).each do |r|
   name = DwcAgent.clean(r)
-  if !name[:family].nil? && name[:family].length >= 3
+  if !name[:family].nil? && name[:family].length >= 2
     names << name
   end
 end

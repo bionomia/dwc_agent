@@ -378,6 +378,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(['D.G.', 'Colls'])
       end
 
+      it "should remove 'local collector'" do
+        input = "A Engilis, Jr., local collector"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['A', 'Engilis'])
+      end
+
       it "should not parse what does not resemble a name" do
         input = "EB"
         parsed = parser.parse(input)
