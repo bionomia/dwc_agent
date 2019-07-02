@@ -14,6 +14,13 @@ module DwcAgent
         title: TITLE
       }
       @namae = Namae::Parser.new(options)
+
+      @strip_out_regex = Regexp.new STRIP_OUT.to_s
+      @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
+      @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join('\\')].to_s
+      @phrase_subs_regex = Regexp.new (PHRASE_SUBS.keys.join('|')).to_s
+      @complex_separators_regex = Regexp.new COMPLEX_SEPARATORS.to_s
+      @add_separators_regex = Regexp.new %r{([A-Z]{1}\.)([[:alpha:]]{2,})}.to_s
     end
       
     # Parses the passed-in string and returns a list of names.
@@ -22,13 +29,12 @@ module DwcAgent
     # @return [Array] the list of parsed names
     def parse(name)
       return [] if name.nil? || name == ""
-      residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
-      name.gsub!(STRIP_OUT, ' ')
-      name.gsub!(/[#{CHAR_SUBS.keys.join('\\')}]/, CHAR_SUBS)
-      name.gsub!(/(#{PHRASE_SUBS.keys.join('|')})/, PHRASE_SUBS)
-      name.gsub!(/([A-Z]{1}\.)([[:alpha:]]{2,})/, '\1 \2')
-      name.gsub!(COMPLEX_SEPARATORS, '\1 | \2')
-      name.gsub!(residual_terminators_regex, '')
+      name.gsub!(@strip_out_regex, ' ')
+      name.gsub!(@char_subs_regex, CHAR_SUBS)
+      name.gsub!(@phrase_subs_regex, PHRASE_SUBS)
+      name.gsub!(@add_separators_regex, '\1 \2')
+      name.gsub!(@complex_separators_regex, '\1 | \2')
+      name.gsub!(@residual_terminators_regex, '')
       name.squeeze!(' ')
       name.strip!
       @namae.parse(name)
