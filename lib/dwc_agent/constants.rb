@@ -50,7 +50,7 @@ module DwcAgent
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|
-    \(?[,;]?\s*?(?i:(local)?\s?collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
+    \(?[,]?\s*?(?i:(local)?\s?collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
     (?i:fide)\:?\s*\b|
     (?i:game\s+dept)\.?\s*\b|
     (?i:see\s+notes?\s*(inside)?)|

@@ -1418,6 +1418,14 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Jean-Baptiste Leschenault", "La Tour"])
       end
 
+      it "should parse a list each element within containing a role" do
+        input = "Collector(s): Walter Cowary; Preparator(s): Donna C. Schmitt"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Walter", "Cowary"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["Donna C.", "Schmitt"])
+      end
+
     end
 
   end
