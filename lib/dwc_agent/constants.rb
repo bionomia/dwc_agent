@@ -1,5 +1,7 @@
 module DwcAgent
   STRIP_OUT = %r{
+    ^[\[{(]|
+    [\]})]$|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\.?\s+al)\.?|
@@ -11,7 +13,7 @@ module DwcAgent
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*(?i:undetermined|indeterminable|dummy|interim|accession)\b|
+    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|illegible|scripsit)\)?\b|
     \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     \b[,;]?\s*(?i:string)\b|

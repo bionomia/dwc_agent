@@ -1426,6 +1426,14 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(["Donna C.", "Schmitt"])
       end
 
+      it "should ignore brackets when wrapped around the entire string" do
+        input = "[A. Gray (scripsit); W. T. Kittredge (2014)]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Gray"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["W. T.", "Kittredge"])
+      end
+
     end
 
   end
