@@ -113,6 +113,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Picard", given: "J.H."})
       end
 
+      it "should reverse the order when family name is parsed as uppercase initials" do
+        input = "Lepschi BJ; Albrecht DE"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Lepschi", given: "B.J." })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ family: "Albrecht", given: "D.E." })
+      end
+
       it "should parse name when given is initalized and order is reversed without separator" do
         input = "Picard J.H."
         parsed = parser.parse(input)
@@ -382,6 +389,21 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should strip out the terminal paricle" do
+        input = "Andrade JC de"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.C.", family: "Andrade"})
+      end
+
+      it "should ignore a single paricle purported to be a name" do
+        input = "Robillard|de"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Robillard"})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil})
       end
 
     end

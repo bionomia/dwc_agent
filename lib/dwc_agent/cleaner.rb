@@ -45,6 +45,17 @@ module DwcAgent
       end
 
       if parsed_namae.given && 
+         parsed_namae.family && 
+         parsed_namae.family.length <=3 && 
+         parsed_namae.family == parsed_namae.family.upcase &&
+         parsed_namae.given[-1] != "."
+          given = parsed_namae.given
+          family = parsed_namae.family
+          parsed_namae.family = given
+          parsed_namae.given = family
+      end
+
+      if parsed_namae.given && 
         (parsed_namae.given == parsed_namae.given.upcase || 
         parsed_namae.given == parsed_namae.given.downcase) && 
         !parsed_namae.given.include?(".") &&

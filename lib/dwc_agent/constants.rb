@@ -83,7 +83,7 @@ module DwcAgent
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     \b[,;]\s+\d+\z|
-    ["!]|
+    ["!@?]|
     [,]?\d+|
     \s+\d+?(\/|\.)?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x)(\/|\.)\d+|
     [,;]\z|
@@ -99,7 +99,8 @@ module DwcAgent
     ^[-,.\s;*\d]+\s?|
     -\d?\z|
     \s*?-{2,}\s*?|
-    ^(?i:exc?p?)[:.]\s*
+    ^(?i:exc?p?)[:.]\s*|
+    \s+de\s*$
   }x
 
   SPLIT_BY = %r{
@@ -166,7 +167,7 @@ module DwcAgent
     (?i:anon)|
     (?i:australian?)|
     (?i:average)|
-    (?i:believe|unclear|illegible|none|suggested|(dis)?agrees?)|approach|
+    (?i:believe|unclear|ill?egible|none|suggested|(dis)?agrees?)|approach|
     (?i:barcod)|
     (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
     (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
@@ -211,7 +212,8 @@ module DwcAgent
     (?i:unidentified|unspecified|unk?nown|unnamed|unread|unmistak|no agent)|
     (?i:urn\:)|
     (?i:usda|ucla)|
-    (?i:workshop|garden|farm|jardin|public)
+    (?i:workshop|garden|farm|jardin|public)|
+    ^\s*?de\s*?$
   }x
 
   TITLE = /\s*\b(sir|lord|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
