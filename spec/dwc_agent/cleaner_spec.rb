@@ -406,6 +406,27 @@ module DwcAgent
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil})
       end
 
+      it "should recognize Lord as a middle name" do
+        input = "Nathaniel Lord Britton"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel Lord", family: "Britton"})
+      end
+
+      it "should recognize Professor as a title" do
+        input = "Professor Nathaniel Britton"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel", family: "Britton"})
+      end
+
+      it "should recognize Sir as a title" do
+        input = "Sir Nathaniel Britton"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel", family: "Britton"})
+      end
+
     end
 
   end
