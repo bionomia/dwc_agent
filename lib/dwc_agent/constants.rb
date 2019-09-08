@@ -216,6 +216,12 @@ module DwcAgent
     ^\s*?de\s*?$
   }x
 
+  FAMILY_BLACKLIST = [
+    "der",
+    "van",
+    "von"
+  ]
+
   TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
 
 end
