@@ -397,18 +397,6 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
-      it "should remove [no data]" do
-        input = "[no data]"
-        parsed = parser.parse(input)
-        expect(parsed).to eq([])
-      end
-
-      it "should remove [no disponible]" do
-        input = "[no disponible]"
-        parsed = parser.parse(input)
-        expect(parsed).to eq([])
-      end
-
       it "should parse name with many given initials" do
         input = "FAH Sperling"
         parsed = parser.parse(input)

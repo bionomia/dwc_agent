@@ -9,10 +9,6 @@ EB || []
 
 Unknown [J. S. Erskine?] || []
 
-[no data] || []
-
-[no disponible] || []
-
 interim || []
 
 LANUV0071 || []
@@ -20,6 +16,10 @@ LANUV0071 || []
 MRI PAS || []
 
 Person String || []
+
+[no data] || [{"family":null, "given":null}]
+
+[no disponible] || [{"family":null, "given":null}]
 
 Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff"}, {"family":null, "given":null}]
 

@@ -461,6 +461,69 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
       end
 
+      it "should ignore [no data]" do
+        input = "[no data]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore [no disponible]" do
+        input = "[no disponible]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore [no data available]" do
+        input = "[no data available]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore [no agent data]" do
+        input = "[no agent data]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore DATA NOT CAPTURED" do
+        input = "DATA NOT CAPTURED"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore 'Curators of USNM'" do
+        input = "Curators of USNM"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore 'C. N. C. Curators'" do
+        input = "C. N. C. Curators"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore 'Administrador'" do
+        input = "Administrador"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
+      it "should ignore 'nomenclatural adjustment'" do
+        input = "nomenclatural adjustment"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
     end
 
   end

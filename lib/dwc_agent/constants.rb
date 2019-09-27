@@ -20,7 +20,6 @@ module DwcAgent
     \b[,;]?\s*(?i:person\s*string)\b|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
     \b[,;]?\s*(?i:colln?)[:.]?(\b|\z)|
-    (?i:no\s+(data|disponible))|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
       May|Jun|Jul|Aug|Sept?|
@@ -78,7 +77,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|
+    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
@@ -165,6 +164,7 @@ module DwcAgent
   BLACKLIST = %r{
     (?i:abundant)|
     (?i:adult|juvenile)|
+    (?i:administra(d|t)or)|
     (?i:anon)|
     (?i:australian?)|
     (?i:average)|
@@ -173,9 +173,10 @@ module DwcAgent
     (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
     (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
     (?i:carex|salix)|
-    (?:catalog)|
+    (?i:catalog(ue)?)|
     (?i:herbarium|herbier|collection|collected|publication|specimen|species|describe|an(a|o)morph|isolated|recorded|inspection|define|status|lighthouse)|
     \b\s*(?i:help)\s*\b|
+    (?i:data\s+not\s+captured)|
     (?i:description|drawing|identification|remark|original|illustration|checklist|intermedia|measurement|indisting|series|imperfect)|
     (?i:desconocido)|
     (?i:exc?s?icc?at(a|i))|
@@ -193,7 +194,9 @@ module DwcAgent
     (?i:univ\.)|
     (?i:graduate|student|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
     (?i:non\s+pr(é|e)cis(é|e))|
-    (?i:not?\s+stated)|
+    (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
+    (?i:not?\s+(entered|stated))|
+    (?i:nomenclatur(e|al)\s+adjustment)|
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:recreation|culture)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
@@ -223,8 +226,8 @@ module DwcAgent
     "van",
     "von",
     "the",
-    "The",
-    "Catalog"
+    "of",
+    "curators"
   ]
 
   TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i

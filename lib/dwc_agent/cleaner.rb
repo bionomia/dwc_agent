@@ -18,7 +18,7 @@ module DwcAgent
     def clean(parsed_namae)
       blank_name = { given: nil, family: nil }
 
-      if parsed_namae.family && FAMILY_BLACKLIST.include?(parsed_namae.family)
+      if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
         return blank_name
       end
 
@@ -111,7 +111,7 @@ module DwcAgent
         return blank_name
       end
 
-      if !family.nil? && FAMILY_BLACKLIST.include?(family)
+      if !family.nil? && FAMILY_BLACKLIST.any?{ |s| s.casecmp(family) == 0 }
         return blank_name
       end
 
