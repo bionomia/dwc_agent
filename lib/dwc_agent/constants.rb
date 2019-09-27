@@ -192,6 +192,7 @@ module DwcAgent
     (?i:univ\.)|
     (?i:graduate|student|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
     (?i:non\s+pr(é|e)cis(é|e))|
+    (?i:not?\s+stated)|
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:recreation|culture)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|

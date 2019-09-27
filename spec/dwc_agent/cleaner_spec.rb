@@ -106,7 +106,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ family: nil, given: nil})
       end
-  
+
+      it "should ignore '[Not Stated]'" do
+        input = "[Not Stated]"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: nil, given: nil})
+      end
+
       it "should parse name with given initials without period(s)" do
         input = "JH Picard"
         parsed = parser.parse(input)
