@@ -111,6 +111,10 @@ module DwcAgent
         return blank_name
       end
 
+      if !family.nil? && FAMILY_BLACKLIST.include?(family)
+        return blank_name
+      end
+
       { given: given, family: family }
     end
 

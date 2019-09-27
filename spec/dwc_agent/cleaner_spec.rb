@@ -454,6 +454,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
       end
 
+      it " should return a blank name when family is 'Catalog'" do
+        input = 'Catalog\1996'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil})
+      end
+
     end
 
   end
