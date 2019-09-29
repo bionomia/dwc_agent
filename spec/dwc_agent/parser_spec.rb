@@ -1422,6 +1422,12 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(["W. T.", "Kittredge"])
       end
 
+      it "should ignore 'sem coletor; sem data'" do
+        input = "sem coletor; sem data"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
     end
 
   end

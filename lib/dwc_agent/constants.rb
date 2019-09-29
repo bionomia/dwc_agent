@@ -81,6 +81,7 @@ module DwcAgent
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
+    (?i:sem\s+(colec?tor|data))|
     \b[,;]\s+\d+\z|
     ["!@?]|
     [,]?\d+|
@@ -227,7 +228,8 @@ module DwcAgent
     "von",
     "the",
     "of",
-    "curators"
+    "curators",
+    "nomenclatural"
   ]
 
   TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
