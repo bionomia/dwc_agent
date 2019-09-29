@@ -17,369 +17,368 @@ MRI PAS || []
 
 Person String || []
 
-[no data] || [{"family":null, "given":null}]
+[no data] || [{"family":null, "given":null, "particle":null}]
 
-[no disponible] || [{"family":null, "given":null}]
+[no disponible] || [{"family":null, "given":null, "particle":null}]
 
-Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff"}, {"family":null, "given":null}]
+Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff", "particle":null}, {"family":null, "given":null, "particle":null}]
 
-!B. P. J. Molloy (CHR) || [{"family":"Molloy", "given":"B.P.J."}]
+!B. P. J. Molloy (CHR) || [{"family":"Molloy", "given":"B.P.J.", "particle":null}]
 
-Tanner, C.A. || [{"family":"Tanner", "given":"C.A."}]
+Tanner, C.A. || [{"family":"Tanner", "given":"C.A.", "particle":null}]
 
-23440a Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+23440a Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null}]
 
-13267 (male) W.J. Cody; 13268 (female) W.E. Kemp || [{"family":"Cody", "given":"W.J."}, {"family":"Kemp", "given":"W.E."}]
+13267 (male) W.J. Cody; 13268 (female) W.E. Kemp || [{"family":"Cody", "given":"W.J.", "particle":null}, {"family":"Kemp", "given":"W.E.", "particle":null}]
 
-23440G Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+23440G Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null}]
 
-23440(a) Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D."}]
+23440(a) Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null}]
 
-Jack Smith et al || [{"family":"Smith", "given":"Jack"}]
+Jack Smith et al || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith; et al || [{"family":"Smith", "given":"Jack"}]
+Jack Smith; et al || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith et al. || [{"family":"Smith", "given":"Jack"}]
+Jack Smith et al. || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith et. al. || [{"family":"Smith", "given":"Jack"}]
+Jack Smith et. al. || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Collector(s): Richard D. Worthington || [{"family":"Worthington", "given":"Richard D."}]
+Collector(s): Richard D. Worthington || [{"family":"Worthington", "given":"Richard D.", "particle":null}]
 
-Jack Smith and others || [{"family":"Smith", "given":"Jack"}]
+Jack Smith and others || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith & others || [{"family":"Smith", "given":"Jack"}]
+Jack Smith & others || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-J.R.Smith || [{"family":"Smith", "given":"J.R."}]
+J.R.Smith || [{"family":"Smith", "given":"J.R.", "particle":null}]
 
-J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R."}, {"family":"Sutherland", "given":"P."}]
+J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R.", "particle":null}, {"family":"Sutherland", "given":"P.", "particle":null}]
 
-Rev. Jack Smith || [{"family":"Smith", "given":"Jack"}]
+Rev. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Fr. Jack Smith || [{"family":"Smith", "given":"Jack"}]
+Fr. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null}]
 
-Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null}]
 
-Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope"}]
+Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null}]
 
-Jack Smith etc || [{"family":"Smith", "given":"Jack"}]
+Jack Smith etc || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith etc. || [{"family":"Smith", "given":"Jack"}]
+Jack Smith etc. || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith, 2009 || [{"family":"Smith", "given":"Jack"}]
+Jack Smith, 2009 || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-W.P. Coreneuk(?) || [{"family":"Coreneuk", "given":"W.P."}]
+W.P. Coreneuk(?) || [{"family":"Coreneuk", "given":"W.P.", "particle":null}]
 
-Game Dept.  prep. C.J. Guiguet || [{"family":"Guiguet", "given":"C.J."}]
+Game Dept.  prep. C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null}]
 
-prob. A C Ziegler || [{"family":"Ziegler", "given":"A.C."}]
+prob. A C Ziegler || [{"family":"Ziegler", "given":"A.C.", "particle":null}]
 
-prep. C.J. Guiguet   || [{"family":"Guiguet", "given":"C.J."}]
+prep. C.J. Guiguet   || [{"family":"Guiguet", "given":"C.J.", "particle":null}]
 
-prep. by C.J. Guiguet || [{"family":"Guiguet", "given":"C.J."}]
+prep. by C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null}]
 
-B. Pfeiffer prep. || [{"family":"Pfeiffer", "given":"B."}]
+B. Pfeiffer prep. || [{"family":"Pfeiffer", "given":"B.", "particle":null}]
 
-R.H. Mackay  prep. I. McTaggart-Cowan || [{"family":"Mackay", "given":"R.H."}, {"family":"McTaggart-Cowan", "given":"I."}]
+R.H. Mackay  prep. I. McTaggart-Cowan || [{"family":"Mackay", "given":"R.H.", "particle":null}, {"family":"McTaggart-Cowan", "given":"I.", "particle":null}]
 
-via Serena Lowartz || [{"family":"Lowartz", "given":"Serena"}]
+via Serena Lowartz || [{"family":"Lowartz", "given":"Serena", "particle":null}]
 
-D.B. Jepsen + T. L. McGuire || [{"family":"Jepsen", "given":"D.B."}, {"family":"McGuire", "given":"T.L."}]
+D.B. Jepsen + T. L. McGuire || [{"family":"Jepsen", "given":"D.B.", "particle":null}, {"family":"McGuire", "given":"T.L.", "particle":null}]
 
-Jack Smith stet! || [{"family":"Smith", "given":"Jack"}]
+Jack Smith stet! || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith stet 1989 || [{"family":"Smith", "given":"Jack"}]
+Jack Smith stet 1989 || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith stet, 1989 || [{"family":"Smith", "given":"Jack"}]
+Jack Smith stet, 1989 || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-Jack Smith e Carlos Santos || [{"family":"Smith", "given":"Jack"}, {"family":"Santos", "given": "Carlos"}]
+Jack Smith e Carlos Santos || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Santos", "given": "Carlos", "particle":null}]
 
-W. C. Gagne, G. Young, & G. Nishida || [{"family":"Gagne", "given":"W.C."}, {"family":"Young", "given":"G."}, {"family":"Nishida", "given":"G."}]
+W. C. Gagne, G. Young, & G. Nishida || [{"family":"Gagne", "given":"W.C.", "particle":null}, {"family":"Young", "given":"G.", "particle":null}, {"family":"Nishida", "given":"G.", "particle":null}]
 
-Jack E Smith || [{"family":"Smith", "given":"Jack E."}]
+Jack E Smith || [{"family":"Smith", "given":"Jack E.", "particle":null}]
 
 UNKNOWN || []
 
-Lucanus, O. (importer) || [{"family":"Lucanus", "given":"O."}]
+Lucanus, O. (importer) || [{"family":"Lucanus", "given":"O.", "particle":null}]
 
-coll A Gyzen || [{"family":"Gyzen", "given":"A."}]
+coll A Gyzen || [{"family":"Gyzen", "given":"A.", "particle":null}]
 
-A.B. Joly Coll. || [{"family":"Joly", "given":"A.B."}]
+A.B. Joly Coll. || [{"family":"Joly", "given":"A.B.", "particle":null}]
 
-Streng Colln. || [{"family":"Streng", "given":null}]
+Streng Colln. || [{"family":"Streng", "given":null, "particle":null}]
 
-J G MILLIAS COLLN || [{"family":"Millias", "given":"J.G."}]
+J G MILLIAS COLLN || [{"family":"Millias", "given":"J.G.", "particle":null}]
 
-O. Conle & F. Hennemann Colls. || [{"family":"Conle", "given":"O."}, {"family":"Hennemann", "given":"F."}]
+O. Conle & F. Hennemann Colls. || [{"family":"Conle", "given":"O.", "particle":null}, {"family":"Hennemann", "given":"F.", "particle":null}]
 
-D.G. Colls || [{"family":"Colls", "given":"D.G."}]
+D.G. Colls || [{"family":"Colls", "given":"D.G.", "particle":null}]
 
-FAH Sperling || [{"family":"Sperling", "given":"F.A.H."}]
+FAH Sperling || [{"family":"Sperling", "given":"F.A.H.", "particle":null}]
 
-Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris"}]
+Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris", "particle":null}]
 
-Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack"}]
+Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O."}, {"family":"Spencer", "given":"G.J."}]
+O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O.", "particle":null}, {"family":"Spencer", "given":"G.J.", "particle":null}]
 
-A. Pedrola i A. Aguilella || [{"family":"Pedrola", "given":"A."}, {"family":"Aguilella", "given":"A."}]
+A. Pedrola i A. Aguilella || [{"family":"Pedrola", "given":"A.", "particle":null}, {"family":"Aguilella", "given":"A.", "particle":null}]
 
-Jack Smith - Yves St-Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"St-Archambault", "given":"Yves"}]
+Jack Smith - Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"St-Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith   –   Yves St-Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"St-Archambault", "given":"Yves"}]
+Jack Smith   –   Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"St-Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith and Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith and Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smithor or Orlando Archambault || [{"family":"Smithor", "given":"Jack"}, {"family":"Archambault", "given":"Orlando"}]
+Jack Smithor or Orlando Archambault || [{"family":"Smithor", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Orlando", "particle":null}]
 
-Jack Smith AND Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith AND Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith and Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}, {"family":"Johnson", "given":"Don"}]
+Jack Smith and Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}, {"family":"Johnson", "given":"Don", "particle":null}]
 
-Jack Smith; Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith; Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Puttock, C.F. James, S.A. || [{"family":"Puttock", "given":"C.F."}, {"family":"James", "given":"S.A."}]
+Puttock, C.F. James, S.A. || [{"family":"Puttock", "given":"C.F.", "particle":null}, {"family":"James", "given":"S.A.", "particle":null}]
 
-Jack Smith | Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith | Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Groom Q., Desmet P. || [{"family":"Groom", "given":"Q."}, {"family":"Desmet", "given":"P."}]
+Groom Q., Desmet P. || [{"family":"Groom", "given":"Q.", "particle":null}, {"family":"Desmet", "given":"P.", "particle":null}]
 
-Jack Smith|Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith|Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith & Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith & Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V."}, {"family":"Savage", "given":"J."}, {"family":"Wheeler", "given":"T.A."}]
+V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V.", "particle":null}, {"family":"Savage", "given":"J.", "particle":null}, {"family":"Wheeler", "given":"T.A.", "particle":null}]
 
-Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K."}, {"family":"Dickinson", "given":"J.C."}, {"family":"Marshall", "given":"N."}]
+Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K.", "particle":null}, {"family":"Dickinson", "given":"J.C.", "particle":null}, {"family":"Marshall", "given":"N.", "particle":null}]
 
-Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null}, {"family":"Dawson", "given":"J."}, {"family":"Wyatt", "given":"N."}, {"family":"Gerring", "given":"J."}]
+Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null, "particle":null}, {"family":"Dawson", "given":"J.", "particle":null}, {"family":"Wyatt", "given":"N.", "particle":null}, {"family":"Gerring", "given":"J.", "particle":null}]
 
-N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N."}, {"family":"Werneke", "given":"D."}, {"family":"Taphorn", "given":"D."}, {"family":"German", "given":"D."}, {"family":"Osorio", "given":"D."}]
+N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N.", "particle":null}, {"family":"Werneke", "given":"D.", "particle":null}, {"family":"Taphorn", "given":"D.", "particle":null}, {"family":"German", "given":"D.", "particle":null}, {"family":"Osorio", "given":"D.", "particle":null}]
 
-Jack Smith / Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith / Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith et Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith et Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith with Yves Archambault || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Smith with Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith with Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}, {"family":"Johnson", "given":"Don"}]
+Jack Smith with Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}, {"family":"Johnson", "given":"Don", "particle":null}]
 
-by P. Zika || [{"family":"Zika", "given":"P."}]
+by P. Zika || [{"family":"Zika", "given":"P.", "particle":null}]
 
-annotated Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+annotated Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null}]
 
-annotated by Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+annotated by Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson conf. Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson conf. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson conf by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson conf by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson conf. by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson conf. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson confirmed by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson confirmed by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-C.E. Garton 1980 checked:W.G. Argus 1980 || [{"family":"Garton", "given":"C.E."}, {"family":"Argus", "given":"W.G."}]
+C.E. Garton 1980 checked:W.G. Argus 1980 || [{"family":"Garton", "given":"C.E.", "particle":null}, {"family":"Argus", "given":"W.G.", "particle":null}]
 
-Jack Johnson checked by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson checked by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Checked By Yves Archambault || [{"family":"Archambault", "given":"Yves"}]
+Checked By Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson dupl Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson dupl Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson dupl. Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson dupl. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson dup by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson dup by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Johnson dup. by Yves Archambault || [{"family":"Johnson", "given":"Jack"}, {"family":"Archambault", "given":"Yves"}]
+Jack Johnson dup. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Johnson ex. by Yves Archambault || [{"family":"Johnson", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Johnson ex. by Yves Archambault || [{"family":"Johnson", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron ex by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron ex by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron examined by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron examined by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron in part Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron in part Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron in part by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron in part by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Jack Smith redet. by Michael Jackson || [{"family":"Smith", "given":"Jack"}, {"family":"Jackson", "given":"Michael"}]
+Jack Smith redet. by Michael Jackson || [{"family":"Smith", "given":"Jack", "particle":null}, {"family":"Jackson", "given":"Michael", "particle":null}]
 
-Anna Roberts stet R. Scagel 1981 || [{"family":"Roberts", "given":"Anna"}, {"family":"Scagel", "given":"R."}]
+Anna Roberts stet R. Scagel 1981 || [{"family":"Roberts", "given":"Anna", "particle":null}, {"family":"Scagel", "given":"R.", "particle":null}]
 
-Rex Byron ver by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron ver by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron ver. by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron ver. by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-Rex Byron verified by Yves Archambault || [{"family":"Byron", "given":"Rex"}, {"family":"Archambault", "given":"Yves"}]
+Rex Byron verified by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null}, {"family":"Archambault", "given":"Yves", "particle":null}]
 
-W.W. Diehl; Verif.: C.L. Shear || [{"family":"Diehl", "given":"W.W."}, {"family":"Shear", "given":"C.L."}]
+W.W. Diehl; Verif.: C.L. Shear || [{"family":"Diehl", "given":"W.W.", "particle":null}, {"family":"Shear", "given":"C.L.", "particle":null}]
 
-Vérifié Michelle Garneau || [{"family":"Garneau", "given":"Michelle"}]
+Vérifié Michelle Garneau || [{"family":"Garneau", "given":"Michelle", "particle":null}]
 
-Gji; Verif. S. Churchill; 1980 || [{"family":"Gji", "given":null}, {"family":"Churchill", "given":"S."}]
+Gji; Verif. S. Churchill; 1980 || [{"family":"Gji", "given":null, "particle":null}, {"family":"Churchill", "given":"S.", "particle":null}]
 
-Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given":"Adam F."}, {"family":"Morton", "given":"J.K."}]
+Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given":"Adam F.", "particle":null}, {"family":"Morton", "given":"J.K.", "particle":null}]
 
-S. Ross 12/i/1999 || [{"family":"Ross", "given":"S."}]
+S. Ross 12/i/1999 || [{"family":"Ross", "given":"S.", "particle":null}]
 
-S. Ross III.1990 || [{"family":"Ross", "given":"S."}]
+S. Ross III.1990 || [{"family":"Ross", "given":"S.", "particle":null}]
 
-Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao"}]
+Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao", "particle":null}]
 
-S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S."}, {"family":"Perrin", "given":"P."}]
+S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S.", "particle":null}, {"family":"Perrin", "given":"P.", "particle":null}]
 
-Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":null}]
+Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":null, "particle":null}]
 
-J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J."}]
+J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J.", "particle":null}]
 
-Bird,C.J. 9/Mar/1981: nom. rev. || [{"family":"Bird", "given":"C.J."}]
+Bird,C.J. 9/Mar/1981: nom. rev. || [{"family":"Bird", "given":"C.J.", "particle":null}]
 
-Roy, Claude   Stet ! || [{"family":"Roy", "given":"Claude"}]
+Roy, Claude   Stet ! || [{"family":"Roy", "given":"Claude", "particle":null}]
 
-A.E. Porsild; stet! Luc Brouillet (MT) 2003 || [{"family":"Porsild", "given":"A.E."}, {"family":"Brouillet", "given":"Luc"}]
+A.E. Porsild; stet! Luc Brouillet (MT) 2003 || [{"family":"Porsild", "given":"A.E.", "particle":null}, {"family":"Brouillet", "given":"Luc", "particle":null}]
 
-Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude"}]
+Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude", "particle":null}]
 
-Roy, Claude (see note) || [{"family":"Roy", "given":"Claude"}]
+Roy, Claude (see note) || [{"family":"Roy", "given":"Claude", "particle":null}]
 
-Brouard, Gustav G. Arsène, Bro. || [{"family":"Brouard", "given":"Gustav G. Arsène"}]
+Brouard, Gustav G. Arsène, Bro. || [{"family":"Brouard", "given":"Gustav G. Arsène", "particle":null}]
 
-Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian"}]
+Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian", "particle":null}]
 
-Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C."}, {"family":"Brayshaw", "given":"Thomas C."}]
+Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C.", "particle":null}, {"family":"Brayshaw", "given":"Thomas C.", "particle":null}]
 
-4073 A.A. Beetle, with D.E. Beetle and Alva Hansen || [{"family":"Beetle", "given":"A.A."}, {"family":"Beetle", "given":"D.E."}, {"family":"Hansen", "given":"Alva"}]
+4073 A.A. Beetle, with D.E. Beetle and Alva Hansen || [{"family":"Beetle", "given":"A.A.", "particle":null}, {"family":"Beetle", "given":"D.E.", "particle":null}, {"family":"Hansen", "given":"Alva", "particle":null}]
 
-C. Tanner.; M.W. Hawkes || [{"family":"Tanner", "given":"C."}, {"family":"Hawkes", "given":"M.W."}]
+C. Tanner.; M.W. Hawkes || [{"family":"Tanner", "given":"C.", "particle":null}, {"family":"Hawkes", "given":"M.W.", "particle":null}]
 
-CJ Bird,21-12-1971 || [{"family":"Bird", "given":"C.J."}]
+CJ Bird,21-12-1971 || [{"family":"Bird", "given":"C.J.", "particle":null}]
 
-CJ Bird,21 Dec. 1999 || [{"family":"Bird", "given":"C.J."}]
+CJ Bird,21 Dec. 1999 || [{"family":"Bird", "given":"C.J.", "particle":null}]
 
-Mortensen,Agnes Mols,2010 || [{"family":"Mortensen", "given":"Agnes Mols"}]
+Mortensen,Agnes Mols,2010 || [{"family":"Mortensen", "given":"Agnes Mols", "particle":null}]
 
-Robert J. Bandoni (Photograph) || [{"family":"Bandoni", "given":"Robert J."}]
+Robert J. Bandoni (Photograph) || [{"family":"Bandoni", "given":"Robert J.", "particle":null}]
 
-S.A. Redhead- Sight Identification || [{"family":"Redhead", "given":"S.A."}]
+S.A. Redhead- Sight Identification || [{"family":"Redhead", "given":"S.A.", "particle":null}]
 
-Jeffery M. Saarela 2005 (to subsp.)  || [{"family":"Saarela", "given":"Jeffery M."}]
+Jeffery M. Saarela 2005 (to subsp.)  || [{"family":"Saarela", "given":"Jeffery M.", "particle":null}]
 
-Bird, Carolyn J.; Fide: Lindsay, J.G. || [{"family":"Bird", "given":"Carolyn J."}, {"family":"Lindsay", "given":"J.G."}]
+Bird, Carolyn J.; Fide: Lindsay, J.G. || [{"family":"Bird", "given":"Carolyn J.", "particle":null}, {"family":"Lindsay", "given":"J.G.", "particle":null}]
 
-Jan Jones Jan. 14, 2013 || [{"family":"Jones", "given":"Jan"}]
+Jan Jones Jan. 14, 2013 || [{"family":"Jones", "given":"Jan", "particle":null}]
 
-G.J. Spencer per Sheila Lyons || [{"family":"Spencer", "given":"G.J."}, {"family":"Lyons", "given":"Sheila"}]
+G.J. Spencer per Sheila Lyons || [{"family":"Spencer", "given":"G.J.", "particle":null}, {"family":"Lyons", "given":"Sheila", "particle":null}]
 
-Richard Robohm on 15 January 2013 || [{"family":"Robohm", "given":"Richard"}]
+Richard Robohm on 15 January 2013 || [{"family":"Robohm", "given":"Richard", "particle":null}]
 
-C.J. Bird 20/Aug./1980 || [{"family":"Bird", "given":"C.J."}]
+C.J. Bird 20/Aug./1980 || [{"family":"Bird", "given":"C.J.", "particle":null}]
 
-K. January; January, 1979 || [{"family":"January", "given":"K."}]
+K. January; January, 1979 || [{"family":"January", "given":"K.", "particle":null}]
 
-Michael May May 2013 || [{"family":"May", "given":"Michael"}]
+Michael May May 2013 || [{"family":"May", "given":"Michael", "particle":null}]
 
-Jacques, Avril décembre 2013 || [{"family":"Jacques", "given":"Avril"}]
+Jacques, Avril décembre 2013 || [{"family":"Jacques", "given":"Avril", "particle":null}]
 
-Jacques, Avril avril 2013 || [{"family":"Jacques", "given":"Avril"}]
+Jacques, Avril avril 2013 || [{"family":"Jacques", "given":"Avril", "particle":null}]
 
-Paul Kroeger 2006 May || [{"family":"Kroeger", "given":"Paul"}]
+Paul Kroeger 2006 May || [{"family":"Kroeger", "given":"Paul", "particle":null}]
 
-Paul Kroeger 2006 may || [{"family":"Kroeger", "given":"Paul"}]
+Paul Kroeger 2006 may || [{"family":"Kroeger", "given":"Paul", "particle":null}]
 
-Henrik Andersen&jon Feilberg || [{"family":"Andersen", "given":"Henrik"}, {"family":"Feilberg", "given":"Jon"}]
+Henrik Andersen&jon Feilberg || [{"family":"Andersen", "given":"Henrik", "particle":null}, {"family":"Feilberg", "given":"Jon", "particle":null}]
 
-Winterbottom, R.;Katz, L.;& CI team || [{"family":"Winterbottom", "given":"R."}, {"family":"Katz", "given":"L."}, {"family":null, "given":null}]
+Winterbottom, R.;Katz, L.;& CI team || [{"family":"Winterbottom", "given":"R.", "particle":null}, {"family":"Katz", "given":"L.", "particle":null}, {"family":null, "given":null, "particle":null}]
 
-JH Picard || [{"family":"Picard", "given":"J.H."}]
+JH Picard || [{"family":"Picard", "given":"J.H.", "particle":null}]
 
-Picard J.H. || [{"family":"Picard", "given":"J.H."}]
+Picard J.H. || [{"family":"Picard", "given":"J.H.", "particle":null}]
 
-J.Z. Cao || [{"family":"Cao", "given":"J.Z."}]
+J.Z. Cao || [{"family":"Cao", "given":"J.Z.", "particle":null}]
 
-Jack smith || [{"family":"Smith", "given":"Jack"}]
+Jack smith || [{"family":"Smith", "given":"Jack", "particle":null}]
 
-C. YOUNG || [{"family":"Young", "given":"C."}]
+C. YOUNG || [{"family":"Young", "given":"C.", "particle":null}]
 
-Chris R.T. YOUNG || [{"family":"Young", "given":"Chris R.T."}]
+Chris R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null}]
 
-CHRIS R.T. YOUNG || [{"family":"Young", "given":"Chris R.T."}]
+CHRIS R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null}]
 
-Sicard, Léas || [{"family":"Sicard", "given":"Léas"}]
+Sicard, Léas || [{"family":"Sicard", "given":"Léas", "particle":null}]
 
-J. Green; R. Driskill; J. W. Markham L. D. Druehl || [{"family":"Green", "given":"J."}, {"family":"Driskill", "given":"R."}, {"family":null, "given":null}]
+J. Green; R. Driskill; J. W. Markham L. D. Druehl || [{"family":"Green", "given":"J.", "particle":null}, {"family":"Driskill", "given":"R.", "particle":null}, {"family":null, "given":null, "particle":null}]
 
-Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, Matthew P; Ho, Hsuan-Ching || [{"family":"Smith", "given":"William Leo"}, {"family":"Bentley", "given":"Andrew C."}, {"family":"Girard", "given":"Matthew G."}, {"family":"Davis", "given":"Matthew P."}, {"family":"Ho", "given":"Hsuan-Ching"}]
+Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, Matthew P; Ho, Hsuan-Ching || [{"family":"Smith", "given":"William Leo", "particle":null}, {"family":"Bentley", "given":"Andrew C.", "particle":null}, {"family":"Girard", "given":"Matthew G.", "particle":null}, {"family":"Davis", "given":"Matthew P.", "particle":null}, {"family":"Ho", "given":"Hsuan-Ching", "particle":null}]
 
-Tuck, Leslie M.; Vladykov, Vadim D. (source) || [{"family":"Tuck", "given":"Leslie M."}, {"family":"Vladykov", "given":"Vadim D."}]
+Tuck, Leslie M.; Vladykov, Vadim D. (source) || [{"family":"Tuck", "given":"Leslie M.", "particle":null}, {"family":"Vladykov", "given":"Vadim D.", "particle":null}]
 
-White* || [{"family":"White", "given":null}]
+White* || [{"family":"White", "given":null, "particle":null}]
 
-Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber"}, {"family":"Taylor", "given":"Terry M."}]
+Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber", "particle":null}, {"family":"Taylor", "given":"Terry M.", "particle":null}]
 
-Jack Wft || [{"family":"Wft", "given":"Jack"}]
+Jack Wft || [{"family":"Wft", "given":"Jack", "particle":null}]
 
-Jack Wit || [{"family":"Wit", "given":"Jack"}]
+Jack Wit || [{"family":"Wit", "given":"Jack", "particle":null}]
 
-Jack SmitH || [{"family":null, "given":null}]
+Jack SmitH || [{"family":null, "given":null, "particle":null}]
 
-RGBennett || [{"family":null, "given":null}]
+RGBennett || [{"family":null, "given":null, "particle":null}]
 
-R.K. Godfrey a. R.D. Houk || [{"family":"Godfrey", "given":"R.K."}, {"family":"Houk", "given":"R.D."}]
+R.K. Godfrey a. R.D. Houk || [{"family":"Godfrey", "given":"R.K.", "particle":null}, {"family":"Houk", "given":"R.D.", "particle":null}]
 
-R.K. A. Godfrey || [{"family":"Godfrey", "given":"R.K.A."}]
+R.K. A. Godfrey || [{"family":"Godfrey", "given":"R.K.A.", "particle":null}]
 
-Paula Maybee || [{"family":"Maybee", "given":"Paula"}]
+Paula Maybee || [{"family":"Maybee", "given":"Paula", "particle":null}]
 
-Paula Maybee maybe || [{"family":"Maybee", "given":"Paula"}]
+Paula Maybee maybe || [{"family":"Maybee", "given":"Paula", "particle":null}]
 
-Stephen Darbyshire 2005 (by correspondance) || [{"family":"Darbyshire", "given":"Stephen"}]
+Stephen Darbyshire 2005 (by correspondance) || [{"family":"Darbyshire", "given":"Stephen", "particle":null}]
 
-Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder) || [{"family":"Holm", "given":"E."}, {"family":"Ng", "given":"J."}, {"family":"Litwiller", "given":"S."}, {"family":"Lee", "given":"C."}]
+Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder) || [{"family":"Holm", "given":"E.", "particle":null}, {"family":"Ng", "given":"J.", "particle":null}, {"family":"Litwiller", "given":"S.", "particle":null}, {"family":"Lee", "given":"C.", "particle":null}]
 
-A A Court, D J Court || [{"family":"Court", "given":"A.A."}, {"family":"Court", "given":"D.J."}]
+A A Court, D J Court || [{"family":"Court", "given":"A.A.", "particle":null}, {"family":"Court", "given":"D.J.", "particle":null}]
 
-A B  Rose, J W  Trudgeon || [{"family":"Rose", "given":"A.B."}, {"family":"Trudgeon", "given":"J.W."}]
+A B  Rose, J W  Trudgeon || [{"family":"Rose", "given":"A.B.", "particle":null}, {"family":"Trudgeon", "given":"J.W.", "particle":null}]
 
-J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas || [{"family":"Armbruster", "given":"J.W."}, {"family":"Armbruster", "given":"C."}, {"family":"Armbruster", "given":"A."}, {"family":"Armbruster", "given":"B."}, {"family":"Armbruster", "given":"L."}, {"family":"Armbruster", "given":"R."}, {"family":"Thomas", "given":"J."}, {"family":"Thomas", "given":"E."}]
+J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas || [{"family":"Armbruster", "given":"J.W.", "particle":null}, {"family":"Armbruster", "given":"C.", "particle":null}, {"family":"Armbruster", "given":"A.", "particle":null}, {"family":"Armbruster", "given":"B.", "particle":null}, {"family":"Armbruster", "given":"L.", "particle":null}, {"family":"Armbruster", "given":"R.", "particle":null}, {"family":"Thomas", "given":"J.", "particle":null}, {"family":"Thomas", "given":"E.", "particle":null}]
 
-A C. Sanders, G. Helmkamp || [{"family":"Sanders", "given":"A.C."}, {"family":"Helmkamp", "given":"G."}]
+A C. Sanders, G. Helmkamp || [{"family":"Sanders", "given":"A.C.", "particle":null}, {"family":"Helmkamp", "given":"G.", "particle":null}]
 
-N. Navarro, G. Gómez y A Ferreira || [{"family":"Navarro", "given":"N."}, {"family":"Gómez", "given":"G."}, {"family":"Ferreira", "given":"A."}]
+N. Navarro, G. Gómez y A Ferreira || [{"family":"Navarro", "given":"N.", "particle":null}, {"family":"Gómez", "given":"G.", "particle":null}, {"family":"Ferreira", "given":"A.", "particle":null}]
 
-A Y Jackson || [{"family":"Jackson", "given":"A.Y."}]
+A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null}]
 
-A Y Jackson || [{"family":"Jackson", "given":"A.Y."}]
+A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null}]
 
-leg. A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+leg. A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null}]
 
-Leg: A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+Leg: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null}]
 
-LEG Chuvilin || [{"family":"Chuvilin", "given":null}]
+LEG Chuvilin || [{"family":"Chuvilin", "given":null, "particle":null}]
 
-gift: A. Chuvilin || [{"family":"Chuvilin", "given":"A."}]
+gift: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null}]
 
-Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff"}]
+Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff", "particle":null}]
 
-Dr.R.K. Johnson,1972 || [{"family":"Johnson", "given":"R.K."}]
+Dr.R.K. Johnson,1972 || [{"family":"Johnson", "given":"R.K.", "particle":null}]
 
-J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J."}]
+J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J.", "particle":null}]
 
-Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R."}]
+Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R.", "particle":null}]
 
-Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin"}]
+Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin", "particle":null}]
 
-R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R."}]
+R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R.", "particle":null}]
 
-Adolphe-Théodore Brongniart || [{"family":"Brongniart", "given":"Adolphe-Théodore"}]
+Adolphe-Théodore Brongniart || [{"family":"Brongniart", "given":"Adolphe-Théodore", "particle":null}]
 
-# TODO: what do we do with particles like "de"
-Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl"}]
+Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl", "particle":"de"}]
 
-H.W. Lewis bis || [{"family":"Lewis", "given":"H.W."}]
+H.W. Lewis bis || [{"family":"Lewis", "given":"H.W.", "particle":null}]
 
-H.W. Lewis ter || [{"family":"Lewis", "given":"H.W."}]
+H.W. Lewis ter || [{"family":"Lewis", "given":"H.W.", "particle":null}]

@@ -16,7 +16,7 @@ module DwcAgent
     # @param parsed_namae [Object] the namae object
     # @return [Hash] the given, family hash
     def clean(parsed_namae)
-      blank_name = { given: nil, family: nil }
+      blank_name = { given: nil, family: nil, particle: nil }
 
       if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
         return blank_name
@@ -99,6 +99,10 @@ module DwcAgent
         particle = nil
       end
 
+      if !particle.nil? && particle.include?(".")
+        particle = nil
+      end
+
       if !family.nil? && (family == family.upcase || family == family.downcase)
         family = NameCase(family)
       end
@@ -115,7 +119,7 @@ module DwcAgent
         return blank_name
       end
 
-      { given: given, family: family }
+      { given: given, family: family, particle: particle }
     end
 
   end
