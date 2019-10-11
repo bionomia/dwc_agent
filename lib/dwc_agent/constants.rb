@@ -159,7 +159,11 @@ module DwcAgent
   }
 
   COMPLEX_SEPARATORS = %r{
-    ^([A-Za-z]{4,},\s+(?:[A-Z]\.\s*){1,})\s+([A-Za-z]{4,},\s+(?:[A-Z]\.\s*){1,})$
+    ^(\S{4,},\s+(?:\S\.\s*){1,})\s+(\S{4,},\s+(?:\S\.\s*){1,})$
+  }x
+
+  CONTRACTED_LIST = %r{
+    ^(\S{1,}\.?)+\s+(?i:and|&)\s+(\S{1,}\.?)+\s*(.*)$
   }x
 
   BLACKLIST = %r{

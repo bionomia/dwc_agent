@@ -524,6 +524,14 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should recognize two family names without provided given names" do
+        input = "Jackson and Peterson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Jackson", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: "Peterson", particle: nil})
+      end
+
     end
 
   end

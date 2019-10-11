@@ -20,7 +20,8 @@ module DwcAgent
       @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join('\\')].to_s
       @phrase_subs_regex = Regexp.new (PHRASE_SUBS.keys.join('|')).to_s
       @complex_separators_regex = Regexp.new COMPLEX_SEPARATORS.to_s
-      @add_separators_regex = Regexp.new %r{([A-Z]{1}\.)([[:alpha:]]{2,})}.to_s
+      @add_separators_regex = Regexp.new %r{(\S{1}\.)([[:alpha:]]{2,})}.to_s
+      @contracted_list_regex = Regexp.new CONTRACTED_LIST.to_s
     end
       
     # Parses the passed-in string and returns a list of names.
@@ -34,6 +35,7 @@ module DwcAgent
       name.gsub!(@phrase_subs_regex, PHRASE_SUBS)
       name.gsub!(@add_separators_regex, '\1 \2')
       name.gsub!(@complex_separators_regex, '\1 | \2')
+      name.gsub!(@contracted_list_regex, '\1 \3 | \2 \3')
       name.gsub!(@residual_terminators_regex, '')
       name.squeeze!(' ')
       name.strip!
