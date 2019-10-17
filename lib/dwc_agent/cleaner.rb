@@ -23,7 +23,7 @@ module DwcAgent
       end
 
       if parsed_namae.family && parsed_namae.family.length < 2 && parsed_namae.family.count('.') == 0
-        return blank_name
+        #return blank_name
       end
 
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
