@@ -56,3 +56,6 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# Log files
+*.log
