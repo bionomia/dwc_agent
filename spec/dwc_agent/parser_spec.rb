@@ -1428,31 +1428,6 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
-=begin
-      it "should recombine contracted names without initials" do
-        input = "Jack and John Smith"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(2)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Jack", "Smith"])
-        expect(parsed[1].values_at(:given, :family)).to eq(["John", "Smith"])
-      end
-
-      it "should recombine contracted names one with initials and one without" do
-        input = "J.D. and John Smith"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(2)
-        expect(parsed[0].values_at(:given, :family)).to eq(["J.D.", "Smith"])
-        expect(parsed[1].values_at(:given, :family)).to eq(["John", "Smith"])
-      end
-
-      it "should recombine contracted names both with initials" do
-        input = "J.D.T. and J. Smith"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(2)
-        expect(parsed[0].values_at(:given, :family)).to eq(["J.D.T.", "Smith"])
-        expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Smith"])
-      end
-
       # Although these are parsed as given names, the cleaner will do its job
       it "should not recombine contracted names" do
         input = "Jackson and Peterson"
@@ -1461,7 +1436,6 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Jackson", nil])
         expect(parsed[1].values_at(:given, :family)).to eq(["Peterson", nil])
       end
-=end
 
     end
 

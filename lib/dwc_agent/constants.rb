@@ -162,16 +162,6 @@ module DwcAgent
     ^(\S{4,},\s+(?:\S\.\s*){1,})\s+(\S{4,},\s+(?:\S\.\s*){1,})$
   }x
 
-# Was used in 1.1.0 but it sunk performance so threw it back to a WIP
-#
-# @contracted_list_regex = Regexp.new CONTRACTED_LIST.to_s
-#
-# name.gsub!(@contracted_list_regex, '\1 \3 | \2 \3')
-#
-#  CONTRACTED_LIST = %r{
-#    ^(\S{1,}\.?)+\s+(?i:and|&)\s+(\S{1,}\.?)+\s*(.*)$
-#  }x
-
   BLACKLIST = %r{
     (?i:abundant)|
     (?i:adult|juvenile)|

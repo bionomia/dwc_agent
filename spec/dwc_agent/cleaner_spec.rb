@@ -265,6 +265,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'MacLennan', family:'Sosiak', particle: nil})
       end
 
+      it "should normalize a name all in lowercase" do
+        input = "beulah garner"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Beulah', family:'Garner', particle: nil})
+      end
+
       it "should clean a name whose given initials lack punctuation" do
         input = "A A Court"
         parsed = parser.parse(input)
