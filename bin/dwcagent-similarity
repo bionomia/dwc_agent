@@ -3,4 +3,4 @@
 
 require 'dwc_agent'
 
-puts DwcAgent.similarity_score(ARGV[0],ARGV[1])
+puts DwcAgent.similarity_score(ARGV[0].dup,ARGV[1].dup)
