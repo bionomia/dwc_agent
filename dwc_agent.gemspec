@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name        = 'dwc_agent'
   s.version     = DwcAgent::Version.version
   s.license     = 'MIT'
-  s.date        = '2019-11-05'
+  s.date        = '2019-11-25'
   s.summary     = "Parse Darwin Core agent terms such as recordedBy and identifiedBy"
   s.description = "Parses the typically messy content in Darwin Core terms that contain people names"
   s.authors     = ["David P. Shorthouse"]

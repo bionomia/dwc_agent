@@ -542,12 +542,33 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should ignore 'not available'" do
+        input = "not available"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
+      it "should ignore '[sequence data]'" do
+        input = "[sequence data]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
       it "should recognize two family names without provided given names" do
         input = "Jackson and Peterson"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Jackson", particle: nil})
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: "Peterson", particle: nil})
+      end
+
+      it "should ignore 'Texas Instruments'" do
+        input = "Texas Instruments For BLM"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
     end

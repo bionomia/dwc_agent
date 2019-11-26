@@ -198,11 +198,13 @@ module DwcAgent
     (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
     (?i:not?\s+(entered|stated))|
     (?i:nomenclatur(e|al)\s+adjustment)|
+    (?i:not\s+available)|
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:recreation|culture)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
     (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|exposit|alliance|protective|circle)|
     (?i:commercial|company|control|product)|
+    (?i:sequence\s+data)|
     (?i:size|large|colou?r)\s+|
     (?i:skeleton)|
     (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|exchange|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
@@ -213,6 +215,7 @@ module DwcAgent
     \s*(?i:too)\s+|\s*(?i:the)\s+|
     (?i:taxiderm(ies|y))|
     (?i:though)|
+    (?i:texas\s+instruments?)\s*?(for)?|
     (?:tropical)|
     (?i:toward|seen at)|
     (?i:unidentified|unspecified|unk?nown|unnamed|unread|unmistak|no agent)|
@@ -230,7 +233,12 @@ module DwcAgent
     "of",
     "curators",
     "nomenclatural",
-    "adjustment"
+    "adjustment",
+    "available",
+    "data",
+    "orig",
+    "science",
+    "catalogue"
   ]
 
   TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
