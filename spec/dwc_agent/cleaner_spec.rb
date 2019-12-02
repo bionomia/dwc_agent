@@ -571,6 +571,14 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should reject '[Collector has not been verified and entered]'" do
+        input = "[Collector has not been verified and entered]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
     end
 
   end

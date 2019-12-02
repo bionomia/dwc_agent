@@ -238,7 +238,13 @@ module DwcAgent
     "data",
     "orig",
     "science",
-    "catalogue"
+    "catalogue",
+    "entered"
+  ]
+
+  GIVEN_BLACKLIST = [
+    "not any",
+    "has not"
   ]
 
   TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i

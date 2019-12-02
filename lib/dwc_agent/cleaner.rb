@@ -22,6 +22,10 @@ module DwcAgent
         return blank_name
       end
 
+      if parsed_namae.given && GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
+        return blank_name
+      end
+
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
         return blank_name
       end
@@ -38,9 +42,9 @@ module DwcAgent
         return blank_name
       end
 
-      if parsed_namae.given && 
-         parsed_namae.family && 
-         parsed_namae.family.count(".") > 0 && 
+      if parsed_namae.given &&
+         parsed_namae.family &&
+         parsed_namae.family.count(".") > 0 &&
          parsed_namae.family.length - parsed_namae.family.count(".") <= 3
           given = parsed_namae.given
           family = parsed_namae.family
@@ -48,9 +52,9 @@ module DwcAgent
           parsed_namae.given = family
       end
 
-      if parsed_namae.given && 
-         parsed_namae.family && 
-         parsed_namae.family.length <=3 && 
+      if parsed_namae.given &&
+         parsed_namae.family &&
+         parsed_namae.family.length <=3 &&
          parsed_namae.family == parsed_namae.family.upcase &&
          parsed_namae.given[-1] != "."
           given = parsed_namae.given
@@ -59,9 +63,9 @@ module DwcAgent
           parsed_namae.given = family
       end
 
-      if parsed_namae.given && 
-        (parsed_namae.given == parsed_namae.given.upcase || 
-        parsed_namae.given == parsed_namae.given.downcase) && 
+      if parsed_namae.given &&
+        (parsed_namae.given == parsed_namae.given.upcase ||
+        parsed_namae.given == parsed_namae.given.downcase) &&
         !parsed_namae.given.include?(".") &&
         parsed_namae.given.tr(".","").length >= 4
           parsed_namae.given = NameCase(parsed_namae.given)
@@ -112,6 +116,10 @@ module DwcAgent
       end
 
       if !family.nil? && FAMILY_BLACKLIST.any?{ |s| s.casecmp(family) == 0 }
+        return blank_name
+      end
+
+      if !given.nil? && GIVEN_BLACKLIST.any?{ |s| s.casecmp(given) == 0 }
         return blank_name
       end
 
