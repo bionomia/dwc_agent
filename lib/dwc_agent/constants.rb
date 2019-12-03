@@ -239,7 +239,8 @@ module DwcAgent
     "orig",
     "science",
     "catalogue",
-    "entered"
+    "entered",
+    "registration"
   ]
 
   GIVEN_BLACKLIST = [
