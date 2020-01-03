@@ -48,6 +48,7 @@ module DwcAgent
     \d+\s+(?i:Oct|Octob(er|re))\.?\b|
     \d+\s+(?i:Nov|Novemb(er|re))\.?\b|
     \d+\s+(?i:Dec|D(e|é)cemb(er|re))\.?\b|
+    \b\s*(?i:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming)\s+(?i:State)\s*\b|
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|

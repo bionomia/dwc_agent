@@ -382,3 +382,5 @@ Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl", "particle
 H.W. Lewis bis || [{"family":"Lewis", "given":"H.W.", "particle":null}]
 
 H.W. Lewis ter || [{"family":"Lewis", "given":"H.W.", "particle":null}]
+
+R. G. Helgesen : North Dakota State University || [{"family":"Helgesen", "given":"R.G.", "particle":null}]

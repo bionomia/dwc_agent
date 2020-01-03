@@ -198,6 +198,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should ignore names with American State University" do
+        input = "R. G. Helgesen : North Dakota State University"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "R.G.", family: "Helgesen", particle: nil})
+      end
+
       it "should ignore 'popa observers'" do
         input = "popa observers"
         parsed = parser.parse(input)
