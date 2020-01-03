@@ -200,6 +200,7 @@ module DwcAgent
     (?i:nomenclatur(e|al)\s+adjustment)|
     (?i:not\s+available)|
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
+    (?i:popa\s+observers?)|
     (?i:recreation|culture)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
     (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|exposit|alliance|protective|circle)|
