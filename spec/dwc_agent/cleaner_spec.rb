@@ -205,6 +205,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "R.G.", family: "Helgesen", particle: nil})
       end
 
+      it "should ignore more affiliations" do
+        input = "Rider, Dr. David A. - North Dakota State University Department of Entomology"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "David A.", family: "Rider", particle: nil})
+      end
+
       it "should ignore 'popa observers'" do
         input = "popa observers"
         parsed = parser.parse(input)
@@ -227,6 +234,7 @@ module DwcAgent
       it "should split with 'communicated to' in text" do
         input = "Huber Moore; communicatd to Terry M. Taylor"
         parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Terry M.", family: "Taylor", particle: nil})
       end
 
@@ -412,6 +420,21 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Wen-Bin", family: "Yu", particle: nil})
+      end
+
+      it "should not ignore names that have russia in them" do
+        input = "Choumovitch, W.; Settler, Russias"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "W.", family: "Choumovitch", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Russias", family: "Settler", particle: nil})
+      end
+
+      it "should ignore affiliations with UNITED STATES" do
+        input = "Upchurch, Garland R., Jr. - Texas State University (UNITED STATES)"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Garland R.", family: "Upchurch", particle: nil})
       end
 
       it "should accept given name that is less than or equal to 25 characters" do

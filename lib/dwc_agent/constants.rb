@@ -48,11 +48,12 @@ module DwcAgent
     \d+\s+(?i:Oct|Octob(er|re))\.?\b|
     \d+\s+(?i:Nov|Novemb(er|re))\.?\b|
     \d+\s+(?i:Dec|D(e|é)cemb(er|re))\.?\b|
-    \b\s*(?i:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming)\s+(?i:State)\s*\b|
+    \b[.-–,;:/]?\s*(?i:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Evergreen|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New\s+Hampshire|New\s+Jersey|New\s+Mexico|New\s+York|North\s+Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Portland|Rhode\s+Island|South\s+Carolina|South\s+Dakota|St\s+Petersburg|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West\s+Virginia|Wisconsin|Wyoming)\s+(?i:State)\s*\b|
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|
     \(?[,]?\s*?(?i:(local)?\s?collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
+    \b[.-–,;:]?\s*(?i:department|faculty)\s*?(?i:of)?\s*?(?i:entomology|biology|zoology)|
     (?i:fide)\:?\s*\b|
     (?i:game\s+dept)\.?\s*\b|
     (?i:see\s+notes?\s*(inside)?)|
@@ -72,6 +73,7 @@ module DwcAgent
     (?i:American\s+Museum\s+of\s+Natural\s+History)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
     (?i:museum\s+victoria)|
+    \b\s*(?i:United\s+States|Russia)\s*\b|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
     -?\s*(?i:synonym(y|ie))|
