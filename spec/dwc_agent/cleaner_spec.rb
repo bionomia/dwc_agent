@@ -615,6 +615,69 @@ module DwcAgent
         expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should ignore échangé" do
+        input = "échangé : B. Lanza"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "B.", family: "Lanza", particle: nil})
+      end
+
+      it "should ignore élève" do
+        input = "Luc Rousseau, élève"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Luc", family: "Rousseau", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
+      it "should ignore éleveur" do
+        input = "Francis GIRARD, éleveur"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Francis", family: "Girard", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
+      it "should ignore no coll." do
+        input = "no coll."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
+      it "should ignore no collector" do
+        input = "no collector"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
+      it "should strip out square brackets and question mark" do
+        input = "[A. Pront]?"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "A.", family: "Pront", particle: nil})
+      end
+
+      it "should strip out square brackets around parts of a name" do
+        input = "[Macoun], J."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.", family: "Macoun", particle: nil})
+      end
+
+      it "should strip out a whole bunch of junk" do
+        input = "David##{} P. @%%Shorthouse"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "David P.", family: "Shorthouse", particle: nil})
+      end
+
+      it "should strip out illisible" do
+        input = "[illisible]"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
     end
 
   end

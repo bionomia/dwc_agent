@@ -3,7 +3,7 @@ module DwcAgent
 
     MAJOR = 1
     MINOR = 4
-    PATCH = 3
+    PATCH = 4
     BUILD = nil
 
     def self.version

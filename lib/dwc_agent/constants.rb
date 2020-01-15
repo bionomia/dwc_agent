@@ -1,7 +1,7 @@
 module DwcAgent
   STRIP_OUT = %r{
     ^[\[{(]|
-    [\]})]$|
+    [\]})]\??$|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\.?\s+al)\.?|
@@ -13,7 +13,7 @@ module DwcAgent
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|illegible|scripsit)\)?\b|
+    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit)\)?\b|
     \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     \b[,;]?\s*(?i:string)\b|
@@ -80,11 +80,12 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|
+    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     (?i:sem\s+(colec?tor|data))|
+    (?i:no\s+coll\.?(ector)?)|
     \b[,;]\s+\d+\z|
     ["!@?]|
     [,]?\d+|
@@ -136,8 +137,6 @@ module DwcAgent
     '|' => ' | ',
     '(' => ' ',
     ')' => ' ',
-    '[' => ' ',
-    ']' => ' ',
     '?' => '',
     '!' => '',
     '=' => '',
@@ -196,7 +195,7 @@ module DwcAgent
     (?i:geographic)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
-    (?i:graduate|student|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
+    (?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
     (?i:non\s+pr(é|e)cis(é|e))|
     (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
     (?i:not?\s+(entered|stated))|
@@ -211,7 +210,7 @@ module DwcAgent
     (?i:sequence\s+data)|
     (?i:size|large|colou?r)\s+|
     (?i:skeleton)|
-    (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|exchange|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
+    (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|(e|é)x?chang(e|é)s?|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
     (?i:submersible)|
     (?i:synonymy?)|(topo|syn|holo)type|
     (?i:systematic|perspective)|
@@ -230,21 +229,28 @@ module DwcAgent
   }x
 
   FAMILY_BLACKLIST = [
+    "da",
+    "de'",
+    "del",
     "der",
+    "du",
+    "el",
     "van",
     "von",
     "the",
     "of",
-    "curators",
-    "nomenclatural",
     "adjustment",
     "available",
-    "data",
-    "orig",
-    "science",
     "catalogue",
+    "curators",
+    "data",
+    "determination",
+    "dissection",
     "entered",
-    "registration"
+    "nomenclatural",
+    "orig",
+    "registration",
+    "science"
   ]
 
   GIVEN_BLACKLIST = [
