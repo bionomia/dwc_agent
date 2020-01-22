@@ -868,10 +868,16 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(['P.', 'Perrin'])
       end
 
-      it "should recognize a religious suffix like Marie-Victorin, frère" do
+      it "should treat a religious name like Marie-Victorin, frère as a given name" do
         input = "Marie-Victorin, frère"
         parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Marie-Victorin', nil])
+        expect(parsed[0].values_at(:given, :family)).to eq(['frère', 'Marie-Victorin'])
+      end
+
+      it "should treat a religious name like Frère León as a given name" do
+        input = "Frère León"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family)).to eq(['Frère', 'León'])
       end
 
       it "should remove (See Note Inside)" do
@@ -1435,6 +1441,48 @@ module DwcAgent
         expect(parsed.size).to eq(2)
         expect(parsed[0].values_at(:given, :family)).to eq(["Jackson", nil])
         expect(parsed[1].values_at(:given, :family)).to eq(["Peterson", nil])
+      end
+
+      it "should recognize Sir as a title" do
+        input = "Sir Kenneth Brannaugh"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should recognize Father as a title" do
+        input = "Father Kenneth Brannaugh"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should recognize Ph.D. as a title" do
+        input = "Kenneth Brannaugh Ph.D."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should recognize Ph.D. preceeded by comma as a title" do
+        input = "Kenneth Brannaugh, Ph.D."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should recognize JR. as a suffix" do
+        input = "Kenneth Brannaugh JR."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should recognize JR. as a suffix when preceeded by a comma" do
+        input = "Kenneth Brannaugh, JR."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
       end
 
     end

@@ -15,7 +15,6 @@ module DwcAgent
     \b[,;]?\s*(?i:ann?onymous)\b|
     \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit)\)?\b|
     \b[,;]?\s*(?i:importer|gift)\:?\b|
-    \b[,;]?\s*(?i:frère|frere|père|pere|soeur|sister|bro)\.?(\b|\z)|
     \b[,;]?\s*(?i:string)\b|
     \b[,;]?\s*(?i:person\s*string)\b|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
@@ -154,10 +153,12 @@ module DwcAgent
   }
 
   PHRASE_SUBS = {
-    'Dr\.' => 'Dr. ',
-    'Mr\.' => 'Mr. ',
-    'Mrs\.' => 'Mrs. ',
-    'Prof\.' => 'Prof. '
+    'dr\.' => 'Dr. ',
+    'mr\.' => 'Mr. ',
+    'mrs\.' => 'Mrs. ',
+    'prof\.' => 'Prof. ',
+    '\, ph\.d\.' => ' Ph.D.',
+    '\, bro\.' => ' Bro.'
   }
 
   COMPLEX_SEPARATORS = %r{
@@ -258,6 +259,6 @@ module DwcAgent
     "has not"
   ]
 
-  TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|docteur|mme|abbé|ptre)\.?|frère|frere|père|pere|professor|esq\.?)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
 
 end

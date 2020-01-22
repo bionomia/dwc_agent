@@ -77,10 +77,10 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "MacQuarrie", given: "Chris", particle: nil})
       end
 
-      it "should recognize a religious suffix like Marie-Victorin, frère" do
+      it "should recognize a religious suffix like Marie-Victorin, frère and treat it as a given name" do
         input = "Marie-Victorin, frère"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Marie-Victorin", given: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Marie-Victorin", given: "Frère", particle: nil})
       end
 
       it "should strip out 'synonymie'" do

@@ -233,7 +233,7 @@ Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao", "particle":null}]
 
 S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S.", "particle":null}, {"family":"Perrin", "given":"P.", "particle":null}]
 
-Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":null, "particle":null}]
+Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":"Frère", "particle":null}]
 
 J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J.", "particle":null}]
 
