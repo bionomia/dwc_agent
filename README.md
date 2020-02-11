@@ -1,7 +1,7 @@
 DwC Agent
 =========
 
-Ruby 2.4 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [identifiedBy][11] prior to passing to its dependent Namae gem, which executes the parsing. It also produces similarity scores between two given names.
+Ruby 2.6 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [identifiedBy][11] prior to passing to its dependent Namae gem, which executes the parsing. It also produces similarity scores between two given names.
 
 [![Gem Version][1]][2]
 [![Gem Downloads][8]][9]

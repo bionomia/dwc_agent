@@ -678,6 +678,13 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
+      it "should ignore 'No consta'" do
+        input = "No consta"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
+
     end
 
   end

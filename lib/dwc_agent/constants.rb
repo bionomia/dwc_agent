@@ -67,7 +67,7 @@ module DwcAgent
     ORCID|
     MRI(\s|-)PAS|
     urn\:qm\.qld\.gov\.au\:collector|
-    (?i:University\s+of\s+California)\,?\s+?(?i:Berkeley)?|
+    (?i:University\s+of\s+(Southern\s+)?California(,\s+Berkeley)?)|
     (?i:Field\s+Museum\s+of\s+Natural\s+History)|
     (?i:American\s+Museum\s+of\s+Natural\s+History)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
@@ -79,7 +79,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|
+    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
@@ -198,6 +198,7 @@ module DwcAgent
     (?i:univ\.)|
     (?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
     (?i:non\s+pr(é|e)cis(é|e))|
+    (?i:no\s+consta)|
     (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
     (?i:not?\s+(entered|stated))|
     (?i:nomenclatur(e|al)\s+adjustment)|
