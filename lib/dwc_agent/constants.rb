@@ -243,6 +243,7 @@ module DwcAgent
     "of",
     "adjustment",
     "available",
+    "arachnology",
     "catalogue",
     "curators",
     "data",
