@@ -1485,6 +1485,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
       end
 
+      it "should not treat any part of 'ACAD acc# 96317' as a name" do
+        input = "ACAD acc# 96317"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
     end
 
   end

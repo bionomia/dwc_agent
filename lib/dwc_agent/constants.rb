@@ -2,6 +2,7 @@ module DwcAgent
   STRIP_OUT = %r{
     ^[\[{(]|
     [\]})]\??$|
+    (?i:acc\s?\#)|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\.?\s+al)\.?|
@@ -79,7 +80,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|
+    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
