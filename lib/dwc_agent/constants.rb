@@ -72,7 +72,7 @@ module DwcAgent
     (?i:Field\s+Museum\s+of\s+Natural\s+History)|
     (?i:American\s+Museum\s+of\s+Natural\s+History)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
-    (?i:museum\s+victoria)|
+    (?i:museums?\s+victoria)|
     \b\s*(?i:United\s+States|Russia)\s*\b|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|

@@ -1491,6 +1491,13 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
+      it "should strip out Museums Victoria" do
+        input = "Dr Martin F. Gomon - Museums Victoria"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Martin F.", "Gomon"])
+      end
+
     end
 
   end
