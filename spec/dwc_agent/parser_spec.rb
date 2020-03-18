@@ -1498,6 +1498,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Martin F.", "Gomon"])
       end
 
+      it "should strip out '& al.'" do
+        input = "Strid & al."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Strid", nil])
+      end
+
     end
 
   end

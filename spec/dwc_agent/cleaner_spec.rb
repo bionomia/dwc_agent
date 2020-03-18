@@ -685,6 +685,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
+      it "should reject a name like BgWd0062" do
+        input = "BgWd0062"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+      end
     end
 
   end

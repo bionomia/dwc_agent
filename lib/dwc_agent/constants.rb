@@ -5,7 +5,7 @@ module DwcAgent
     (?i:acc\s?\#)|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
-    \b[,;]?\s*(?i:et\.?\s+al)\.?|
+    \b[,;]?\s*(?i:et\.?\s+al|&\s+al)\.?|
     \b\s+(bis|ter)(\b|\z)|
     \bu\.\s*a\.|
     \b[,;]?\s*(?i:and|&)?\s*(?i:others)\s*\b|
@@ -175,6 +175,7 @@ module DwcAgent
     (?i:average)|
     (?i:believe|unclear|ill?egible|none|suggested|(dis)?agrees?)|approach|
     (?i:barcod)|
+    (?i:BgWd)|
     (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
     (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
     (?i:carex|salix)|
