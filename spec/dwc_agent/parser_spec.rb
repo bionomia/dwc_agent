@@ -1398,6 +1398,20 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["R.", "Bieler"])
       end
 
+      it "should split a name with a character that looks like a pipe v1" do
+        input = "H. Whetzel∣H. Jackson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[1].values_at(:given, :family)).to eq(["H.", "Jackson"])
+      end
+
+      it "should split a name with a character that looks like a pipe v1" do
+        input = "H. WhetzelǀH. Jackson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[1].values_at(:given, :family)).to eq(["H.", "Jackson"])
+      end
+
       it "should ignore particles" do
         input = "Leo Anton Karl de Ball"
         parsed = parser.parse(input)
