@@ -80,7 +80,7 @@ module DwcAgent
     \b\s*\(?(?i:(fe)?male)\)?\s*\b|
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
-    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|
+    FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|USGS|NAWQA|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
@@ -229,7 +229,7 @@ module DwcAgent
     (?i:texas\s+instruments?)\s*?(for)?|
     (?:tropical)|
     (?i:toward|seen at)|
-    (?i:unidentified|unspecified|unk?nown|unnamed|unread|unmistak|no agent)|
+    (?i:unidentified|unspecified|unk?nown?|unnamed|unread|unmistak|no agent)|
     (?i:urn\:)|
     (?i:usda|ucla)|
     (?i:workshop|garden|farm|jardin|public)|
