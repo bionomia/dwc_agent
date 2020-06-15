@@ -201,7 +201,7 @@ module DwcAgent
     (?i:geographic)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
-    (?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker)|
+    (?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fishermen|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker|gamekeeper)|
     (?i:non\s+pr(é|e)cis(é|e))|
     (?i:no\s+consta)|
     (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|

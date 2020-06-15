@@ -7,12 +7,12 @@ Gem::Specification.new do |s|
   s.name        = 'dwc_agent'
   s.version     = DwcAgent::Version.version
   s.license     = 'MIT'
-  s.date        = '2020-05-19'
+  s.date        = '2020-06-15'
   s.summary     = "Parse Darwin Core agent terms such as recordedBy and identifiedBy"
   s.description = "Parses the typically messy content in Darwin Core terms that contain people names"
   s.authors     = ["David P. Shorthouse"]
   s.email       = 'davidpshorthouse@gmail.coms'
-  s.homepage    = 'https://github.com/dshorthouse/dwc_agent'
+  s.homepage    = 'https://github.com/bionomia/dwc_agent'
 
   s.files        = Dir['MIT-LICENSE', 'README.rdoc', 'lib/**/*']
   s.executables  = ["dwcagent", "dwcagent-similarity"]
