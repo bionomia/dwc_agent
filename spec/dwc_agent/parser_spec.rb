@@ -59,6 +59,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Ian D.", "MacDonald"])
       end
 
+      it "should remove [presumed]" do
+        input = "[presumed] A C Ziegler"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["A C", "Ziegler"])
+      end
+
       it "should remove numerical values and lowercase letter in brackets" do
         input = "23440(a) Ian D. MacDonald"
         parsed = parser.parse(input)
@@ -1478,11 +1485,25 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
       end
 
+      it "should replace -Jr with ' Jr.'" do
+        input = "P. Meira-Jr"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["P.", "Meira"])
+      end
+
       it "should recognize Ph.D. preceeded by comma as a title" do
         input = "Kenneth Brannaugh, Ph.D."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+      end
+
+      it "should strip out PROFº" do
+        input = "PROFº Claudio Vale"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["Claudio", "Vale"])
       end
 
       it "should recognize JR. as a suffix" do

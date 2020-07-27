@@ -212,6 +212,14 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "David A.", family: "Rider", particle: nil})
       end
 
+      it "should clean Jr suffix" do
+        input = "Abner Kingman, Jr., Gary D. Alpert"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Abner", family: "Kingman", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Gary D.", family: "Alpert", particle: nil})
+      end
+
       it "should ignore 'popa observers'" do
         input = "popa observers"
         parsed = parser.parse(input)

@@ -14,7 +14,7 @@ module DwcAgent
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit)\)?\b|
+    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit|presumed?)\)?\b|
     \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:string)\b|
     \b[,;]?\s*(?i:person\s*string)\b|
@@ -54,6 +54,7 @@ module DwcAgent
     \b\s*(?i:prob)\.\s*\b|
     \(?[,]?\s*?(?i:(local)?\s?collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
     \b[.-–,;:]?\s*(?i:department|faculty)\s*?(?i:of)?\s*?(?i:entomology|biology|zoology)|
+    (?i:Engº|Agrº|Fcº|Drº|Mº|Profº|Dº|Fº)|
     (?i:fide)\:?\s*\b|
     (?i:game\s+dept)\.?\s*\b|
     (?i:see\s+notes?\s*(inside)?)|
@@ -160,9 +161,13 @@ module DwcAgent
     'dr\.' => 'Dr. ',
     'mr\.' => 'Mr. ',
     'mrs\.' => 'Mrs. ',
+    'ms\.' => 'Ms. ',
     'prof\.' => 'Prof. ',
     '\, ph\.d\.' => ' Ph.D.',
-    '\, bro\.' => ' Bro.'
+    '\, bro\.' => ' Bro.',
+    ' jr\.,' => ' Jr.;',
+    ' jr,' => ' Jr.;',
+    '-Jr' => ' Jr.'
   }
 
   COMPLEX_SEPARATORS = %r{
@@ -266,6 +271,6 @@ module DwcAgent
     "has not"
   ]
 
-  TITLE = /\s*\b(sir|count(ess)?|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
 
 end
