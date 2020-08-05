@@ -445,6 +445,19 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Garland R.", family: "Upchurch", particle: nil})
       end
 
+      it "should strip out country names like Poland" do
+        input = "Piotr Zuchlinski, Poland"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Piotr", family: "Zuchlinski", particle: nil})
+      end
+
+      it "should strip out other country names entirely like Belgium" do
+        input = "Belgium"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(0)
+      end
+
       it "should accept given name that is less than or equal to 25 characters" do
         input = "Jean-Baptiste Leschenault de La Tour"
         parsed = parser.parse(input)
@@ -459,7 +472,7 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
       end
 
-      it "should strip out the terminal paricle" do
+      it "should strip out the terminal particle" do
         input = "Andrade JC de"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
