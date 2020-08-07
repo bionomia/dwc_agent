@@ -159,16 +159,12 @@ module DwcAgent
   }
 
   PHRASE_SUBS = {
-    'dr\.' => 'Dr. ',
-    'mr\.' => 'Mr. ',
-    'mrs\.' => 'Mrs. ',
-    'ms\.' => 'Ms. ',
     'prof\.' => 'Prof. ',
     '\, ph\.d\.' => ' Ph.D.',
     '\, bro\.' => ' Bro.',
-    ' jr\.,' => ' Jr.;',
-    ' jr,' => ' Jr.;',
-    '-Jr' => ' Jr.'
+    ' jr\.\,' => ' Jr.;',
+    ' jr\,' => ' Jr.;',
+    '\-jr' => ' Jr.'
   }
 
   COMPLEX_SEPARATORS = %r{
@@ -273,5 +269,9 @@ module DwcAgent
   ]
 
   TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+
+  APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
+
+  SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|[IVX]{2,})(\.|\b)/
 
 end

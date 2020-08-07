@@ -16,7 +16,7 @@ module DwcAgent
     # @param parsed_namae [Object] the namae object
     # @return [Hash] the given, family hash
     def clean(parsed_namae)
-      blank_name = { given: nil, family: nil, particle: nil }
+      blank_name = { title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil }
 
       if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
         return blank_name
@@ -84,6 +84,9 @@ module DwcAgent
       family = parsed_namae.family.gsub(/\.\z/, '').strip rescue nil
       given = parsed_namae.given.strip rescue nil
       particle = parsed_namae.particle.strip rescue nil
+      appellation = parsed_namae.appellation.strip rescue nil
+      suffix = parsed_names.suffix.strip rescue nil
+      title = parsed_names.title.strip rescue nil
 
       if !given.nil? && given.match(/[A-Z]\.[A-Za-z]{2,}/)
         given = given.gsub(".", ". ").strip
@@ -123,7 +126,7 @@ module DwcAgent
         return blank_name
       end
 
-      { given: given, family: family, particle: particle }
+      { title: nil, appellation: nil, given: given, particle: particle, family: family, suffix: nil }
     end
 
   end

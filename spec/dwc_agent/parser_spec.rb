@@ -931,7 +931,7 @@ module DwcAgent
       end
 
       it "should remove Bro." do
-        input = "Brouard, Gustav G. Arsène, Bro."
+        input = "Bro. Gustav G. Arsène Brouard"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["Gustav G. Arsène", "Brouard"])
@@ -1361,10 +1361,28 @@ module DwcAgent
         expect(parsed.size).to eq(0)
       end
 
-      it "should recognize a title when no space between it and name" do
-        input = "Dr.R.K. Johnson,1972"
+      it "should recognize a title Dr." do
+        input = "Dr. R.K. Johnson,1972"
         parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(["R.K.", "Johnson"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["R.K.", "Johnson", "Dr."])
+      end
+
+      it "should recognize an appellation Mrs." do
+        input = "Mrs. R.K. Johnson,1972"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["R.K.", "Johnson", "Mrs."])
+      end
+
+      it "should recognize an appellation Ms." do
+        input = "Ms. R.K. Johnson,1972"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["R.K.", "Johnson", "Ms."])
+      end
+
+      it "should recognize an appellation Miss" do
+        input = "Miss R.K. Johnson,1972"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["R.K.", "Johnson", "Miss"])
       end
 
       it "should strip out LANUV0071" do
@@ -1538,6 +1556,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["Strid", nil])
+      end
+
+      it "should recognize appellation, Mr." do
+        input = "Mr. John Smith"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["John", "Smith", "Mr."])
       end
 
     end

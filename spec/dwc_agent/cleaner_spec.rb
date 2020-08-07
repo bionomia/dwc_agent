@@ -8,375 +8,368 @@ module DwcAgent
       it "should reject a name that has 'Canadian Museum of Nature'" do
         input = "Jeff Saarela; Canadian Museum of Nature"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should clean a name with two given names" do
         input = "William Leo Smith"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "William Leo", family: "Smith", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "William Leo", particle: nil, family: "Smith", suffix: nil })
       end
 
       it "should reject a name that has 'Department' in it" do
         input = "Oregon Department of Agriculture"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should capitalize mistaken lowercase first initials" do
         input = "r.C. Smith"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given:"R.C.", family:"Smith", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:"R.C.", particle: nil, family:"Smith", suffix: nil })
       end
 
       it "should clean family names with extraneous period" do
         input = "C. Tanner."
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given:'C.', family: 'Tanner', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'C.', particle: nil, family: 'Tanner', suffix: nil })
       end
 
       it "should remove extraneous capitalized letters within brackets" do
         input = "!B. P. J. Molloy (CHR)"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given:'B.P.J.', family: 'Molloy', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'B.P.J.',  particle: nil, family: 'Molloy', suffix: nil })
       end
 
       it "should recognize a single name as a family name" do
         input = "Tanner"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given:nil, family: 'Tanner', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: 'Tanner', suffix: nil })
       end
 
       it "should normalize a name all in caps" do
         input = "WILLIAM BEEBE"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'William', family:'Beebe', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'William', particle: nil, family:'Beebe', suffix: nil })
       end
 
       it "should remove brackets from name" do
         input = "W.P. Coreneuk(?)"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'W.P.', family:'Coreneuk', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'W.P.', particle: nil, family:'Coreneuk', suffix: nil })
       end
 
       it "should not explode by E" do
         input = "Jack E Smith"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Smith", given: "Jack E.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack E.", particle: nil, family: "Smith", suffix: nil })
       end
 
       it "should parse name with many given initials" do
         input = "FAH Sperling"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Sperling", given: "F.A.H.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "F.A.H.", particle: nil, family: "Sperling", suffix: nil })
       end
 
       it "should preserve caps in family names" do
         input = "Chris MacQuarrie"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "MacQuarrie", given: "Chris", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Chris", particle: nil, family: "MacQuarrie", suffix: nil })
       end
 
       it "should recognize a religious suffix like Marie-Victorin, frère and treat it as a given name" do
         input = "Marie-Victorin, frère"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Marie-Victorin", given: "Frère", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Frère", particle: nil, family: "Marie-Victorin", suffix: nil })
       end
 
       it "should strip out 'synonymie'" do
         input = "Université Laval - synonymie"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should explode names with spaces missing surrounding ampersand" do
         input = "Henrik Andersen&jon Feilberg"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[1]).to_h).to eq({ family: "Feilberg", given: "Jon", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Jon", particle: nil, family: "Feilberg", suffix: nil })
       end
 
       it "should explode a messy list" do
         input = "Winterbottom, R.;Katz, L.;& CI team"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[2]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[2]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'non précisé'" do
         input = "non précisé"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore '[Not Stated]'" do
         input = "[Not Stated]"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should parse name with given initials without period(s)" do
         input = "JH Picard"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Picard", given: "J.H.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.H.", particle: nil, family: "Picard", suffix: nil })
       end
 
       it "should reverse the order when family name is parsed as uppercase initials" do
         input = "Lepschi BJ; Albrecht DE"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Lepschi", given: "B.J.", particle: nil })
-        expect(cleaner.clean(parsed[1]).to_h).to eq({ family: "Albrecht", given: "D.E.", particle: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "B.J.", particle: nil, family: "Lepschi", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "D.E.", particle: nil, family: "Albrecht", suffix: nil })
       end
 
       it "should parse name when given is initalized and order is reversed without separator" do
         input = "Picard J.H."
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Picard", given: "J.H.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.H.", particle: nil, family: "Picard", suffix: nil })
       end
 
       it "should capitalize surnames like 'Jack smith'" do
         input = "Jack smith"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Smith", given: "Jack", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack", particle: nil, family: "Smith", suffix: nil })
       end
 
       it "should capitalize names like 'C. YOUNG'" do
         input = "C. YOUNG"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Young", given: "C.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "C.", particle: nil, family: "Young", suffix: nil })
       end
 
       it "should flip a name like 'Groom Q.'" do
         input = "Groom Q."
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Groom", given: "Q.", particle: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Q.", particle: nil, family: "Groom", suffix: nil })
       end
 
       it "should flip a name like 'Raes N'" do
         input = "Raes N"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Raes", given: "N.", particle: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "N.", particle: nil, family: "Raes", suffix: nil })
       end
 
       it "should flip a name like 'Slik JWF'" do
         input = "Slik JWF"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Slik", given: "J.W.F.", particle: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.W.F.", particle: nil, family: "Slik", suffix: nil })
       end
 
       it "should capitalize names like 'Chris R.T. YOUNG'" do
         input = "Chris R.T. YOUNG"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Young", given: "Chris R.T.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Chris R.T.", particle: nil, family: "Young", suffix: nil })
       end
 
       it "should capitalize names like 'CHRIS R.T. YOUNG'" do
         input = "CHRIS R.T. YOUNG"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Young", given: "Chris R.T.", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Chris R.T.", particle: nil, family: "Young", suffix: nil })
       end
 
       it "should properly handle and capitalize utf-8 characters" do
         input = "Sicard, Léas"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Sicard", given: "Léas", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Léas", particle: nil, family: "Sicard", suffix: nil })
       end
 
       it "should ignore poorly parsed names with long given names and many periods" do
         input = "J. Green; R. Driskill; J. W. Markham L. D. Druehl"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[2]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[2]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore names with 'the'" do
         input = "The old bird was dead"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore names with 'unidentified'" do
         input = "Unidentified Beetle"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore names with American State University" do
         input = "R. G. Helgesen : North Dakota State University"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "R.G.", family: "Helgesen", particle: nil})
-      end
-
-      it "should ignore more affiliations" do
-        input = "Rider, Dr. David A. - North Dakota State University Department of Entomology"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "David A.", family: "Rider", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "R.G.", particle: nil, family: "Helgesen", suffix: nil })
       end
 
       it "should clean Jr suffix" do
-        input = "Abner Kingman, Jr., Gary D. Alpert"
+        input = "Abner Kingman, Jr.; Gary D. Alpert"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Abner", family: "Kingman", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Gary D.", family: "Alpert", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Abner", particle: nil, family: "Kingman", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Gary D.", particle: nil, family: "Alpert", suffix: nil })
       end
 
       it "should ignore 'popa observers'" do
         input = "popa observers"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore instances of word 'exchange'" do
         input = "Butcher, N.; Dominion exchange"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "Butcher", given: "N.", particle: nil })
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "N.", particle: nil, family: "Butcher", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should remove asterisks from a name" do
         input = "White*"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ family: "White", given: nil, particle: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "White", suffix: nil })
       end
 
       it "should split with 'communicated to' in text" do
         input = "Huber Moore; communicatd to Terry M. Taylor"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Terry M.", family: "Taylor", particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Terry M.", particle: nil, family: "Taylor", suffix: nil })
       end
 
       it "should ignore a three letter family name without vowels" do
         input = "Jack Wft"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Jack", family: "Wft", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack", particle: nil, family: "Wft", suffix: nil })
       end
 
       it "should accept a three letter family name with a vowel" do
         input = "Jack Wit"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Jack", family: "Wit", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack", particle: nil, family: "Wit", suffix: nil })
       end
 
       it "should not split a string of names with A." do
         input = "R.K. A. Godfrey"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "R.K.A.", family: "Godfrey", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "R.K.A.", particle: nil, family: "Godfrey", suffix: nil })
       end
 
       it "should not ignore the name Paula Maybee" do
         input = "Paula Maybee"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Paula", family: "Maybee", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Paula", particle: nil, family: "Maybee", suffix: nil })
       end
 
       it "it should not ignore the word maybe" do
         input = "Paula Maybee maybe"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Paula", family: "Maybee", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Paula", particle: nil, family: "Maybee", suffix: nil })
       end
 
       it "should ignore a family name with CAPs at end" do
         input = "Jack SmitH"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore a family name with two CAPs at the beginning" do
         input = "RGBennett"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should normalize a name all in caps, written in reverse order" do
         input = "SOSIAK, MACLENNAN"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'MacLennan', family:'Sosiak', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'MacLennan', particle: nil, family:'Sosiak', suffix: nil })
       end
 
       it "should normalize a name all in lowercase" do
         input = "beulah garner"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Beulah', family:'Garner', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'Beulah', particle: nil, family:'Garner', suffix: nil })
       end
 
       it "should clean a name whose given initials lack punctuation" do
         input = "A A Court"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.A.', family:'Court', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'A.A.', particle: nil, family:'Court', suffix: nil })
       end
 
       it "should clean a name whose given initials lack punctuation" do
         input = "Abreu, M.C"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'M.C.', family:'Abreu', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'M.C.', particle: nil, family:'Abreu', suffix: nil })
       end
 
       it "should remove anything between brackets" do
         input = "Michael (Mike) Smith"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Michael', family: 'Smith', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'Michael', particle: nil, family: 'Smith', suffix: nil })
       end
 
       it "should remove Ded:" do
         input = "Ded: A.E. Nordenskiöld (V"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.E.', family: 'Nordenskiöld', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'A.E.', particle: nil, family: 'Nordenskiöld', suffix: nil })
       end
 
       it "should remove another variant of ded" do
         input = "Lagerström, H (Ded.)"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'H.', family: 'Lagerström', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'H.', particle: nil, family: 'Lagerström', suffix: nil })
       end
 
       it "should remove yet another variant of ded and parse the remains" do
         input = "Richt, L & S Jansson (ded"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: 'S.', family: 'Jansson', particle: nil})
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: 'S.', particle: nil, family: 'Jansson', suffix: nil })
       end
 
       it "should remove extraneous information with brackets at end of string" do
         input = "J. Lindahl (Ingegerd & Gl"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'J.', family: 'Lindahl', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'J.', particle: nil, family: 'Lindahl', suffix: nil })
       end
 
       it "should remove Coll in brackets" do
         input = "D.Podlech (Coll. M, MSB)"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'D.', family: 'Podlech', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'D.', particle: nil, family: 'Podlech', suffix: nil })
       end
 
       it "should remove nickname in brackets at end of string" do
         input = "Michael Smith (Mike)"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'Michael', family: 'Smith', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'Michael', particle: nil, family: 'Smith', suffix: nil })
       end
 
       it "should remove extra content in brackets" do
         input = "Triplehorn, W. E. (Wanda Elaine) & Triplehorn, C."
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'W.E.', family: 'Triplehorn', particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: 'C.', family: 'Triplehorn', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'W.E.', particle: nil, family: 'Triplehorn', suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: 'C.', particle: nil, family: 'Triplehorn', suffix: nil })
       end
 
       it "should remove content within square brackets" do
         input = "A. ORTEGA [INTERCAMBIO MA-VIT]"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: 'A.', family: 'Ortega', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'A.', particle: nil, family: 'Ortega', suffix: nil })
       end
 
       it "should remove stray dashes and dots at the beginning of a string" do
         input = "-. Alfonso"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: 'Alfonso', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: 'Alfonso', suffix: nil })
       end
 
       it "should remove stray asterisks at the beginnning of a string" do
         input = "* SCHUCH"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: 'Schuch', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: 'Schuch', suffix: nil })
       end
 
       it "should remove content prefixed by curly brackets" do
@@ -388,68 +381,68 @@ module DwcAgent
       it "should remove any period after a number" do
         input = "B. Maguire 2375.4"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "B.", particle: nil, family: 'Maguire', suffix: nil })
       end
 
       it "should remove any period after a number and then remove trailing semicolon" do
         input = "B. Maguire; 2375.4"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "B.", particle: nil, family: 'Maguire', suffix: nil })
       end
 
       it "should remove via at end of string" do
         input = "B. Maguire via"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "B.", family: 'Maguire', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "B.", particle: nil, family: 'Maguire', suffix: nil })
       end
 
       it "should remove semicolon at start and messes elsewhere" do
         input = "; annot. J. Walter (W) 2017-04"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.", family: 'Walter', particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.", particle: nil, family: 'Walter', suffix: nil })
       end
 
       it "should ignore dashes in weird places" do
         input = "-. Borja; -- Rivet & Galiano"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(3)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Borja", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "Borja", suffix: nil })
       end
 
       it "should not mess with initials when there are three" do
         input = "A.J.E.Smith"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "A.J.E.", family: "Smith", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.J.E.", particle: nil, family: "Smith", suffix: nil })
       end
 
       it "should not mess with very small family names" do
         input = "Wen-Bin Yu"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Wen-Bin", family: "Yu", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Wen-Bin", particle: nil, family: "Yu", suffix: nil })
       end
 
       it "should not ignore names that have russia in them" do
         input = "Choumovitch, W.; Settler, Russias"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "W.", family: "Choumovitch", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "Russias", family: "Settler", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "W.", particle: nil, family: "Choumovitch", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Russias", particle: nil, family: "Settler", suffix: nil })
       end
 
       it "should ignore affiliations with UNITED STATES" do
         input = "Upchurch, Garland R., Jr. - Texas State University (UNITED STATES)"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Garland R.", family: "Upchurch", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Garland R.", particle: nil, family: "Upchurch", suffix: nil })
       end
 
       it "should strip out country names like Poland" do
         input = "Piotr Zuchlinski, Poland"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Piotr", family: "Zuchlinski", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Piotr", particle: nil, family: "Zuchlinski", suffix: nil })
       end
 
       it "should strip out other country names entirely like Belgium" do
@@ -462,202 +455,202 @@ module DwcAgent
         input = "Jean-Baptiste Leschenault de La Tour"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Jean-Baptiste Leschenault", family: "La Tour", particle: "de"})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jean-Baptiste Leschenault", particle: "de", family: "La Tour", suffix: nil })
       end
 
       it "should reject given name that is greater than 25 characters" do
         input = "Jean-Baptiste Leschenaults de La Tour"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should strip out the terminal particle" do
         input = "Andrade JC de"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.C.", family: "Andrade", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.C.", particle: nil, family: "Andrade", suffix: nil })
       end
 
       it "should ignore a single paricle purported to be a name" do
         input = "Robillard|de"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Robillard", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "Robillard", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should recognize Lord as a middle name" do
         input = "Nathaniel Lord Britton"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel Lord", family: "Britton", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Nathaniel Lord", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should recognize Professor as a title" do
         input = "Professor Nathaniel Britton"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel", family: "Britton", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should recognize Sir as a title" do
         input = "Sir Nathaniel Britton"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Nathaniel", family: "Britton", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should return a blank name when family name is 'der'" do
         input = "Baan M van der"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should return a blank name when family name is 'der'" do
         input = "Baan M van der"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should return a blank name when family name is 'von'" do
         input = "Baer K.E. von"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it " should return a blank name when family is 'Catalog'" do
         input = 'Catalog\1996'
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore [no data]" do
         input = "[no data]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore [no disponible]" do
         input = "[no disponible]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore [no data available]" do
         input = "[no data available]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore [no agent data]" do
         input = "[no agent data]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore DATA NOT CAPTURED" do
         input = "DATA NOT CAPTURED"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'Curators of USNM'" do
         input = "Curators of USNM"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'C. N. C. Curators'" do
         input = "C. N. C. Curators"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'Administrador'" do
         input = "Administrador"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'nomenclatural adjustment'" do
         input = "nomenclatural adjustment"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore 'not available'" do
         input = "not available"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore '[sequence data]'" do
         input = "[sequence data]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should recognize two family names without provided given names" do
         input = "Jackson and Peterson"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: "Jackson", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: "Peterson", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "Jackson", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "Peterson", suffix: nil })
       end
 
       it "should ignore 'Texas Instruments'" do
         input = "Texas Instruments For BLM"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should reject '[Collector has not been verified and entered]'" do
         input = "[Collector has not been verified and entered]"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore échangé" do
         input = "échangé : B. Lanza"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: "B.", family: "Lanza", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "B.", particle: nil, family: "Lanza", suffix: nil })
       end
 
       it "should ignore élève" do
         input = "Luc Rousseau, élève"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Luc", family: "Rousseau", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Luc", particle: nil, family: "Rousseau", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore éleveur" do
         input = "Francis GIRARD, éleveur"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "Francis", family: "Girard", particle: nil})
-        expect(cleaner.clean(parsed[1]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Francis", particle: nil, family: "Girard", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should ignore no coll." do
@@ -676,21 +669,21 @@ module DwcAgent
         input = "[A. Pront]?"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "A.", family: "Pront", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.", particle: nil, family: "Pront", suffix: nil })
       end
 
       it "should strip out square brackets around parts of a name" do
         input = "[Macoun], J."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "J.", family: "Macoun", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.", particle: nil, family: "Macoun", suffix: nil })
       end
 
       it "should strip out a whole bunch of junk" do
         input = "David##{} P. @%%Shorthouse"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: "David P.", family: "Shorthouse", particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "David P.", particle: nil, family: "Shorthouse", suffix: nil })
       end
 
       it "should strip out illisible" do
@@ -703,14 +696,14 @@ module DwcAgent
         input = "No consta"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
 
       it "should reject a name like BgWd0062" do
         input = "BgWd0062"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({given: nil, family: nil, particle: nil})
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
     end
 
