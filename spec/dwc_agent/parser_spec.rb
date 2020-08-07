@@ -1565,6 +1565,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["John", "Smith", "Mr."])
       end
 
+      it "should retain title and suffix after cleaning" do
+        input = "Dr. James Mornay Jr."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["James", "Mornay", "Dr.", "Jr."])
+      end
     end
 
   end

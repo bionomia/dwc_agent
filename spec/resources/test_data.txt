@@ -53,15 +53,15 @@ J.R.Smith || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation":
 
 J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Sutherland", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
-Rev. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rev. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": "Rev."}]
 
-Fr. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Fr. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": "Fr.", "suffix": null, "title": null}]
 
-Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Miss", "suffix": null, "title": null}]
 
-Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Mrs.", "suffix": null, "title": null}]
 
-Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Ms", "suffix": null, "title": null}]
 
 Jack Smith etc || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
@@ -227,7 +227,7 @@ Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given
 
 S. Ross 12/i/1999 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
-S. Ross III.1990 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+S. Ross III.1990 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": "III.", "title": null}]
 
 Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
@@ -367,7 +367,7 @@ Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff", "particle":
 
 J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
-Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R.", "particle":null, "appellation": null, "suffix": null, "title": "Esq."}]
 
 Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin", "particle":null, "appellation": null, "suffix": null, "title": null}]
 

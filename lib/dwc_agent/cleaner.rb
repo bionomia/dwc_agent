@@ -85,8 +85,8 @@ module DwcAgent
       given = parsed_namae.given.strip rescue nil
       particle = parsed_namae.particle.strip rescue nil
       appellation = parsed_namae.appellation.strip rescue nil
-      suffix = parsed_names.suffix.strip rescue nil
-      title = parsed_names.title.strip rescue nil
+      suffix = parsed_namae.suffix.strip rescue nil
+      title = parsed_namae.title.strip rescue nil
 
       if !given.nil? && given.match(/[A-Z]\.[A-Za-z]{2,}/)
         given = given.gsub(".", ". ").strip
@@ -126,7 +126,7 @@ module DwcAgent
         return blank_name
       end
 
-      { title: nil, appellation: nil, given: given, particle: particle, family: family, suffix: nil }
+      { title: title, appellation: appellation, given: given, particle: particle, family: family, suffix: suffix }
     end
 
   end

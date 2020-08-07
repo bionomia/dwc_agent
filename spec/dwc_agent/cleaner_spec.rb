@@ -209,7 +209,7 @@ module DwcAgent
         input = "Abner Kingman, Jr.; Gary D. Alpert"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Abner", particle: nil, family: "Kingman", suffix: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Abner", particle: nil, family: "Kingman", suffix: "Jr." })
         expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Gary D.", particle: nil, family: "Alpert", suffix: nil })
       end
 
@@ -435,7 +435,7 @@ module DwcAgent
         input = "Upchurch, Garland R., Jr. - Texas State University (UNITED STATES)"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Garland R.", particle: nil, family: "Upchurch", suffix: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Garland R.", particle: nil, family: "Upchurch", suffix: "Jr." })
       end
 
       it "should strip out country names like Poland" do
@@ -491,14 +491,14 @@ module DwcAgent
         input = "Professor Nathaniel Britton"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Professor", appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should recognize Sir as a title" do
         input = "Sir Nathaniel Britton"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Sir", appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should return a blank name when family name is 'der'" do
@@ -705,6 +705,21 @@ module DwcAgent
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
       end
+
+      it "should retain appellation after cleaning" do
+        input = "Mrs. James de Mornay"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: "Mrs.", given: "James", particle: "de", family: "Mornay", suffix: nil })
+      end
+
+      it "should retain title and suffix after cleaning" do
+        input = "Dr. James Mornay Jr."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Dr.", appellation: nil, given: "James", particle: nil, family: "Mornay", suffix: "Jr." })
+      end
+
     end
 
   end
