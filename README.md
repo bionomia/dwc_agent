@@ -44,7 +44,7 @@ dwc_agent is released under the [MIT license][5].
 Support
 -------
 
-Bug reports can be filed at [https://github.com/dshorthouse/dwc_agent/issues][6].
+Bug reports can be filed at [https://github.com/bionomia/dwc_agent/issues][6].
 
 Copyright
 ---------
@@ -55,10 +55,10 @@ Copyright (c) 2018 Canadian Museum of Nature
 
 [1]: https://badge.fury.io/rb/dwc_agent.svg
 [2]: http://badge.fury.io/rb/dwc_agent
-[3]: https://secure.travis-ci.org/dshorthouse/dwc_agent.svg
-[4]: http://travis-ci.org/dshorthouse/dwc_agent
+[3]: https://secure.travis-ci.org/bionomia/dwc_agent.svg
+[4]: http://travis-ci.org/bionomia/dwc_agent
 [5]: http://www.opensource.org/licenses/MIT
-[6]: https://github.com/dshorthouse/dwc_agent/issues
+[6]: https://github.com/bionomia/dwc_agent/issues
 [7]: https://github.com/dshorthouse
 [8]: https://img.shields.io/gem/dt/dwc_agent.svg
 [9]: https://rubygems.org/gems/dwc_agent
