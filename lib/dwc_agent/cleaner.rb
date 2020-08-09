@@ -30,7 +30,7 @@ module DwcAgent
         return blank_name
       end
 
-      if parsed_namae.given && parsed_namae.given.length > 25
+      if parsed_namae.given && parsed_namae.given.length > 35
         return blank_name
       end
 

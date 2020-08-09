@@ -458,8 +458,8 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jean-Baptiste Leschenault", particle: "de", family: "La Tour", suffix: nil })
       end
 
-      it "should reject given name that is greater than 25 characters" do
-        input = "Jean-Baptiste Leschenaults de La Tour"
+      it "should reject given name that is greater than 35 characters" do
+        input = "Jean-Baptiste Leschenaults François Hulle de La Tour"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
