@@ -1573,5 +1573,12 @@ module DwcAgent
       end
     end
 
+    it "should not remove 'France' from 'Frances'" do
+      input = "Frances Smith"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["Frances", "Smith", nil, nil])
+    end
+
   end
 end
