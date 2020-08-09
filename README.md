@@ -27,7 +27,7 @@ Or, from the command-line:
 ```bash
 gem install dwc_agent
 dwcagent "13267 (male) W.J. Cody; 13268 (female) W.E. Kemp"
-=> [{"given":"W.J.","family":"Cody"},{"given":"W.E.","family":"Kemp"}]
+=> [{"title":null,"appellation":null,"given":"W.J.","particle":null,"family":"Cody","suffix":null},{"title":null,"appellation":null,"given":"W.E.","particle":null,"family":"Kemp","suffix":null}]
 ```
 
 ```bash
