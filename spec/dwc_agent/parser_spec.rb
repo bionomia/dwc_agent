@@ -680,6 +680,14 @@ module DwcAgent
         expect(parsed[1].values_at(:given, :family)).to eq(['Yves', 'Archambault'])
       end
 
+      it "should explode names with 'confirmada por'" do
+        input = "Fernandes,MG.C confirmada por Rapini,A."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(['MG.C', 'Fernandes'])
+        expect(parsed[1].values_at(:given, :family)).to eq(['A.', 'Rapini'])
+      end
+
       it "should explode names with 'checked:'" do
         input = "C.E. Garton 1980 checked:W.G. Argus 1980"
         parsed = parser.parse(input)
@@ -773,6 +781,23 @@ module DwcAgent
         expect(parsed.size).to eq(2)
         expect(parsed[0].values_at(:given, :family)).to eq(['Rex', 'Byron'])
         expect(parsed[1].values_at(:given, :family)).to eq(['Yves', 'Archambault'])
+      end
+
+      it "should explode name with 'och'" do
+        input = "M. Källersjö och A. Anderberg 272"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(['M.', 'Källersjö'])
+        expect(parsed[1].values_at(:given, :family)).to eq(['A.', 'Anderberg'])
+      end
+
+      it "should explode names with 'con'" do
+        input = "Alfonso Octavio con A. Bonet y Rafael Torres"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(3)
+        expect(parsed[0].values_at(:given, :family)).to eq(['Alfonso', 'Octavio'])
+        expect(parsed[1].values_at(:given, :family)).to eq(['A.', 'Bonet'])
+        expect(parsed[2].values_at(:given, :family)).to eq(['Rafael', 'Torres']) 
       end
 
       it "should explode names with 'redet by'" do

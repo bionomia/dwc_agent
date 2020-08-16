@@ -113,18 +113,20 @@ module DwcAgent
     [–|ǀ∣｜│&+\/;:]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(e|y|i|en|et|or|per|for)\s*\b|
+    \b(con|e|y|i|en|et|or|per|for)\s*\b|
     \b(?i:and|with)\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|
     \b(?i:communicate?d(\s+to)?)\s*\b|
     \b(?i:conf\.?(\s+by)?|confirmed(\s+by)?)\s*\b|
+    \b(?i:confirmada)(\s+por)?\s*\b|
     \b(?i:checked?(\s+by)?)\s*\b|
     \b(?i:det\.?(\s+by)?)\s*\b|
     \b(?i:dupl?\.?(\s+by)?|duplicate(\s+by)?)\s*\b|
     \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
     \b(?i:in?dentified(\s+by)?)\s*\b|
     \b(?i:in\s+part(\s+by)?)\s*\b|
+    \b(?i:och)\s*\b|
     \b(?i:prep\.?\s+(?i:by)?)\s*\b|
     \b(?i:redet\.?(\s+by?)?)\s*\b|
     \b(?i:reidentified(\s+by)?)\s*\b|
