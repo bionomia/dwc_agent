@@ -6,6 +6,7 @@ Ruby 2.6 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [ide
 [![Gem Version][1]][2]
 [![Gem Downloads][8]][9]
 [![Continuous Integration Status][3]][4]
+[![security](https://hakiri.io/github/bionomia/dwc_agent/master.svg)](https://hakiri.io/github/bionomia/dwc_agent/master)
 
 Usage
 -----
