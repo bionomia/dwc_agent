@@ -232,6 +232,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "White", suffix: nil })
       end
 
+      it "should remove 'purchased'" do
+        input = "Purchased by A. E. Jamrach."
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.E.", particle: nil, family: "Jamrach", suffix: nil })
+      end
+
       it "should split with 'communicated to' in text" do
         input = "Huber Moore; communicatd to Terry M. Taylor"
         parsed = parser.parse(input)
@@ -492,6 +498,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Professor", appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
+      end
+
+      it "should recognize Prof. as a title" do
+        input = "Prof. Nathaniel Britton"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Prof.", appellation: nil, given: "Nathaniel", particle: nil, family: "Britton", suffix: nil })
       end
 
       it "should recognize Sir as a title" do

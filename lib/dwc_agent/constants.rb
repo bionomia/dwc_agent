@@ -61,7 +61,7 @@ module DwcAgent
     (?i:see\s+notes?\s*(inside)?)|
     (?i:see\s+letter\s+enclosed)|
     (?i:(by)?\s+correspondance)|
-    (?i:pers\.?\s+comm\.?)|
+    (?i:pers\.?\s*comm\.?)|
     (?i:crossed\s+out)|
     \(?(?i:source)\(?|
     (?i:according\s+to)|
@@ -128,6 +128,7 @@ module DwcAgent
     \b(?i:in\s+part(\s+by)?)\s*\b|
     \b(?i:och)\s*\b|
     \b(?i:prep\.?\s+(?i:by)?)\s*\b|
+    \b(?i:purchased?)(\s+by)?\s*\b|
     \b(?i:redet\.?(\s+by?)?)\s*\b|
     \b(?i:reidentified(\s+by)?)\s*\b|
     \b(?i:stet)\s*\b|
@@ -161,12 +162,18 @@ module DwcAgent
   }
 
   PHRASE_SUBS = {
-    'prof\.' => 'Prof. ',
-    '\, ph\.d\.' => ' Ph.D.',
-    '\, bro\.' => ' Bro.',
-    ' jr\.\,' => ' Jr.;',
-    ' jr\,' => ' Jr.;',
-    '\-jr' => ' Jr.'
+    ', ph.d.' => ' Ph.D.',
+    ', Ph.D.' => ' Ph.D.',
+    ', bro.' => ' Bro.',
+    ' jr.,' => ' Jr.;',
+    ' jr,' => ' Jr.;',
+    '-jr' => ' Jr.',
+    '-Jr' => ' Jr.',
+    ', Jr.' => ' Jr.',
+    ',Jr.' => ' Jr.',
+    ', Sr.' => ' Sr.',
+    ',Sr.' => ' Sr.'
+
   }
 
   COMPLEX_SEPARATORS = %r{

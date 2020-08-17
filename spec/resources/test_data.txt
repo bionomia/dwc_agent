@@ -247,8 +247,6 @@ Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude", "particle":
 
 Roy, Claude (see note) || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
-Brouard, Gustav G. Arsène, Bro. || [{"family":"Brouard", "given":"Gustav G. Arsène", "particle":null, "appellation": null, "suffix": null, "title": null}]
-
 Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian", "particle":null, "appellation": null, "suffix": null, "title": null}]
 
 Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Brayshaw", "given":"Thomas C.", "particle":null, "appellation": null, "suffix": null, "title": null}]

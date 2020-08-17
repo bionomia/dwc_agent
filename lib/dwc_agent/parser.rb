@@ -20,7 +20,7 @@ module DwcAgent
       @strip_out_regex = Regexp.new STRIP_OUT.to_s
       @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
       @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join].to_s
-      @phrase_subs_regex = Regexp.new PHRASE_SUBS.keys.join('|').to_s, Regexp::IGNORECASE
+      @phrase_subs_regex = Regexp.new PHRASE_SUBS.keys.map{|a| Regexp.escape a }.join('|').to_s
       @complex_separators_regex = Regexp.new COMPLEX_SEPARATORS.to_s
       @add_separators_regex = Regexp.new %r{(\S{1}\.)([[:alpha:]]{2,})}.to_s
     end

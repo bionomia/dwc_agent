@@ -797,7 +797,7 @@ module DwcAgent
         expect(parsed.size).to eq(3)
         expect(parsed[0].values_at(:given, :family)).to eq(['Alfonso', 'Octavio'])
         expect(parsed[1].values_at(:given, :family)).to eq(['A.', 'Bonet'])
-        expect(parsed[2].values_at(:given, :family)).to eq(['Rafael', 'Torres']) 
+        expect(parsed[2].values_at(:given, :family)).to eq(['Rafael', 'Torres'])
       end
 
       it "should explode names with 'redet by'" do
@@ -959,7 +959,7 @@ module DwcAgent
         input = "Bro. Gustav G. Arsène Brouard"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Gustav G. Arsène", "Brouard"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Gustav G. Arsène", "Brouard", "Bro."])
       end
 
       it "should strip out stet from the end of a name" do
@@ -1423,6 +1423,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["J.", "Oscoz"])
       end
 
+      it "should strip out 'pers.comm.'" do
+        input = "pers.comm. R. Hearn"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["R.", "Hearn"])
+      end
+
       it "should strip out MRI PAS" do
         input = "MRI PAS"
         parsed = parser.parse(input)
@@ -1432,7 +1439,7 @@ module DwcAgent
       it "should recognize Esq. as a title" do
         input = "Charles R. Darwin Esq."
         parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Charles R.", "Darwin"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Charles R.", "Darwin", "Esq."])
       end
 
       it "should recognize family names with only 2 characters" do
@@ -1466,7 +1473,7 @@ module DwcAgent
         input = "Leo Anton Karl de Ball"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Leo Anton Karl", "Ball"])
+        expect(parsed[0].values_at(:given, :family, :particle)).to eq(["Leo Anton Karl", "Ball", "de"])
       end
 
       it "should parse a complex name" do
@@ -1511,21 +1518,21 @@ module DwcAgent
         input = "Sir Kenneth Brannaugh"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Kenneth", "Brannaugh", "Sir"])
       end
 
       it "should recognize Father as a title" do
         input = "Father Kenneth Brannaugh"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Kenneth", "Brannaugh", "Father"])
       end
 
       it "should recognize Ph.D. as a title" do
         input = "Kenneth Brannaugh Ph.D."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Kenneth", "Brannaugh", "Ph.D."])
       end
 
       it "should replace -Jr with ' Jr.'" do
@@ -1539,7 +1546,7 @@ module DwcAgent
         input = "Kenneth Brannaugh, Ph.D."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Kenneth", "Brannaugh", "Ph.D."])
       end
 
       it "should strip out PROFº" do
@@ -1553,7 +1560,7 @@ module DwcAgent
         input = "Kenneth Brannaugh JR."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :suffix)).to eq(["Kenneth", "Brannaugh", "JR."])
       end
 
       it "should recognize JR. as a suffix when preceeded by a comma" do
@@ -1596,6 +1603,13 @@ module DwcAgent
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["James", "Mornay", "Dr.", "Jr."])
       end
+    end
+
+    it "should recognize ', Jr.' as a suffix and 'Mr.' as an appellation" do
+      input = "Mr. Jerry E. Nichols Jr."
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :suffix, :appellation)).to eq(["Jerry E.", "Nichols", "Jr.", "Mr."])
     end
 
     it "should not remove 'France' from 'Frances'" do
