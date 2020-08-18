@@ -6,15 +6,16 @@ module DwcAgent
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\.?\s+al|&\s+al)\.?|
+    \b[,;]?\s*(?i:etal)\.?|
     \b\s+(bis|ter)(\b|\z)|
     \bu\.\s*a\.|
-    \b[,;]?\s*(?i:and|&)?\s*(?i:others)\s*\b|
+    \b[,;]?\s*(?i:and|&)?\s*(?i:others|party)\s*\b|
     \b[,;]?\s*(?i:etc)\.?|
     \b[,;]?\s*(?i:on)\b|
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
-    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit|presumed?)\)?\b|
+    \b[,;]?\s*\(?(?i:undetermined|indeterminable|dummy|interim|accession|ill(eg|is)ible|scripsit|presumed?|presumably)\)?\b|
     \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:string)\b|
     \b[,;]?\s*(?i:person\s*string)\b|
@@ -83,11 +84,14 @@ module DwcAgent
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
     FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|USGS|NAWQA|
+    \b,?\s*(?i:para|topo|syn)?(?i:type)|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
     (?i:sem\s+(colec?tor|data))|
     (?i:no\s+coll\.?(ector)?)|
+    (?i:not?)\s+(?i:name|date|details?|specific)?\s*?(?i:given|name|date|noted)|
+    (?i:non?)\s+(?i:specificato)|
     \b[,;]\s+\d+\z|
     ["!@?]|
     [,]?\d+|
@@ -158,22 +162,24 @@ module DwcAgent
     '}' => '',
     '@' => '',
     '%' => '',
-    '\\' => ''
+    '\\' => '',
+    '´' => '\'',
+    '+' => ' | '
   }
 
   PHRASE_SUBS = {
     ', ph.d.' => ' Ph.D.',
     ', Ph.D.' => ' Ph.D.',
     ', bro.' => ' Bro.',
-    ' jr.,' => ' Jr.;',
-    ' jr,' => ' Jr.;',
-    '-jr' => ' Jr.',
-    '-Jr' => ' Jr.',
+    ', Jr.,' => ' Jr.;',
     ', Jr.' => ' Jr.',
     ',Jr.' => ' Jr.',
     ', Sr.' => ' Sr.',
-    ',Sr.' => ' Sr.'
-
+    ',Sr.' => ' Sr.',
+    ' jr.,' => ' Jr.;',
+    ' jr,' => ' Jr.;',
+    '-jr' => ' Jr.',
+    '-Jr' => ' Jr.'
   }
 
   COMPLEX_SEPARATORS = %r{
@@ -266,6 +272,7 @@ module DwcAgent
     "determination",
     "dissection",
     "entered",
+    "indecipherable",
     "nomenclatural",
     "orig",
     "registration",
@@ -277,7 +284,7 @@ module DwcAgent
     "has not"
   ]
 
-  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|prof|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|major|capt|cmdr|lt|sgt|cpl|pvt|proff?|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
 
   APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
 

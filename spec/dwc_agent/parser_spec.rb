@@ -23,6 +23,18 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Jeff", "Saarela"])
       end
 
+      it "should reject 'no name given'" do
+        input = "no name given"
+        parsed = parser.parse(input)
+        expect(parsed).to eq([])
+      end
+
+      it "should reject 'not given'" do
+        input = "not given"
+        parsed = parser.parse(input)
+        expect(parsed).to eq([])
+      end
+
       it "should remove extraneous capitalized letters within brackets" do
         input = "!B. P. J. Molloy (CHR)"
         parsed = parser.parse(input)
@@ -35,6 +47,20 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['C.A.', 'Tanner'])
+      end
+
+      it "should remove 'etal'" do
+        input = "HUNT, G L, ETAL"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['G L', 'HUNT'])
+      end
+
+      it "should remove another form of 'etal'" do
+        input = "L.Rossi;etal."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['L.', 'Rossi'])
       end
 
       it "should remove numerical values and lowercase letter" do
@@ -156,6 +182,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
+      end
+
+      it "should remove '& party'" do
+        input = "J Paxton & party"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(['J', 'Paxton'])
       end
 
       it "should separate a concatenated name" do
@@ -289,6 +322,12 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
         expect(parsed[0].values_at(:given, :family)).to eq(['D.B.', 'Jepsen'])
+      end
+
+      it "should explode by + without spacing" do
+        input = "Dalzell+Hutchison"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
       end
 
       it "should explode by 'stet!'" do
@@ -1410,6 +1449,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["R.K.", "Johnson", "Miss"])
       end
 
+      it "should recognize a title 'Major'" do
+        input = "Major Richard W. G. Hingston"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Richard W. G.", "Hingston", "Major"])
+      end
+
       it "should strip out LANUV0071" do
         input = "LANUV0071"
         parsed = parser.parse(input)
@@ -1542,6 +1587,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["P.", "Meira"])
       end
 
+      it "should replace an odd single quote" do
+        input = "L. O´Brian"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq(["L.", "O'Brian"])
+      end
+
       it "should recognize Ph.D. preceeded by comma as a title" do
         input = "Kenneth Brannaugh, Ph.D."
         parsed = parser.parse(input)
@@ -1567,7 +1619,15 @@ module DwcAgent
         input = "Kenneth Brannaugh, JR."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Kenneth", "Brannaugh"])
+        expect(parsed[0].values_at(:given, :family, :suffix)).to eq(["Kenneth", "Brannaugh", "JR."])
+      end
+
+      it "should recognize a comma after 'Jr.' as start of a new name" do
+        input = "Joseph T. Marshall Jr., B. Sagal"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family, :suffix)).to eq(["Joseph T.", "Marshall", "Jr."])
+        expect(parsed[1].values_at(:given, :family, :suffix)).to eq(["B.", "Sagal", nil])
       end
 
       it "should not treat any part of 'ACAD acc# 96317' as a name" do
@@ -1581,6 +1641,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(parsed[0].values_at(:given, :family)).to eq(["Martin F.", "Gomon"])
+      end
+
+      it "should strip out TYPE" do
+        input = "Dillon (F), TYPE"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(parsed[0].values_at(:given, :family)).to eq([nil,"Dillon"])
       end
 
       it "should strip out '& al.'" do
