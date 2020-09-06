@@ -733,6 +733,48 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Dr.", appellation: nil, given: "James", particle: nil, family: "Mornay", suffix: "Jr." })
       end
 
+      it "should reject 'Illegible determiner name'" do
+        input = "Illegible determiner name"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+      end
+
+      it "should reject 'Illegible annotator name'" do
+        input = "Illegible annotator name"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+      end
+
+      it "should reject 'Collector Name Erased'" do
+        input = "Collector Name Erased"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+      end
+
+      it "should reject 'details lost'" do
+        input = "details lost"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+      end
+
+      it "should not reject 'E.V.C. Lost'" do
+        input = "E.V.C. Lost"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "E.V.C.", particle: nil, family: "Lost", suffix: nil })
+      end
+
+      it "should not reject 'Name, T.F.'" do
+        input = "Name, T.F."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "T.F.", particle: nil, family: "Name", suffix: nil })
+      end
+
     end
 
   end

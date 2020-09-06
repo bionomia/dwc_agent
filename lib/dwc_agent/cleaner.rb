@@ -18,10 +18,6 @@ module DwcAgent
     def clean(parsed_namae)
       blank_name = { title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil }
 
-      if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
-        return blank_name
-      end
-
       if parsed_namae.given && GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
         return blank_name
       end
@@ -77,6 +73,10 @@ module DwcAgent
 
       if parsed_namae.given && /[A-Za-z]\./.match(parsed_namae.given)
         parsed_namae.given = NameCase(parsed_namae.given)
+      end
+
+      if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
+        return blank_name
       end
 
       parsed_namae.normalize_initials

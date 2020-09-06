@@ -23,6 +23,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["Jeff", "Saarela"])
       end
 
+      it "should remove 'first name unknown'" do
+        input = "First Name Unknown|Robert Martin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+      end
+
       it "should reject 'no name given'" do
         input = "no name given"
         parsed = parser.parse(input)

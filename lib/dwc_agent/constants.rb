@@ -54,10 +54,11 @@ module DwcAgent
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|
-    \(?[,]?\s*?(?i:(local)?\s?collector|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
+    \(?[,]?\s*?(?i:(local)?\s?collectors?|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
     \b[.-–,;:]?\s*(?i:department|faculty)\s*?(?i:of)?\s*?(?i:entomology|biology|zoology)|
     (?i:Engº|Agrº|Fcº|Drº|Mº|Profº|Dº|Fº)|
     (?i:fide)\:?\s*\b|
+    (?i:first\s+name\s+unknown)|
     (?i:game\s+dept)\.?\s*\b|
     (?i:see\s+notes?\s*(inside)?)|
     (?i:see\s+letter\s+enclosed)|
@@ -67,16 +68,18 @@ module DwcAgent
     \(?(?i:source)\(?|
     (?i:according\s+to)|
     (?i:lanuv)\d+|
+    \b\s*name\b|
+    \b\s*lost\b|
     (?i:nswobs)|
     ORCID|
     MRI(\s|-)PAS|
     urn\:qm\.qld\.gov\.au\:collector|
     (?i:University\s+of\s+(Southern\s+)?California(,\s+Berkeley)?)|
-    (?i:Field\s+Museum\s+of\s+Natural\s+History)|
-    (?i:American\s+Museum\s+of\s+Natural\s+History)|
+    (?i:field\s+museum\s+of\s+natural\s+history)|
+    (?i:american\s+museum\s+of\s+natural\s+history)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
     (?i:museums?\s+victoria)|
-    \b\s*(?i:United\s+States|Russia)\s*\b|
+    \b\s*(?i:united\s+states|russia)\s*\b|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
     -?\s*(?i:synonym(y|ie))|
@@ -244,7 +247,7 @@ module DwcAgent
     (?i:though)|
     (?i:texas\s+instruments?)\s*?(for)?|
     (?:tropical)|
-    (?i:toward|seen at)|
+    (?i:toward|seen\s+at)|
     (?i:unidentified|unspecified|unk?nown?|unnamed|unread|unmistak|no agent)|
     (?i:urn\:)|
     (?i:usda|ucla)|
@@ -253,30 +256,47 @@ module DwcAgent
   }x
 
   FAMILY_BLACKLIST = [
+    "ap",
     "da",
+    "de",
     "de'",
     "del",
     "der",
+    "di",
+    "do",
+    "dos",
     "du",
     "el",
+    "le",
+    "la",
     "van",
     "von",
     "the",
     "of",
     "adjustment",
+    "annotator",
     "available",
     "arachnology",
     "catalogue",
     "curators",
     "data",
+    "details",
+    "determiner",
     "determination",
     "dissection",
     "entered",
+    "erased",
     "indecipherable",
     "nomenclatural",
     "orig",
     "registration",
-    "science"
+    "science",
+    "wg",
+    "wm",
+    "wn",
+    "zw",
+    "zz",
+    "z-"
   ]
 
   GIVEN_BLACKLIST = [
