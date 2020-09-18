@@ -41,6 +41,24 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'B.P.J.',  particle: nil, family: 'Molloy', suffix: nil })
       end
 
+      it "should remove 1st" do
+        input = "Beatty, G.H., 1st"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'G.H.',  particle: nil, family: 'Beatty', suffix: nil })
+      end
+
+      it "should remove 4th" do
+        input = "G.H. Beatty 4th"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'G.H.',  particle: nil, family: 'Beatty', suffix: nil })
+      end
+
+      it "should remove 3rd" do
+        input = "G.H. Beatty 3rd"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'G.H.',  particle: nil, family: 'Beatty', suffix: nil })
+      end
+
       it "should recognize a single name as a family name" do
         input = "Tanner"
         parsed = parser.parse(input)

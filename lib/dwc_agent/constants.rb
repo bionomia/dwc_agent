@@ -3,6 +3,7 @@ module DwcAgent
     ^[\[{(]|
     [\]})]\??$|
     (?i:acc\s?\#)|
+    [,;]?\s*(?i:1st|2nd|3rd|[4-9]th)|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?i:et\.?\s+al|&\s+al)\.?|
