@@ -47,12 +47,6 @@ module DwcAgent
         expect(parsed).to eq([])
       end
 
-      it "should remove 'ohne angaben' (= without disclosure)" do
-        input = "ohne angaben"
-        parsed = parser.parse(input)
-        expect(parsed).to eq([])
-      end
-
       it "should remove 'keine angaben' (= not specified)" do
         input = "keine angaben"
         parsed = parser.parse(input)
