@@ -793,6 +793,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "T.F.", particle: nil, family: "Name", suffix: nil })
       end
 
+      it "should not reject 'ALQthanin'" do
+        input = "Rahmah Nasser ALQthanin"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Rahmah Nasser", particle: nil, family: "ALQthanin", suffix: nil })
+      end
+
     end
 
   end

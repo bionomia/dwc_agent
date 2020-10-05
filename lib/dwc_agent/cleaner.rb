@@ -114,7 +114,7 @@ module DwcAgent
         return blank_name
       end
 
-      if !family.nil? && family.match(/^[A-Z]{2}/)
+      if given.nil? && !family.nil? && family.match(/^[A-Z]{2}/)
         return blank_name
       end
 
