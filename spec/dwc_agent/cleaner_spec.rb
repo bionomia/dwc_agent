@@ -804,7 +804,35 @@ module DwcAgent
         input = "J. Jerratyka.."
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.", particle: nil, family: "Jerratyka", suffix: nil })        
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.", particle: nil, family: "Jerratyka", suffix: nil })
+      end
+
+      it "should strip out 'C. Pau 1aaa-05'" do
+        input = "C. Pau 1aaa-05"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "C.", particle: nil, family: "Pau", suffix: nil })
+      end
+
+      it "should strip out 'AA4'" do
+        input = "Aysan Y. AA4"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Y.", particle: nil, family: "Aysan", suffix: nil })
+      end
+
+      it "should strip out '2015bb'" do
+        input = "B.L. Isaac 2015bb"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "B.L.", particle: nil, family: "Isaac", suffix: nil })
+      end
+
+      it "should strip out 'CC111'" do
+        input = "Glaux C. CC111"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "C.", particle: nil, family: "Glaux", suffix: nil })
       end
 
     end
