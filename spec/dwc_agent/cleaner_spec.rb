@@ -800,6 +800,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Rahmah Nasser", particle: nil, family: "ALQthanin", suffix: nil })
       end
 
+      it "should strip out extra dots at the end of a name" do
+        input = "J. Jerratyka.."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.", particle: nil, family: "Jerratyka", suffix: nil })        
+      end
+
     end
 
   end
