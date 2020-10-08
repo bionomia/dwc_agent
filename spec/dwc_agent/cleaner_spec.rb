@@ -835,6 +835,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "C.", particle: nil, family: "Glaux", suffix: nil })
       end
 
+      it "should recognize 'Aa' as a family" do
+        input = "Van Der Aa"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Van Der", particle: nil, family: "Aa", suffix: nil })
+      end
+
     end
 
   end
