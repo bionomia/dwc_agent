@@ -89,7 +89,7 @@ module DwcAgent
     \b(?i:to\s+(sub)?spp?)\.?|
     (?i:nom\.?\s+rev\.?)|
     FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|USGS|NAWQA|
-    \b,?\s*(?i:para|topo|syn)?(?i:type)|
+    (?i:para|topo|syn|holo|allo|choro|eco|iso|isoepi|isopara|karyo|morpho|neo|mero|pala|paralecto|paraneo|photo|schizo)?(?i:types?\:?)|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
     (?i:university|museum|exhibits?)|
     (?i:uqam)|
@@ -244,7 +244,7 @@ module DwcAgent
     (?i:skeleton)|
     (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|(e|é)x?chang(e|é)s?|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
     (?i:submersible)|
-    (?i:synonymy?)|(topo|syn|holo)type|
+    (?i:synonymy?)|
     (?i:systematic|perspective)|
     \s+(?i:off)\s+|
     \s*(?i:too)\s+|\s*(?i:the)\s+|

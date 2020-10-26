@@ -1704,5 +1704,18 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["Frances", "Smith", nil, nil])
     end
 
+    it "should remove 'Paralectotypes'" do
+      input = "Paralectotypes"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(0)
+    end
+
+    it "should remove isotype" do
+      input = "Isotype (MO) P.J.M. Maas"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["P.J.M.", "Maas", nil, nil])
+    end
+
   end
 end
