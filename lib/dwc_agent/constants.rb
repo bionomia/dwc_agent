@@ -12,6 +12,7 @@ module DwcAgent
     \bu\.\s*a\.|
     \b[,;]?\s*(?i:and|&)?\s*(?i:others|party)\s*\b|
     \b[,;]?\s*(?i:etc)\.?|
+    \b[,;]?\s*(?i:exp)\.?\s*(\b|\z)|
     \b[,;]?\s*(?i:on)\b|
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
@@ -216,6 +217,7 @@ module DwcAgent
     (?i:exc?s?icc?at(a|i))|
     (?i:evidence)|
     (?i:exporter)|
+    (?i:foundation)|
     (?i:ichthyology)|
     (?i:inconn?u)|
     (?i:internation|gou?vern|ministry|extension|unit|district|provincial|na(c|t)ional|military|region|environ|natur(e|al)|naturelles|division|program|direction|national)|

@@ -1717,5 +1717,19 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["P.J.M.", "Maas", nil, nil])
     end
 
+    it "should remove Exp." do
+      input = "A.C. Twomey Exp."
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["A.C.", "Twomey", nil, nil])
+    end
+
+    it "should remove Exp and digits" do
+      input = "Kimberley Exp 2772"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["Kimberley", nil, nil, nil])
+    end
+
   end
 end
