@@ -16,13 +16,10 @@ module DwcAgent
         suffix: SUFFIX
       }
       @namae = Namae::Parser.new(options)
-
       @strip_out_regex = Regexp.new STRIP_OUT.to_s
-      @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
       @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join].to_s
       @phrase_subs_regex = Regexp.new PHRASE_SUBS.keys.map{|a| Regexp.escape a }.join('|').to_s
-      @complex_separators_regex = Regexp.new COMPLEX_SEPARATORS.to_s
-      @add_separators_regex = Regexp.new %r{(\S{1}\.)([[:alpha:]]{2,})}.to_s
+      @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
     end
 
     # Parses the passed-in string and returns a list of names.
@@ -35,8 +32,7 @@ module DwcAgent
       name.gsub!(/\[|\]/, '')
       name.gsub!(@char_subs_regex, CHAR_SUBS)
       name.gsub!(@phrase_subs_regex, PHRASE_SUBS)
-      name.gsub!(@add_separators_regex, '\1 \2')
-      name.gsub!(@complex_separators_regex, '\1 | \2')
+      SEPARATORS.each{|key, value| name.gsub!(Regexp.new(key), value)}
       name.gsub!(@residual_terminators_regex, '')
       name.squeeze!(' ')
       name.strip!

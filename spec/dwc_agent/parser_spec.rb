@@ -1731,5 +1731,19 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :title, :suffix)).to eq(["Kimberley", nil, nil, nil])
     end
 
+    it "should move 'van' to the beginning of the name" do
+      input = "Heurn W.C. van"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :particle)).to eq(["W.C.", "Heurn", "van"])
+    end
+
+    it "should move 'von' to the beginning of the name" do
+      input = "Humboldt A. von"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :particle)).to eq(["A.", "Humboldt", "von"])
+    end
+
   end
 end
