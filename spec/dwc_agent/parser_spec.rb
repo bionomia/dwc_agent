@@ -1752,5 +1752,13 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :particle)).to eq(["A.", "Humboldt", "von"])
     end
 
+    it "should construct two names from people who share a Family name" do
+      input = "M.R. and J.D. Shorthouse"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["M.R.", "Shorthouse"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["J.D.", "Shorthouse"])
+    end
+
   end
 end
