@@ -1784,5 +1784,26 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["RS", "Shorthouse"])
     end
 
+    it "should strip out 'ded.'" do
+      input = "Augener ded. 7.VI.1928"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Augener", nil])
+    end
+
+    it "should strip out 'don.' at the beginning" do
+      input = "don. A. Hüllmann"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Hüllmann"])
+    end
+
+    it "should strip out 'don.' within text" do
+      input = "Leg. et don. B.W. Hoeksema"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["B.W.", "Hoeksema"])
+    end
+
   end
 end
