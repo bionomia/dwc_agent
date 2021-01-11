@@ -1832,5 +1832,22 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["Shin", nil])
     end
 
+    it "should split three family names with last one separated with ampersand" do
+      input = "Wasum,Scur & Kegler"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Wasum", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Scur", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["Kegler", nil])
+    end
+
+    it "should split two names that might have looked like three" do
+      input = "Wasum,Scur & Kegler,R"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Scur", "Wasum"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["R", "Kegler"])
+    end
+
   end
 end
