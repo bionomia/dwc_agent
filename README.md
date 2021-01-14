@@ -25,6 +25,7 @@ names = DwcAgent.parse 'Chaboo, Bennett, Shin'
 => [#<Name given="Chaboo">, #<Name given="Bennett">, #<Name given="Shin">]
 DwcAgent.clean names[0]
 => {:title=>nil, :appellation=>nil, :given=>nil, :particle=>nil, :family=>"Chaboo", :suffix=>nil}
+```
 
 ```ruby
 require "dwc_agent"
