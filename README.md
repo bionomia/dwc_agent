@@ -17,6 +17,15 @@ names = DwcAgent.parse '13267 (male) W.J. Cody; 13268 (female) W.E. Kemp'
 => [#<Name family="Cody" given="W.J.">, #<Name family="Kemp" given="W.E.">]
 ```
 
+Parsing is occasionally messy & so it is advisable to make use of the additional `clean` method for each parsed name. However, the response is a Hash and not an object of type `Namae::Name`.
+
+```ruby
+require "dwc_agent"
+names = DwcAgent.parse 'Chaboo, Bennett, Shin'
+=> [#<Name given="Chaboo">, #<Name given="Bennett">, #<Name given="Shin">]
+DwcAgent.clean names[0]
+=> {:title=>nil, :appellation=>nil, :given=>nil, :particle=>nil, :family=>"Chaboo", :suffix=>nil}
+
 ```ruby
 require "dwc_agent"
 score = DwCAgent.similarity_score('John C.', 'John')
