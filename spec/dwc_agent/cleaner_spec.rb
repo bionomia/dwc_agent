@@ -835,6 +835,15 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Van Der", particle: nil, family: "Aa", suffix: nil })
       end
 
+      it "should strip out 'malacology'" do
+        input = "Ms. Alison Clair Miller - Australian Museum - Malacology"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(3)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: "Ms.", given: "Alison Clair", particle: nil, family: "Miller", suffix: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+        expect(cleaner.clean(parsed[2]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil })
+      end
+
     end
 
   end

@@ -230,6 +230,7 @@ module DwcAgent
     (?i:o?\.?m\.?n\.?r\.?)|
     (?i:measurement)|
     (?i:ent(o|y)mology)|
+    (?i:malacology)|
     (?i:geographic)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
