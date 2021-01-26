@@ -1776,6 +1776,15 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Shorthouse"])
     end
 
+    it "should construct two names from shared Family name, separated by '&' without duplicating other names" do
+      input = "M. & J. Shorthouse & A.Y. Jackson"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["M.", "Shorthouse"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Shorthouse"])
+      expect(parsed[2].values_at(:given, :family)).to eq(["A.Y.", "Jackson"])
+    end
+
     it "should construct two names from shared Family name, separated by '&' no punctuation" do
       input = "DD & RS Shorthouse"
       parsed = parser.parse(input)
