@@ -92,7 +92,7 @@ module DwcAgent
     FNA|DAO|HUH|FDNMB|MNHN|PNI|USNM|ZMUC|CSIRO|ACAD|USGS|NAWQA|
     (?i:para|topo|syn|holo|allo|choro|eco|iso|isoepi|isopara|karyo|morpho|neo|mero|pala|paralecto|paraneo|photo|schizo)?(?i:types?\:?)|
     AFSC\/POLISH\s+SORTING\s+CTR\.?|
-    (?i:university|museum|exhibits?)|
+    (?i:university|mus(e|é)um|exhibits?)|
     (?i:uqam)|
     (?i:sem\s+(colec?tor|data))|
     (?i:no\s+coll\.?(ector)?)|
@@ -118,6 +118,7 @@ module DwcAgent
     ^[-,.\s;*\d]+\s?|
     \s*?-{2,}\s*?|
     ^(?i:exc?p?)[:.]\s*|
+    \:?\s*(?i:exch)(\b|\z)|
     \s+de\s*$|
     \.{2,}$
   }x
@@ -299,11 +300,19 @@ module DwcAgent
     "dissection",
     "entered",
     "erased",
+    "expd",
+    "expdn",
+    "hist",
+    "historical",
+    "historie",
     "indecipherable",
+    "inst",
     "nomenclatural",
     "orig",
+    "qld",
     "registration",
     "science",
+    "study",
     "wg",
     "wm",
     "wn",
