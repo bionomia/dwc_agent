@@ -1543,7 +1543,7 @@ module DwcAgent
         input = "Jean-Baptiste Leschenault de La Tour"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(["Jean-Baptiste Leschenault", "La Tour"])
+        expect(parsed[0].values_at(:given, :family, :particle)).to eq(["Jean-Baptiste Leschenault", "Tour", "de La"])
       end
 
       it "should parse a list each element within containing a role" do
