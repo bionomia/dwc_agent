@@ -3,11 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 require "dwc_agent/version"
 
 Gem::Specification.new do |s|
-  s.required_ruby_version = '~> 2.7'
+  s.required_ruby_version = '>= 2.7'
   s.name        = 'dwc_agent'
   s.version     = DwcAgent::Version.version
   s.license     = 'MIT'
-  s.date        = '2021-03-23'
+  s.date        = '2021-04-07'
   s.summary     = "Parse Darwin Core agent terms such as recordedBy and identifiedBy"
   s.description = "Parses the typically messy content in Darwin Core terms that contain people names"
   s.authors     = ["David P. Shorthouse"]
