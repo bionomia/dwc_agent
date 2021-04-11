@@ -1814,7 +1814,7 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["B.W.", "Hoeksema"])
     end
 
-    it "whould split what looks like three comma-separated family names" do
+    it "should split what looks like three comma-separated family names" do
       input = "Chaboo, Bennett, Shin"
       parsed = parser.parse(input)
       expect(parsed.size).to eq(3)
@@ -1823,7 +1823,7 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["Shin", nil])
     end
 
-    it "whould split what looks like four comma-separated family names" do
+    it "should split what looks like four comma-separated family names" do
       input = "Chaboo, Bennett, Shin, Smith"
       parsed = parser.parse(input)
       expect(parsed.size).to eq(4)
@@ -1831,6 +1831,17 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["Bennett", nil])
       expect(parsed[2].values_at(:given, :family)).to eq(["Shin", nil])
       expect(parsed[3].values_at(:given, :family)).to eq(["Smith", nil])
+    end
+
+    it "should split what looks like four comma-separated family names" do
+      input = "Chaboo, Bennett, Shin, Smith & Jackson"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(5)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Chaboo", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Bennett", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["Shin", nil])
+      expect(parsed[3].values_at(:given, :family)).to eq(["Smith", nil])
+      expect(parsed[4].values_at(:given, :family)).to eq(["Jackson", nil])
     end
 
     it "should not split what does not look like comma-separated family names" do
