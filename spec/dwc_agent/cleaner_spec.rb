@@ -851,6 +851,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "Thomas", particle: nil, family: "Bown", suffix: nil })
       end
 
+      it "should strip out ex herb." do
+        input = "ex herb. A. Braun"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "A.", particle: nil, family: "Braun", suffix: nil })
+      end
+
     end
 
   end

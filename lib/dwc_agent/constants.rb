@@ -118,6 +118,7 @@ module DwcAgent
     ^[-,.\s;*\d]+\s?|
     \s*?-{2,}\s*?|
     ^(?i:exc?p?)[:.]\s*|
+    (?i:ex\.?\s+herb\.?\s*)|
     \:?\s*(?i:exch)(\b|\z)|
     \s+de\s*$|
     \.{2,}$
@@ -246,6 +247,7 @@ module DwcAgent
     (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
     (?i:popa\s+observers?)|
     (?i:recreation|culture)|
+    (?i:renseigné)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
     (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|exposit|alliance|protective|circle)|
     (?i:commercial|company|control|product)|
