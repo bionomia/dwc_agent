@@ -469,8 +469,8 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Piotr", particle: nil, family: "Zuchlinski", suffix: nil })
       end
 
-      it "should strip out other country names entirely like Belgium" do
-        input = "Belgium"
+      it "should strip out other country names entirely like Germany" do
+        input = "Germany"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(0)
       end
