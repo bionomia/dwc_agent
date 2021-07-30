@@ -8,7 +8,7 @@ names = []
 DwcAgent.parse(ARGV[0].dup).each do |r|
   name = DwcAgent.clean(r)
   if !name.family.nil? && name.family.length >= 2
-    names << name
+    names << name.to_h
   end
 end
-puts names.uniq.to_h.to_json
+puts names.uniq.to_json
