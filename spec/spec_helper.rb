@@ -21,7 +21,7 @@ def clean(input)
 end
 
 def json(input)
-  parse(input).map{ |a| clean(a) }.to_json
+  parse(input).map{ |a| clean(a).to_h }.to_json
 end
 
 def read_test_file

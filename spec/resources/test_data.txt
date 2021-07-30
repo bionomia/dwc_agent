@@ -17,366 +17,366 @@ MRI PAS || []
 
 Person String || []
 
-[no data] || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+[no data] || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null }]
 
-[no disponible] || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+[no disponible] || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null }]
 
-Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jeff Saarela; Canadian Museum of Nature || [{"family":"Saarela", "given":"Jeff", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-!B. P. J. Molloy (CHR) || [{"family":"Molloy", "given":"B.P.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+!B. P. J. Molloy (CHR) || [{"family":"Molloy", "given":"B.P.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Tanner, C.A. || [{"family":"Tanner", "given":"C.A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Tanner, C.A. || [{"family":"Tanner", "given":"C.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-23440a Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+23440a Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-13267 (male) W.J. Cody; 13268 (female) W.E. Kemp || [{"family":"Cody", "given":"W.J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Kemp", "given":"W.E.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+13267 (male) W.J. Cody; 13268 (female) W.E. Kemp || [{"family":"Cody", "given":"W.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Kemp", "given":"W.E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-23440G Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+23440G Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-23440(a) Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+23440(a) Ian D. MacDonald || [{"family":"MacDonald", "given":"Ian D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith et al || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith et al || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith; et al || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith; et al || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith et al. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith et al. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith et. al. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith et. al. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Collector(s): Richard D. Worthington || [{"family":"Worthington", "given":"Richard D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Collector(s): Richard D. Worthington || [{"family":"Worthington", "given":"Richard D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith and others || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith and others || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith & others || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith & others || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J.R.Smith || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J.R.Smith || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Sutherland", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J.R.Smith and P.Sutherland || [{"family":"Smith", "given":"J.R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Sutherland", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rev. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": "Rev."}]
+Rev. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": "Rev.", "dropping_particle": null, "nick": null}]
 
-Fr. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": "Fr.", "suffix": null, "title": null}]
+Fr. Jack Smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": "Fr.", "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Miss", "suffix": null, "title": null}]
+Miss Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Miss", "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Mrs.", "suffix": null, "title": null}]
+Mrs. Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Mrs.", "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Ms", "suffix": null, "title": null}]
+Ms Penelope Cruz || [{"family":"Cruz", "given":"Penelope", "particle":null, "appellation": "Ms", "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith etc || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith etc || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith etc. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith etc. || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith, 2009 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith, 2009 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-W.P. Coreneuk(?) || [{"family":"Coreneuk", "given":"W.P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+W.P. Coreneuk(?) || [{"family":"Coreneuk", "given":"W.P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Game Dept.  prep. C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Game Dept.  prep. C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-prob. A C Ziegler || [{"family":"Ziegler", "given":"A.C.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+prob. A C Ziegler || [{"family":"Ziegler", "given":"A.C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-prep. C.J. Guiguet   || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+prep. C.J. Guiguet   || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-prep. by C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+prep. by C.J. Guiguet || [{"family":"Guiguet", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-B. Pfeiffer prep. || [{"family":"Pfeiffer", "given":"B.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+B. Pfeiffer prep. || [{"family":"Pfeiffer", "given":"B.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-R.H. Mackay  prep. I. McTaggart-Cowan || [{"family":"Mackay", "given":"R.H.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"McTaggart-Cowan", "given":"I.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+R.H. Mackay  prep. I. McTaggart-Cowan || [{"family":"Mackay", "given":"R.H.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"McTaggart-Cowan", "given":"I.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-via Serena Lowartz || [{"family":"Lowartz", "given":"Serena", "particle":null, "appellation": null, "suffix": null, "title": null}]
+via Serena Lowartz || [{"family":"Lowartz", "given":"Serena", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-D.B. Jepsen + T. L. McGuire || [{"family":"Jepsen", "given":"D.B.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"McGuire", "given":"T.L.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+D.B. Jepsen + T. L. McGuire || [{"family":"Jepsen", "given":"D.B.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"McGuire", "given":"T.L.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith stet! || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith stet! || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith stet 1989 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith stet 1989 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith stet, 1989 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith stet, 1989 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith e Carlos Santos || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Santos", "given": "Carlos", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith e Carlos Santos || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Santos", "given": "Carlos", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-W. C. Gagne, G. Young, & G. Nishida || [{"family":"Gagne", "given":"W.C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Young", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Nishida", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+W. C. Gagne, G. Young, & G. Nishida || [{"family":"Gagne", "given":"W.C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Young", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Nishida", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack E Smith || [{"family":"Smith", "given":"Jack E.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack E Smith || [{"family":"Smith", "given":"Jack E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 UNKNOWN || []
 
-Lucanus, O. (importer) || [{"family":"Lucanus", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Lucanus, O. (importer) || [{"family":"Lucanus", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-coll A Gyzen || [{"family":"Gyzen", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+coll A Gyzen || [{"family":"Gyzen", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A.B. Joly Coll. || [{"family":"Joly", "given":"A.B.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A.B. Joly Coll. || [{"family":"Joly", "given":"A.B.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Streng Colln. || [{"family":"Streng", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+Streng Colln. || [{"family":"Streng", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J G MILLIAS COLLN || [{"family":"Millias", "given":"J.G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J G MILLIAS COLLN || [{"family":"Millias", "given":"J.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-O. Conle & F. Hennemann Colls. || [{"family":"Conle", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Hennemann", "given":"F.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+O. Conle & F. Hennemann Colls. || [{"family":"Conle", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Hennemann", "given":"F.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-D.G. Colls || [{"family":"Colls", "given":"D.G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+D.G. Colls || [{"family":"Colls", "given":"D.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-FAH Sperling || [{"family":"Sperling", "given":"F.A.H.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+FAH Sperling || [{"family":"Sperling", "given":"F.A.H.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Spencer", "given":"G.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Spencer", "given":"G.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A. Pedrola i A. Aguilella || [{"family":"Pedrola", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Aguilella", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A. Pedrola i A. Aguilella || [{"family":"Pedrola", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Aguilella", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith - Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"St-Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith - Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"St-Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith   –   Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"St-Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith   –   Yves St-Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"St-Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith and Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith and Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smithor or Orlando Archambault || [{"family":"Smithor", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Orlando", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smithor or Orlando Archambault || [{"family":"Smithor", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Orlando", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith AND Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith AND Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith and Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Johnson", "given":"Don", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith and Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Johnson", "given":"Don", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith; Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith; Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Puttock, C.F. James, S.A. || [{"family":"Puttock", "given":"C.F.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"James", "given":"S.A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Puttock, C.F. James, S.A. || [{"family":"Puttock", "given":"C.F.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"James", "given":"S.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith | Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith | Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Groom Q., Desmet P. || [{"family":"Groom", "given":"Q.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Desmet", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Groom Q., Desmet P. || [{"family":"Groom", "given":"Q.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Desmet", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith|Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith|Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith & Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith & Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Savage", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Wheeler", "given":"T.A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Savage", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Wheeler", "given":"T.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Dickinson", "given":"J.C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Marshall", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Dickinson", "given":"J.C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Marshall", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Dawson", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Wyatt", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Gerring", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Dawson", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Wyatt", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Gerring", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Werneke", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Taphorn", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"German", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Osorio", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Werneke", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Taphorn", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"German", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Osorio", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith / Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith / Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith et Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith et Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith with Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith with Yves Archambault || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith with Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Johnson", "given":"Don", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith with Yves Archambault and Don Johnson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Johnson", "given":"Don", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-by P. Zika || [{"family":"Zika", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+by P. Zika || [{"family":"Zika", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-annotated Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+annotated Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-annotated by Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+annotated by Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson conf Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson conf. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson conf. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson conf by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson conf by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson conf. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson conf. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson confirmed by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson confirmed by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-C.E. Garton 1980 checked:W.G. Argus 1980 || [{"family":"Garton", "given":"C.E.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Argus", "given":"W.G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+C.E. Garton 1980 checked:W.G. Argus 1980 || [{"family":"Garton", "given":"C.E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Argus", "given":"W.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson checked by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson checked by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Checked By Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Checked By Yves Archambault || [{"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson dupl Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson dupl Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson dupl. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson dupl. Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson dup by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson dup by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Johnson dup. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Johnson dup. by Yves Archambault || [{"family":"Johnson", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Johnson ex. by Yves Archambault || [{"family":"Johnson", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Johnson ex. by Yves Archambault || [{"family":"Johnson", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron ex by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron ex by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron examined by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron examined by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron in part Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron in part Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron in part by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron in part by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Smith redet. by Michael Jackson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Jackson", "given":"Michael", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Smith redet. by Michael Jackson || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Jackson", "given":"Michael", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Anna Roberts stet R. Scagel 1981 || [{"family":"Roberts", "given":"Anna", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Scagel", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Anna Roberts stet R. Scagel 1981 || [{"family":"Roberts", "given":"Anna", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Scagel", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron ver by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron ver by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron ver. by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron ver. by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Rex Byron verified by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Rex Byron verified by Yves Archambault || [{"family":"Byron", "given":"Rex", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Archambault", "given":"Yves", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-W.W. Diehl; Verif.: C.L. Shear || [{"family":"Diehl", "given":"W.W.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Shear", "given":"C.L.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+W.W. Diehl; Verif.: C.L. Shear || [{"family":"Diehl", "given":"W.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Shear", "given":"C.L.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Vérifié Michelle Garneau || [{"family":"Garneau", "given":"Michelle", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Vérifié Michelle Garneau || [{"family":"Garneau", "given":"Michelle", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Gji; Verif. S. Churchill; 1980 || [{"family":"Gji", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Churchill", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Gji; Verif. S. Churchill; 1980 || [{"family":"Gji", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Churchill", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given":"Adam F.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Morton", "given":"J.K.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Adam F. Szczawinski ; J.K. Morton (FNA) 1993 || [{"family":"Szczawinski", "given":"Adam F.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Morton", "given":"J.K.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-S. Ross 12/i/1999 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+S. Ross 12/i/1999 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-S. Ross III.1990 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": "III.", "title": null}]
+S. Ross III.1990 || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": "III.", "title": null, "dropping_particle": null, "nick": null}]
 
-Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Xinxiao Wang || [{"family":"Wang", "given":"Xinxiao", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Perrin", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+S. Ross Ver By P. Perrin || [{"family":"Ross", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Perrin", "given":"P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":"Frère", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Marie-Victorin, frère || [{"family":"Marie-Victorin", "given":"Frère", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J. Macoun (See Note Inside) || [{"family":"Macoun", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Bird,C.J. 9/Mar/1981: nom. rev. || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Bird,C.J. 9/Mar/1981: nom. rev. || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Roy, Claude   Stet ! || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Roy, Claude   Stet ! || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A.E. Porsild; stet! Luc Brouillet (MT) 2003 || [{"family":"Porsild", "given":"A.E.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Brouillet", "given":"Luc", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A.E. Porsild; stet! Luc Brouillet (MT) 2003 || [{"family":"Porsild", "given":"A.E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Brouillet", "given":"Luc", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Roy, Claude (See Note Inside) || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Roy, Claude (see note) || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Roy, Claude (see note) || [{"family":"Roy", "given":"Claude", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Christian Kronenstet ! || [{"family":"Kronenstet", "given":"Christian", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Brayshaw", "given":"Thomas C.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Vernon C. Brink; Thomas C. Brayshaw stet! 1979 || [{"family":"Brink", "given":"Vernon C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Brayshaw", "given":"Thomas C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-4073 A.A. Beetle, with D.E. Beetle and Alva Hansen || [{"family":"Beetle", "given":"A.A.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Beetle", "given":"D.E.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Hansen", "given":"Alva", "particle":null, "appellation": null, "suffix": null, "title": null}]
+4073 A.A. Beetle, with D.E. Beetle and Alva Hansen || [{"family":"Beetle", "given":"A.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Beetle", "given":"D.E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Hansen", "given":"Alva", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-C. Tanner.; M.W. Hawkes || [{"family":"Tanner", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Hawkes", "given":"M.W.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+C. Tanner.; M.W. Hawkes || [{"family":"Tanner", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Hawkes", "given":"M.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-CJ Bird,21-12-1971 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+CJ Bird,21-12-1971 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-CJ Bird,21 Dec. 1999 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+CJ Bird,21 Dec. 1999 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Mortensen,Agnes Mols,2010 || [{"family":"Mortensen", "given":"Agnes Mols", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Mortensen,Agnes Mols,2010 || [{"family":"Mortensen", "given":"Agnes Mols", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Robert J. Bandoni (Photograph) || [{"family":"Bandoni", "given":"Robert J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Robert J. Bandoni (Photograph) || [{"family":"Bandoni", "given":"Robert J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-S.A. Redhead- Sight Identification || [{"family":"Redhead", "given":"S.A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+S.A. Redhead- Sight Identification || [{"family":"Redhead", "given":"S.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jeffery M. Saarela 2005 (to subsp.)  || [{"family":"Saarela", "given":"Jeffery M.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jeffery M. Saarela 2005 (to subsp.)  || [{"family":"Saarela", "given":"Jeffery M.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Bird, Carolyn J.; Fide: Lindsay, J.G. || [{"family":"Bird", "given":"Carolyn J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Lindsay", "given":"J.G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Bird, Carolyn J.; Fide: Lindsay, J.G. || [{"family":"Bird", "given":"Carolyn J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Lindsay", "given":"J.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jan Jones Jan. 14, 2013 || [{"family":"Jones", "given":"Jan", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jan Jones Jan. 14, 2013 || [{"family":"Jones", "given":"Jan", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-G.J. Spencer per Sheila Lyons || [{"family":"Spencer", "given":"G.J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Lyons", "given":"Sheila", "particle":null, "appellation": null, "suffix": null, "title": null}]
+G.J. Spencer per Sheila Lyons || [{"family":"Spencer", "given":"G.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Lyons", "given":"Sheila", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Richard Robohm on 15 January 2013 || [{"family":"Robohm", "given":"Richard", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Richard Robohm on 15 January 2013 || [{"family":"Robohm", "given":"Richard", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-C.J. Bird 20/Aug./1980 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+C.J. Bird 20/Aug./1980 || [{"family":"Bird", "given":"C.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-K. January; January, 1979 || [{"family":"January", "given":"K.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+K. January; January, 1979 || [{"family":"January", "given":"K.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Michael May May 2013 || [{"family":"May", "given":"Michael", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Michael May May 2013 || [{"family":"May", "given":"Michael", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jacques, Avril décembre 2013 || [{"family":"Jacques", "given":"Avril", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jacques, Avril décembre 2013 || [{"family":"Jacques", "given":"Avril", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jacques, Avril avril 2013 || [{"family":"Jacques", "given":"Avril", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jacques, Avril avril 2013 || [{"family":"Jacques", "given":"Avril", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Paul Kroeger 2006 May || [{"family":"Kroeger", "given":"Paul", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Paul Kroeger 2006 May || [{"family":"Kroeger", "given":"Paul", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Paul Kroeger 2006 may || [{"family":"Kroeger", "given":"Paul", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Paul Kroeger 2006 may || [{"family":"Kroeger", "given":"Paul", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Henrik Andersen&jon Feilberg || [{"family":"Andersen", "given":"Henrik", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Feilberg", "given":"Jon", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Henrik Andersen&jon Feilberg || [{"family":"Andersen", "given":"Henrik", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Feilberg", "given":"Jon", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Winterbottom, R.;Katz, L.;& CI team || [{"family":"Winterbottom", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Katz", "given":"L.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+Winterbottom, R.;Katz, L.;& CI team || [{"family":"Winterbottom", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Katz", "given":"L.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-JH Picard || [{"family":"Picard", "given":"J.H.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+JH Picard || [{"family":"Picard", "given":"J.H.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Picard J.H. || [{"family":"Picard", "given":"J.H.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Picard J.H. || [{"family":"Picard", "given":"J.H.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J.Z. Cao || [{"family":"Cao", "given":"J.Z.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J.Z. Cao || [{"family":"Cao", "given":"J.Z.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack smith || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-C. YOUNG || [{"family":"Young", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+C. YOUNG || [{"family":"Young", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Chris R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Chris R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-CHRIS R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+CHRIS R.T. YOUNG || [{"family":"Young", "given":"Chris R.T.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Sicard, Léas || [{"family":"Sicard", "given":"Léas", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Sicard, Léas || [{"family":"Sicard", "given":"Léas", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J. Green; R. Driskill; J. W. Markham L. D. Druehl || [{"family":"Green", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Driskill", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+J. Green; R. Driskill; J. W. Markham L. D. Druehl || [{"family":"Green", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Driskill", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, Matthew P; Ho, Hsuan-Ching || [{"family":"Smith", "given":"William Leo", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Bentley", "given":"Andrew C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Girard", "given":"Matthew G.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Davis", "given":"Matthew P.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Ho", "given":"Hsuan-Ching", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Smith, William Leo; Bentley, Andrew C; Girard, Matthew G; Davis, Matthew P; Ho, Hsuan-Ching || [{"family":"Smith", "given":"William Leo", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Bentley", "given":"Andrew C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Girard", "given":"Matthew G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Davis", "given":"Matthew P.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Ho", "given":"Hsuan-Ching", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Tuck, Leslie M.; Vladykov, Vadim D. (source) || [{"family":"Tuck", "given":"Leslie M.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Vladykov", "given":"Vadim D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Tuck, Leslie M.; Vladykov, Vadim D. (source) || [{"family":"Tuck", "given":"Leslie M.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Vladykov", "given":"Vadim D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-White* || [{"family":"White", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+White* || [{"family":"White", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Taylor", "given":"Terry M.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Taylor", "given":"Terry M.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Wft || [{"family":"Wft", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Wft || [{"family":"Wft", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Wit || [{"family":"Wit", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack Wit || [{"family":"Wit", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack SmitH || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jack SmitH || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-RGBennett || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+RGBennett || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-R.K. Godfrey a. R.D. Houk || [{"family":"Godfrey", "given":"R.K.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Houk", "given":"R.D.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+R.K. Godfrey a. R.D. Houk || [{"family":"Godfrey", "given":"R.K.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Houk", "given":"R.D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-R.K. A. Godfrey || [{"family":"Godfrey", "given":"R.K.A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+R.K. A. Godfrey || [{"family":"Godfrey", "given":"R.K.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Paula Maybee || [{"family":"Maybee", "given":"Paula", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Paula Maybee || [{"family":"Maybee", "given":"Paula", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Paula Maybee maybe || [{"family":"Maybee", "given":"Paula", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Paula Maybee maybe || [{"family":"Maybee", "given":"Paula", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Stephen Darbyshire 2005 (by correspondance) || [{"family":"Darbyshire", "given":"Stephen", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Stephen Darbyshire 2005 (by correspondance) || [{"family":"Darbyshire", "given":"Stephen", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder) || [{"family":"Holm", "given":"E.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Ng", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Litwiller", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Lee", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder) || [{"family":"Holm", "given":"E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Ng", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Litwiller", "given":"S.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Lee", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A A Court, D J Court || [{"family":"Court", "given":"A.A.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Court", "given":"D.J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A A Court, D J Court || [{"family":"Court", "given":"A.A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Court", "given":"D.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A B  Rose, J W  Trudgeon || [{"family":"Rose", "given":"A.B.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Trudgeon", "given":"J.W.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A B  Rose, J W  Trudgeon || [{"family":"Rose", "given":"A.B.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Trudgeon", "given":"J.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas || [{"family":"Armbruster", "given":"J.W.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Armbruster", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Armbruster", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Armbruster", "given":"B.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Armbruster", "given":"L.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Armbruster", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Thomas", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Thomas", "given":"E.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J.W. Armbruster, C Armbruster, A Armbruster, B Armbruster, L Armbruster, R Armbruster, J Thomas, E Thomas || [{"family":"Armbruster", "given":"J.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Armbruster", "given":"C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Armbruster", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Armbruster", "given":"B.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Armbruster", "given":"L.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Armbruster", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Thomas", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Thomas", "given":"E.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A C. Sanders, G. Helmkamp || [{"family":"Sanders", "given":"A.C.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Helmkamp", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A C. Sanders, G. Helmkamp || [{"family":"Sanders", "given":"A.C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Helmkamp", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-N. Navarro, G. Gómez y A Ferreira || [{"family":"Navarro", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Gómez", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null}, {"family":"Ferreira", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+N. Navarro, G. Gómez y A Ferreira || [{"family":"Navarro", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Gómez", "given":"G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Ferreira", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+A Y Jackson || [{"family":"Jackson", "given":"A.Y.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-leg. A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+leg. A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Leg: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Leg: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-LEG Chuvilin || [{"family":"Chuvilin", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null}]
+LEG Chuvilin || [{"family":"Chuvilin", "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-gift: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+gift: A. Chuvilin || [{"family":"Chuvilin", "given":"A.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Jeff Saarela; Person String || [{"family":"Saarela", "given":"Jeff", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+J.Oscoz  (ORCID: 0000-0002-8464-9442) || [{"family":"Oscoz", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R.", "particle":null, "appellation": null, "suffix": null, "title": "Esq."}]
+Charles R. Darwin Esq. || [{"family":"Darwin", "given":"Charles R.", "particle":null, "appellation": null, "suffix": null, "title": "Esq.", "dropping_particle": null, "nick": null}]
 
-Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Wen-Bin Yu || [{"family":"Yu", "given":"Wen-Bin", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+R. Bieler : Field Museum of Natural History || [{"family":"Bieler", "given":"R.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Adolphe-Théodore Brongniart || [{"family":"Brongniart", "given":"Adolphe-Théodore", "particle":null, "appellation": null, "suffix": null, "title": null}]
+Adolphe-Théodore Brongniart || [{"family":"Brongniart", "given":"Adolphe-Théodore", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl", "particle":"de", "appellation": null, "suffix": null, "title": null}]
+Leo Anton Karl de Ball || [{"family":"Ball", "given":"Leo Anton Karl", "particle":"de", "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-H.W. Lewis bis || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+H.W. Lewis bis || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-H.W. Lewis ter || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+H.W. Lewis ter || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-R. G. Helgesen : North Dakota State University || [{"family":"Helgesen", "given":"R.G.", "particle":null, "appellation": null, "suffix": null, "title": null}]
+R. G. Helgesen : North Dakota State University || [{"family":"Helgesen", "given":"R.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]

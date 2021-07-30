@@ -1,4 +1,5 @@
 module DwcAgent
+
   class Cleaner
 
     class << self
@@ -16,26 +17,25 @@ module DwcAgent
     # @param parsed_namae [Object] the namae object
     # @return [Hash] the given, family hash
     def clean(parsed_namae)
-      blank_name = { title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil }
 
       if parsed_namae.given && GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
-        return blank_name
+        return Namae::Name.new
       end
 
       if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
-        return blank_name
+        return Namae::Name.new
       end
 
       if parsed_namae.given && parsed_namae.given.length > 35
-        return blank_name
+        return Namae::Name.new
       end
 
       if parsed_namae.given && parsed_namae.given.count('.') >= 3 && /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
-        return blank_name
+        return Namae::Name.new
       end
 
       if parsed_namae.display_order =~ BLACKLIST
-        return blank_name
+        return Namae::Name.new
       end
 
       if parsed_namae.given &&
@@ -76,7 +76,7 @@ module DwcAgent
       end
 
       if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
-        return blank_name
+        return Namae::Name.new
       end
 
       parsed_namae.normalize_initials
@@ -111,22 +111,30 @@ module DwcAgent
       end
 
       if !family.nil? && family.match(/[A-Z]$/)
-        return blank_name
+        return Namae::Name.new
       end
 
       if given.nil? && !family.nil? && family.match(/^[A-Z]{2}/)
-        return blank_name
+        return Namae::Name.new
       end
 
       if !family.nil? && FAMILY_BLACKLIST.any?{ |s| s.casecmp(family) == 0 }
-        return blank_name
+        return Namae::Name.new
       end
 
       if !given.nil? && GIVEN_BLACKLIST.any?{ |s| s.casecmp(given) == 0 }
-        return blank_name
+        return Namae::Name.new
       end
 
-      { title: title, appellation: appellation, given: given, particle: particle, family: family, suffix: suffix }
+      name = {
+        title: title,
+        appellation: appellation,
+        given: given,
+        particle: particle,
+        family: family,
+        suffix: suffix
+      }
+      Namae::Name.new(name)
     end
 
   end

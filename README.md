@@ -14,22 +14,27 @@ Usage
 ```ruby
 require "dwc_agent"
 names = DwcAgent.parse '13267 (male) W.J. Cody; 13268 (female) W.E. Kemp'
-=> [#<Name family="Cody" given="W.J.">, #<Name family="Kemp" given="W.E.">]
+=>
+[#<struct Namae::Name family="Cody", given="W.J.", suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>,
+ #<struct Namae::Name family="Kemp", given="W.E.", suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>]
 ```
 
-Parsing is occasionally messy & so it is advisable to make use of the additional `clean` method for each parsed name. However, the response is a Hash and not an object of type `Namae::Name`.
+Parsing is occasionally messy & so it is advisable to make use of the additional `clean` method for each parsed name.
 
 ```ruby
 require "dwc_agent"
 names = DwcAgent.parse 'Chaboo, Bennett, Shin'
-=> [#<Name given="Chaboo">, #<Name given="Bennett">, #<Name given="Shin">]
+=>
+[#<struct Namae::Name family=nil, given="Chaboo", suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>,
+ #<struct Namae::Name family=nil, given="Bennett", suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>,
+ #<struct Namae::Name family=nil, given="Shin", suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>]
 DwcAgent.clean names[0]
-=> {:title=>nil, :appellation=>nil, :given=>nil, :particle=>nil, :family=>"Chaboo", :suffix=>nil}
+=> #<struct Namae::Name family="Chaboo", given=nil, suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>
 ```
 
 ```ruby
 require "dwc_agent"
-score = DwCAgent.similarity_score('John C.', 'John')
+score = DwcAgent.similarity_score('John C.', 'John')
 => 1.1
 ```
 
@@ -38,7 +43,7 @@ Or, from the command-line:
 ```bash
 gem install dwc_agent
 dwcagent "13267 (male) W.J. Cody; 13268 (female) W.E. Kemp"
-=> [{"title":null,"appellation":null,"given":"W.J.","particle":null,"family":"Cody","suffix":null},{"title":null,"appellation":null,"given":"W.E.","particle":null,"family":"Kemp","suffix":null}]
+=> [{"title":null,"appellation":null,"given":"W.J.","particle":null,"family":"Cody","suffix":null,"dropping_particle":null,"nick":null},{"title":null,"appellation":null,"given":"W.E.","particle":null,"family":"Kemp","suffix":null,"dropping_particle":null,"nick":null}]
 ```
 
 ```bash
@@ -62,7 +67,7 @@ Copyright
 
 Authors: [David P. Shorthouse][7]
 
-Copyright (c) 2018 Canadian Museum of Nature
+Copyright (c) 2021
 
 [1]: https://badge.fury.io/rb/dwc_agent.svg
 [2]: http://badge.fury.io/rb/dwc_agent

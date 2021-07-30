@@ -1467,10 +1467,10 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family, :appellation)).to eq(["R.K.", "Johnson", "Miss"])
       end
 
-      it "should recognize a title 'Major'" do
-        input = "Major Richard W. G. Hingston"
+      it "should recognize a title 'Maj'" do
+        input = "Maj Richard W. G. Hingston"
         parsed = parser.parse(input)
-        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Richard W. G.", "Hingston", "Major"])
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["Richard W. G.", "Hingston", "Maj"])
       end
 
       it "should strip out LANUV0071" do
