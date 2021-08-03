@@ -10,9 +10,23 @@ namestring = "A.D. and P. Smith"
 
 parsed = DwcAgent.parse(namestring)
 
-iterations = 2500
+iterations = 1000
 
 Benchmark.bm do |bm|
+
+  bm.report("similarity") do
+    iterations.times do
+      DwcAgent.similarity_score("Peter", "Peter Michael")
+    end
+  end
+
+  bm.report("dwc_agent_clean") do
+    iterations.times do
+      DwcAgent.parse(namestring).each do |a|
+        DwcAgent.clean(a)
+      end
+    end
+  end
 
   bm.report("dwc_agent") do
     iterations.times do

@@ -14,8 +14,8 @@ module DwcAgent
     # Cleans the passed-in namae object from the parse method and
     # re-organizes it to better match expected Darwin Core output.
     #
-    # @param parsed_namae [Object] the namae object
-    # @return [Hash] the given, family hash
+    # @param parsed_namae [Namae::Name] a Namae object
+    # @return Namae::Name [Object] a new Namae object
     def clean(parsed_namae)
 
       if parsed_namae.given && GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
