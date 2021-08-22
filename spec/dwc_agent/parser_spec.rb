@@ -1785,6 +1785,14 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["A.Y.", "Jackson"])
     end
 
+    it "should construct two names from a shared family name where the latter has letters with diacritical marks" do
+      input = "J. & A. Bornmüller"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J.", "Bornmüller"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["A.", "Bornmüller"])
+    end
+
     it "should construct two names from shared Family name, separated by '&' no punctuation" do
       input = "DD & RS Shorthouse"
       parsed = parser.parse(input)
