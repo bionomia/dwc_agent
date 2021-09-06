@@ -329,7 +329,7 @@ module DwcAgent
     "has not"
   ]
 
-  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|proff?|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|docteur|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|proff?|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|doct(eu|o)r|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
 
   APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
 

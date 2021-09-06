@@ -1449,6 +1449,12 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family, :title)).to eq(["R.K.", "Johnson", "Dr."])
       end
 
+      it "should recognize a title Dr." do
+        input = "Doctor R.K. Johnson,1972"
+        parsed = parser.parse(input)
+        expect(parsed[0].values_at(:given, :family, :title)).to eq(["R.K.", "Johnson", "Doctor"])
+      end
+
       it "should recognize an appellation Mrs." do
         input = "Mrs. R.K. Johnson,1972"
         parsed = parser.parse(input)
