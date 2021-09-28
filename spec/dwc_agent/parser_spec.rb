@@ -53,6 +53,18 @@ module DwcAgent
         expect(parsed).to eq([])
       end
 
+      it "should remove 'Field Number'" do
+        input = "Field Number"
+        parsed = parser.parse(input)
+        expect(parsed).to eq([])
+      end
+
+      it "should remove 'pitfall trap'" do
+        input = "pitfall trap"
+        parsed = parser.parse(input)
+        expect(parsed).to eq([])
+      end
+
       it "should remove extraneous capitalized letters within brackets" do
         input = "!B. P. J. Molloy (CHR)"
         parsed = parser.parse(input)

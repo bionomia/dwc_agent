@@ -56,6 +56,9 @@ module DwcAgent
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|
+    \b\s*(?i:field\s*number)|
+    \b\s*?(?i:malaise|light|pitfall|pan|suction|lobster|actinic light|cdc)\s*(?i:trap)\s*\b|
+    \|\s*(?i:collector\s*(field\s*)?number).*$|
     \(?[,]?\s*?(?i:(local)?\s?collectors?|data\s*recorder|netter|(oper|prepar)ator)\(?s?\)?\.?\:?|
     \b[.-–,;:]?\s*(?i:department|faculty)\s*?(?i:of)?\s*?(?i:entomology|biology|zoology)|
     (?i:Engº|Agrº|Fcº|Drº|Mº|Profº|Dº|Fº)|

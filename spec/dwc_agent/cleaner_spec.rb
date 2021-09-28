@@ -634,6 +634,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
+      it "should remove 'collector field number:' to end of string" do
+        input = "R.M. Bailey | collector field number: C-5"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+      end
+
       it "should recognize two family names without provided given names" do
         input = "Jackson and Peterson"
         parsed = parser.parse(input)
