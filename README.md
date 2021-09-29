@@ -72,7 +72,7 @@ Copyright (c) 2021
 [1]: https://badge.fury.io/rb/dwc_agent.svg
 [2]: http://badge.fury.io/rb/dwc_agent
 [3]: https://github.com/bionomia/dwc_agent/actions/workflows/ruby.yml/badge.svg
-[4]: https://github.com/bionomia/dwc_agent
+[4]: https://github.com/bionomia/dwc_agent/actions
 [5]: http://www.opensource.org/licenses/MIT
 [6]: https://github.com/bionomia/dwc_agent/issues
 [7]: https://github.com/dshorthouse
