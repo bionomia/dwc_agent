@@ -9,12 +9,6 @@ module DwcAgent
 
     describe "Clean results from the Parser" do
 
-      it "should reject a name that has 'Canadian Museum of Nature'" do
-        input = "Jeff Saarela; Canadian Museum of Nature"
-        parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[1]).to_h).to eq(@blank_name)
-      end
-
       it "should clean a name with two given names" do
         input = "William Leo Smith"
         parsed = parser.parse(input)
@@ -866,6 +860,13 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "A.", particle: nil, family: "Braun", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should strip out fisherman" do
+        input = "Sudanese fisherman, via J.E. Randall"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
     end
