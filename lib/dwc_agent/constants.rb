@@ -342,4 +342,26 @@ module DwcAgent
 
   SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|[IVX]{2,})(\.|\b)/
 
+  PARTICLES = [
+    "ap",
+    "da",
+    "de",
+    "de'",
+    "del",
+    "der",
+    "des",
+    "di",
+    "do",
+    "dos",
+    "du",
+    "el",
+    "le",
+    "la",
+    "van",
+    "von",
+    "the",
+    "of",
+    "van der"
+  ]
+
 end

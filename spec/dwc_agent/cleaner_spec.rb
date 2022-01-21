@@ -291,10 +291,10 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Paula", particle: nil, family: "Maybee", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
-      it "should ignore a family name with CAPs at end" do
+      it "should fix a family name with CAPs at end" do
         input = "Jack SmitH"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack", particle: nil, family: "Smith", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
       it "should ignore a family name with two CAPs at the beginning" do
@@ -836,7 +836,7 @@ module DwcAgent
         input = "Van Der Aa"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Van Der", particle: nil, family: "Aa", suffix: nil, dropping_particle: nil, nick: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: "Van Der", family: "Aa", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
       it "should strip out 'malacology'" do
@@ -874,6 +874,28 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "O'Keefe", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should handle a name in reverse order with a comma and a particle" do
+        input = "da Torre, A.R."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.R.", particle: "da", family: "Torre", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should handle a name in reverse order without a comma and a particle" do
+        input = "da Torre A.R."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.R.", particle: "da", family: "Torre", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should handle two sets of names in reverse order, one of which with a particle" do
+        input = "da Torre A.R. & Correia M.P."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "A.R.", particle: "da", family: "Torre", suffix: nil, dropping_particle: nil, nick: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "M.P.", particle: nil, family: "Correia", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
     end

@@ -18,11 +18,14 @@ module DwcAgent
     # @return Namae::Name [Object] a new Namae object
     def clean(parsed_namae)
 
-      if parsed_namae.given && GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
+      if parsed_namae.given &&
+         GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
         return Namae::Name.new
       end
 
-      if parsed_namae.family && parsed_namae.family.length == 3 && parsed_namae.family.count('.') == 1
+      if parsed_namae.family &&
+         parsed_namae.family.length == 3 &&
+         parsed_namae.family.count('.') == 1
         return Namae::Name.new
       end
 
@@ -30,12 +33,21 @@ module DwcAgent
         return Namae::Name.new
       end
 
-      if parsed_namae.given && parsed_namae.given.count('.') >= 3 && /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
+      if parsed_namae.given &&
+         parsed_namae.given.count('.') >= 3 &&
+         /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
         return Namae::Name.new
       end
 
       if parsed_namae.display_order =~ BLACKLIST
         return Namae::Name.new
+      end
+
+      if parsed_namae.family &&
+         parsed_namae.family.count(".") == 1 &&
+         parsed_namae.family[-1] == "." &&
+         parsed_namae.family.length > 3
+        parsed_namae.family = parsed_namae.family.delete_suffix(".")
       end
 
       if parsed_namae.given &&
@@ -59,6 +71,15 @@ module DwcAgent
           parsed_namae.given = family
       end
 
+      if !parsed_namae.given &&
+         parsed_namae.particle &&
+         parsed_namae.family &&
+         /^[A-Za-z]{3,}\s+(?:[A-Z]\.\s?){1,}$/.match(parsed_namae.family)
+         matched = /^(?<family>[A-Za-z]{3,})\s+(?<given>([A-Z]\.\s?){1,})$/.match(parsed_namae.family)
+         parsed_namae.family = matched[:family]
+         parsed_namae.given = matched[:given]
+       end
+
       if parsed_namae.given &&
         (parsed_namae.given == parsed_namae.given.upcase ||
         parsed_namae.given == parsed_namae.given.downcase) &&
@@ -75,18 +96,21 @@ module DwcAgent
         parsed_namae.given = NameCase(parsed_namae.given)
       end
 
-      if parsed_namae.family && FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
+      if parsed_namae.family &&
+         FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
         return Namae::Name.new
       end
 
-      if parsed_namae.family.nil? && !parsed_namae.given.nil? && !parsed_namae.given.include?(".")
+      if parsed_namae.family.nil? &&
+         !parsed_namae.given.nil? &&
+         !parsed_namae.given.include?(".")
         parsed_namae.family = parsed_namae.given
         parsed_namae.given = nil
       end
 
       parsed_namae.normalize_initials
 
-      family = parsed_namae.family.gsub(/\.\z/, '').strip rescue nil
+      family = parsed_namae.family
       given = parsed_namae.given.strip rescue nil
       particle = parsed_namae.particle.strip rescue nil
       appellation = parsed_namae.appellation.strip rescue nil
@@ -97,7 +121,10 @@ module DwcAgent
         given = given.gsub(".", ". ").strip
       end
 
-      if !family.nil? && given.nil? && !particle.nil?
+      if !family.nil? &&
+         given.nil? &&
+         !particle.nil? &&
+         !PARTICLES.include?(particle.downcase)
         given = particle.sub(/[a-z]\./, &:upcase).sub(/^(.)/) { $1.capitalize }
         particle = nil
       end
@@ -110,8 +137,8 @@ module DwcAgent
         family = NameCase(family)
       end
 
-      if !family.nil? && family.match(/[A-Z]$/)
-        return Namae::Name.new
+      if !family.nil? && family.match(/[A-Z]{1,3}$/)
+        family = NameCase(family.upcase)
       end
 
       if given.nil? && !family.nil? && family.match(/^[A-Z]{2}/)

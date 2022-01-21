@@ -153,7 +153,7 @@ V. Crecco, J. Savage & T.A. Wheeler || [{"family":"Crecco", "given":"V.", "parti
 
 Harkness, W.J.K., Dickinson, J.C., & Marshall, N. || [{"family":"Harkness", "given":"W.J.K.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Dickinson", "given":"J.C.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Marshall", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Dawson", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Wyatt", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Gerring", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
+Gad., L.; Dawson, J.; Wyatt, N.; Gerring, J. || [{"family":"Gad", "given":"L.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Dawson", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Wyatt", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Gerring", "given":"J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 N. Lujan, D. Werneke, D. Taphorn, D. German & D. Osorio || [{"family":"Lujan", "given":"N.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Werneke", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Taphorn", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"German", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Osorio", "given":"D.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
@@ -323,7 +323,7 @@ Jack Wft || [{"family":"Wft", "given":"Jack", "particle":null, "appellation": nu
 
 Jack Wit || [{"family":"Wit", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack SmitH || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
+Jack SmitH || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 RGBennett || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
