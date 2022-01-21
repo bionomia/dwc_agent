@@ -869,6 +869,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
+      it "should consider the name O'Keefe a family name" do
+        input = "O'Keefe"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: "O'Keefe", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
     end
 
   end

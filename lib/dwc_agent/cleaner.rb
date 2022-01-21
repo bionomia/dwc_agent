@@ -79,6 +79,11 @@ module DwcAgent
         return Namae::Name.new
       end
 
+      if parsed_namae.family.nil? && !parsed_namae.given.nil? && !parsed_namae.given.include?(".")
+        parsed_namae.family = parsed_namae.given
+        parsed_namae.given = nil
+      end
+
       parsed_namae.normalize_initials
 
       family = parsed_namae.family.gsub(/\.\z/, '').strip rescue nil
@@ -90,11 +95,6 @@ module DwcAgent
 
       if !given.nil? && given.match(/[A-Z]\.[A-Za-z]{2,}/)
         given = given.gsub(".", ". ").strip
-      end
-
-      if family.nil? && !given.nil? && !given.include?(".")
-        family = given
-        given = nil
       end
 
       if !family.nil? && given.nil? && !particle.nil?
