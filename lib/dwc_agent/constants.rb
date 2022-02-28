@@ -261,8 +261,7 @@ module DwcAgent
     (?i:submersible)|
     (?i:synonymy?)|
     (?i:systematic|perspective)|
-    \s+(?i:off)\s+|
-    \s*(?i:too)\s+|\s*(?i:the)\s+|
+    ^\s*(?i:off|too|the)\s*|
     (?i:taxiderm(ies|y))|
     (?i:though)|
     (?i:texas\s+instruments?)\s*?(for)?|
