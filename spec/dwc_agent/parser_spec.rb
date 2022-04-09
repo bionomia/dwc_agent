@@ -1902,5 +1902,13 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :particle)).to eq(["Archduke Rainer Joseph", "Austria", "of"])
     end
 
+    it "should parse 'A.A. and A. Elizabeth Knowles'" do
+      input = "A.A. and A. Elizabeth Knowles"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["A.A.", "Knowles"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["A. Elizabeth", "Knowles"])
+    end
+
   end
 end
