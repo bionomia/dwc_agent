@@ -905,6 +905,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Berthe Hoola", particle: "van", family: "Nooten", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
+      it "should parse the name 'Angela Iran Esquivel'" do
+        input = "Angela Iran Esquivel"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Angela Iran", particle: nil, family: "Esquivel", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
     end
 
   end
