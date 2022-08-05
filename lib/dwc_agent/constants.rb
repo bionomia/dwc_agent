@@ -124,7 +124,8 @@ module DwcAgent
     (?i:ex\.?\s+herb\.?\s*)|
     \:?\s*(?i:exch)(\b|\z)|
     \s+de\s*$|
-    \.{2,}$
+    \.{2,}$|
+    \[|\]
   }x
 
   SPLIT_BY = %r{

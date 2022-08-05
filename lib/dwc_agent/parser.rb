@@ -1,4 +1,5 @@
 module DwcAgent
+
   class Parser
 
     class << self
@@ -29,9 +30,7 @@ module DwcAgent
     def parse(name)
       return [] if name.nil? || name == ""
       name.gsub!(@strip_out_regex, ' ')
-      name.gsub!(/\[|\]/, '')
-      name.gsub!(@char_subs_regex, CHAR_SUBS)
-      name.gsub!(@phrase_subs_regex, PHRASE_SUBS)
+      name.gsub!(Regexp.union(@char_subs_regex, @phrase_subs_regex), CHAR_SUBS.merge(PHRASE_SUBS))
       SEPARATORS.each{|key, value| name.gsub!(Regexp.new(key), value)}
       name.gsub!(@residual_terminators_regex, '')
       name.squeeze!(' ')
