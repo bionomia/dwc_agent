@@ -21,6 +21,7 @@ module DwcAgent
       @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join].to_s
       @phrase_subs_regex = Regexp.new PHRASE_SUBS.keys.map{|a| Regexp.escape a }.join('|').to_s
       @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
+      @separators = SEPARATORS.map{|k,v| [ Regexp.new(k), v] }
     end
 
     # Parses the passed-in string and returns a list of names.
@@ -31,7 +32,7 @@ module DwcAgent
       return [] if name.nil? || name == ""
       name.gsub!(@strip_out_regex, ' ')
       name.gsub!(Regexp.union(@char_subs_regex, @phrase_subs_regex), CHAR_SUBS.merge(PHRASE_SUBS))
-      SEPARATORS.each{|key, value| name.gsub!(Regexp.new(key), value)}
+      @separators.each{|k| name.gsub!(k[0], k[1])}
       name.gsub!(@residual_terminators_regex, '')
       name.squeeze!(' ')
       name.strip!
