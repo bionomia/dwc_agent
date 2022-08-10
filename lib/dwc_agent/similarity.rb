@@ -1,4 +1,5 @@
 module DwcAgent
+
   class Similarity
 
     class << self
@@ -40,9 +41,10 @@ module DwcAgent
           score += 0.1
         end
       end
-    
+
       score
     end
 
   end
+
 end

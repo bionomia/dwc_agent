@@ -1,4 +1,5 @@
 module DwcAgent
+
   class Version
 
     MAJOR = 3
@@ -11,4 +12,5 @@ module DwcAgent
     end
 
   end
+
 end

@@ -9,6 +9,14 @@ module DwcAgent
     end
 
     def initialize
+      @blacklist = BLACKLIST
+      @given_blacklist = GIVEN_BLACKLIST
+      @family_blacklist = FAMILY_BLACKLIST
+      @particles = PARTICLES
+    end
+
+    def default
+      Namae::Name.new
     end
 
     # Cleans the passed-in namae object from the parse method and
@@ -19,28 +27,28 @@ module DwcAgent
     def clean(parsed_namae)
 
       if parsed_namae.given &&
-         GIVEN_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
-        return Namae::Name.new
+         @given_blacklist.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
+        return
       end
 
       if parsed_namae.family &&
          parsed_namae.family.length == 3 &&
          parsed_namae.family.count('.') == 1
-        return Namae::Name.new
+        return default
       end
 
       if parsed_namae.given && parsed_namae.given.length > 35
-        return Namae::Name.new
+        return default
       end
 
       if parsed_namae.given &&
          parsed_namae.given.count('.') >= 3 &&
          /\.\s*[a-zA-Z]{4,}\s+[a-zA-Z]{1,}\./.match(parsed_namae.given)
-        return Namae::Name.new
+        return default
       end
 
-      if parsed_namae.display_order =~ BLACKLIST
-        return Namae::Name.new
+      if parsed_namae.display_order =~ @blacklist
+        return default
       end
 
       if parsed_namae.family &&
@@ -97,8 +105,8 @@ module DwcAgent
       end
 
       if parsed_namae.family &&
-         FAMILY_BLACKLIST.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
-        return Namae::Name.new
+         @family_blacklist.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
+        return default
       end
 
       if parsed_namae.family.nil? &&
@@ -124,7 +132,7 @@ module DwcAgent
       if !family.nil? &&
          given.nil? &&
          !particle.nil? &&
-         !PARTICLES.include?(particle.downcase)
+         !@particles.include?(particle.downcase)
         given = particle.sub(/[a-z]\./, &:upcase).sub(/^(.)/) { $1.capitalize }
         particle = nil
       end
@@ -142,15 +150,15 @@ module DwcAgent
       end
 
       if given.nil? && !family.nil? && family.match(/^[A-Z]{2}/)
-        return Namae::Name.new
+        return default
       end
 
-      if !family.nil? && FAMILY_BLACKLIST.any?{ |s| s.casecmp(family) == 0 }
-        return Namae::Name.new
+      if !family.nil? && @family_blacklist.any?{ |s| s.casecmp(family) == 0 }
+        return default
       end
 
-      if !given.nil? && GIVEN_BLACKLIST.any?{ |s| s.casecmp(given) == 0 }
-        return Namae::Name.new
+      if !given.nil? && @given_blacklist.any?{ |s| s.casecmp(given) == 0 }
+        return default
       end
 
       name = {
@@ -165,4 +173,5 @@ module DwcAgent
     end
 
   end
+
 end

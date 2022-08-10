@@ -7,8 +7,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'dwc_agent'
 
 namestring = "A.D. and P. Smith"
-
-parsed = DwcAgent.parse(namestring)
+parsed = DwcAgent.parse(namestring)[0]
 
 iterations = 1000
 
@@ -20,23 +19,29 @@ Benchmark.bm do |bm|
     end
   end
 
-  bm.report("dwc_agent_clean") do
+  bm.report("namae") do
     iterations.times do
-      DwcAgent.parse(namestring).each do |a|
-        DwcAgent.clean(a)
-      end
+      Namae.parse(namestring)
     end
   end
 
-  bm.report("dwc_agent") do
+  bm.report("dwc_agent_parser") do
     iterations.times do
       DwcAgent.parse(namestring)
     end
   end
 
-  bm.report("namae") do
+  bm.report("dwc_agent_cleaner") do
     iterations.times do
-      Namae.parse(namestring)
+      DwcAgent.clean(parsed)
+    end
+  end
+
+  bm.report("dwc_agent_combined") do
+    iterations.times do
+      DwcAgent.parse(namestring).each do |a|
+        DwcAgent.clean(a)
+      end
     end
   end
 
