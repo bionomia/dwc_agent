@@ -222,6 +222,7 @@ module DwcAgent
     (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
     (?i:carex|salix)|
     (?i:catalog(ue)?)|
+    (?i:conservator)|
     (?i:herbarium|herbier|collection|collected|publication|specimen|species|describe|an(a|o)morph|isolated|recorded|inspection|define|status|lighthouse)|
     \b\s*(?i:help)\s*\b|
     (?i:data\s+not\s+captured)|
@@ -297,6 +298,7 @@ module DwcAgent
     "new",
     "no",
     "adjustment",
+    "agent",
     "annotator",
     "available",
     "arachnology",
