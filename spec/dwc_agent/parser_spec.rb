@@ -1910,5 +1910,12 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["A. Elizabeth", "Knowles"])
     end
 
+    it " should parse 'Grand Duke Nicholas Mikhailovich of Russia'" do
+      input = "Grand Duke Nicholas Mikhailovich of Russia"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :particle, :family)).to eq(["Grand Duke Nicholas Mikhailovich", "of", "Russia"])
+    end
+
   end
 end
