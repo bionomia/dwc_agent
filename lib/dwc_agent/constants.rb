@@ -85,7 +85,7 @@ module DwcAgent
     (?i:american\s+museum\s+of\s+natural\s+history)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
     (?i:museums?\s+victoria)|
-    \b\s*(?i:united\s+states|russia)\s*\b|
+    \b\s*(?i:united\s+states)\s*\b|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
     -?\s*(?i:synonym(y|ie))|
@@ -202,7 +202,7 @@ module DwcAgent
     "(\\S{1}\\.)([[:alpha:]]{2,})" => "\\1 \\2",
     "([[:alpha:]]*),?\\s+(.*)\\s+(van|von)$" => "\\3 \\1, \\2",
     "^([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+([A-Z.\\s]+)\\s+([[:alpha:]]{2,})\\s+([[:alpha:]]{2,})$" => "\\1 \\4 | \\2 \\3 \\4",
-    "^([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+([A-Z.\\s]+)\\s+([[:alpha:]]{2,})(.*)" => "\\1 \\3 | \\2 \\3 | \\4",
+    "^([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+([A-Z.\\s]+)\\s+([[:alpha:]]{2,})(.*)$" => "\\1 \\3 | \\2 \\3 | \\4",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{2,})$" => "\\1 | \\2 | \\3",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4 | \\5"
