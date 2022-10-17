@@ -85,7 +85,7 @@ module DwcAgent
     (?i:american\s+museum\s+of\s+natural\s+history)|
     (?i:The\s+Paleontological\s+Research\s+Institution)|
     (?i:museums?\s+victoria)|
-    \b\s*(?i:united\s+states)\s*\b|
+    \b\s*(?i:united\s+states|russia)\s*\b|
     (?i:revised|photograph|fruits\s+only)|
     -?\s*(?i:sight\s+(id|identifi?cation))\.?\s*\b|
     -?\s*(?i:synonym(y|ie))|
