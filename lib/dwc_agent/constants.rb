@@ -136,6 +136,7 @@ module DwcAgent
     \b(?i:and|with)\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|
+    \b(?i:comm\.?)\s*\b|
     \b(?i:communicate?d(\s+to)?)\s*\b|
     \b(?i:conf\.?(\s+by)?|confirmed(\s+by)?)\s*\b|
     \b(?i:confirmada)(\s+por)?\s*\b|

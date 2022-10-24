@@ -1910,5 +1910,13 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["A. Elizabeth", "Knowles"])
     end
 
+    it "should recognize 'comm.' as a splitter" do
+      input = "Yoder comm. R. Lowen"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Yoder", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["R.", "Lowen"])
+    end
+
   end
 end
