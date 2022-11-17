@@ -380,3 +380,5 @@ H.W. Lewis bis || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellat
 H.W. Lewis ter || [{"family":"Lewis", "given":"H.W.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 R. G. Helgesen : North Dakota State University || [{"family":"Helgesen", "given":"R.G.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
+
+K. & G. Ball || [{"family":"Ball", "given":"K.", "particle":null, "appellation":null, "suffix":null, "title":null, "dropping_particle":null, "nick":null}, {"family":"Ball", "given":"G.", "particle":null, "appellation":null, "suffix":null, "title":null, "dropping_particle":null, "nick":null}]
