@@ -26,6 +26,12 @@ module DwcAgent
     # @return Namae::Name [Object] a new Namae object
     def clean(parsed_namae)
 
+      if parsed_namae.family &&
+         parsed_namae.family == NameCase(parsed_namae.family) &&
+         parsed_namae.display_order.split.join == parsed_namae.initials
+        return default
+      end
+
       if parsed_namae.given &&
          @given_blacklist.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
         return
@@ -72,6 +78,7 @@ module DwcAgent
          parsed_namae.family &&
          parsed_namae.family.length <=3 &&
          parsed_namae.family == parsed_namae.family.upcase &&
+         #parsed_namae.family != NameCase(parsed_namae.family) &&
          parsed_namae.given[-1] != "."
           given = parsed_namae.given
           family = parsed_namae.family
@@ -167,7 +174,9 @@ module DwcAgent
         given: given,
         particle: particle,
         family: family,
-        suffix: suffix
+        suffix: suffix,
+        nick: parsed_namae.nick,
+        dropping_particle: parsed_namae.dropping_particle
       }
       Namae::Name.new(name)
     end
