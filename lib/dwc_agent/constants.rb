@@ -102,7 +102,7 @@ module DwcAgent
     (?i:not?)\s+(?i:name|date|details?|specific)?\s*?(?i:given|name|date|noted)|
     (?i:non?)\s+(?i:specificato)|
     \b[,;]\s+\d+\z|
-    ["!@?]|
+    [!@?]|
     [,]?\d+|
     \s+\d+?(\/|\.)?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x)(\/|\.)\d+|
     [,;]\z|
@@ -159,6 +159,7 @@ module DwcAgent
   }x
 
   CHAR_SUBS = {
+    '"' => '\'',
     '|' => ' | ',
     'ǀ' => ' | ',
     '∣' => ' | ',

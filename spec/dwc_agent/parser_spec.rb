@@ -1918,5 +1918,19 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["R.", "Lowen"])
     end
 
+    it "should recognize 'Bill' as a nickname" do
+      input = "William \"Bill\" Smith"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :nick)).to eq(["William", "Smith", "Bill"])
+    end
+
+    it "should convert a double quote in a family name" do
+      input = "Michael O\"Malley"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :nick)).to eq(["Michael", "O'Malley", nil])
+    end
+
   end
 end
