@@ -13,6 +13,7 @@ module DwcAgent
     \b[,;]?\s*(?i:and|&)?\s*(?i:others|party)\s*\b|
     \b[,;]?\s*(?i:etc)\.?|
     \b[,;]?\s*(?i:exp)\.?\s*(\b|\z)|
+    \b[,;]?\s*(?i:aboard)[^$]+|
     \b[,;]?\s*(?i:on)\b|
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|

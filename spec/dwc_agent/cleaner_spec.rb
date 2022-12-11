@@ -69,6 +69,12 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'William', particle: nil, family:'Beebe', suffix: nil, dropping_particle: nil, nick: nil })
       end
 
+      it "should remove aboard" do
+        input = "D. Nabeshima, aboard longline vessel \"Mokihana\""
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'D.',  particle: nil, family: 'Nabeshima', suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
       it "should remove brackets from name" do
         input = "W.P. Coreneuk(?)"
         parsed = parser.parse(input)
