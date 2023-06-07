@@ -122,7 +122,8 @@ module DwcAgent
     ^[-,.\s;*\d]+\s?|
     \s*?-{2,}\s*?|
     ^(?i:exc?p?)[:.]\s*|
-    (?i:ex\.?\s+herb\.?\s*)|
+    ^(?:ex\.?|in)\s+(?:he?r?b)\.?\s+|
+    (?!^)(?:ex\.?|in)\s+(?:he?r?b)\.?\s+.*$|
     \:?\s*(?i:exch)(\b|\z)|
     \s+de\s*$|
     \.{2,}$|
@@ -133,7 +134,7 @@ module DwcAgent
     [–|ǀ∣｜│&+\/;:]|
     \s+-\s+|
     \s+a\.\s+|
-    \b(con|e|y|i|en|et|or|per|for)\s*\b|
+    \b(con|e|y|i|en|et|or|per|for|und)\s*\b|
     \b(?i:and|with)\s*\b|
     \b(?i:annotated(\s+by)?)\s*\b|
     \b(?i:coll\.)\s*\b|

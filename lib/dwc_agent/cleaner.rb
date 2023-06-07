@@ -144,7 +144,7 @@ module DwcAgent
         particle = nil
       end
 
-      if !particle.nil? && particle.include?(".")
+      if !particle.nil? && particle.include?(".") && !particle.include?("v")
         particle = nil
       end
 

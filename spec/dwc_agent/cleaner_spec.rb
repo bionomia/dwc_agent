@@ -868,6 +868,27 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "A.", particle: nil, family: "Braun", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
+      it "should strip out 'in Hb. Buschardt'" do
+        input = "J. Poelt & A. Buschardt in Hb. Buschardt"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "J.", particle: nil, family: "Poelt", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should treat a lowercase v. as a particle" do
+        input = "G. v. Reenen"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "G.", particle: "v.", family: "Reenen", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not treat a lowercase v. as a particle when other lowercase initials are present" do
+        input = "g. v. reenen"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq( { title: nil, appellation: nil, given: "G. v.", particle: nil, family: "Reenen", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
       it "should strip out fisherman" do
         input = "Sudanese fisherman, via J.E. Randall"
         parsed = parser.parse(input)

@@ -1415,6 +1415,13 @@ module DwcAgent
         expect(parsed[0].values_at(:given, :family)).to eq(["A Y", "Jackson"])
       end
 
+      it "should treat 'und' as a separator" do
+        input = "G. Fischer und K. E. Harz"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(parsed[0].values_at(:given, :family)).to eq(["G.", "Fischer"])
+      end
+
       it "should ignore 'leg.'" do
         input = "leg. A. Chuvilin"
         parsed = parser.parse(input)
@@ -1838,6 +1845,13 @@ module DwcAgent
       parsed = parser.parse(input)
       expect(parsed.size).to eq(1)
       expect(parsed[0].values_at(:given, :family)).to eq(["B.W.", "Hoeksema"])
+    end
+
+    it "should strip out every at and after 'in herb.'" do
+      input = "G. Lettau in herb. V. J. Grummann"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["G.", "Lettau"])
     end
 
     it "should split what looks like three comma-separated family names" do
