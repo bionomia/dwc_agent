@@ -1847,11 +1847,19 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["B.W.", "Hoeksema"])
     end
 
-    it "should strip out every at and after 'in herb.'" do
+    it "should strip out everything at and after 'in herb.'" do
       input = "G. Lettau in herb. V. J. Grummann"
       parsed = parser.parse(input)
       expect(parsed.size).to eq(1)
       expect(parsed[0].values_at(:given, :family)).to eq(["G.", "Lettau"])
+    end
+
+    it "should strip out everything at and after 'in Hb.'" do
+      input = "J. Poelt & A. Buschardt in Hb. Buschardt"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J.", "Poelt"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["A.", "Buschardt"])
     end
 
     it "should split what looks like three comma-separated family names" do
