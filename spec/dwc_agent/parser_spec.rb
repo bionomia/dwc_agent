@@ -1961,5 +1961,12 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["Alan", "Smith"])
     end
 
+    it "should strip out an emoji" do
+      input = "Useita avantouimareita😄"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Useita", "avantouimareita"])
+    end
+
   end
 end
