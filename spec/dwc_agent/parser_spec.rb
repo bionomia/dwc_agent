@@ -1954,5 +1954,12 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :nick)).to eq(["Michael", "O'Malley", nil])
     end
 
+    it "should split two names with '& Al'" do
+      input = "CJR & Alan Smith"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[1].values_at(:given, :family)).to eq(["Alan", "Smith"])
+    end
+
   end
 end
