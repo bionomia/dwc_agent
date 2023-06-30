@@ -128,7 +128,7 @@ module DwcAgent
     \s+de\s*$|
     \.{2,}$|
     \[|\]|
-    [^[:alnum:][:blank:][:punct:][∣´|ǀ∣｜│`~$^+|<>]]
+    [^[:alnum:][:blank:][:punct:][∣´|ǀ∣｜│`~$^+|<>]]      # Removes emojis from string
   }x
 
   SPLIT_BY = %r{
@@ -145,6 +145,7 @@ module DwcAgent
     \b(?i:confirmada)(\s+por)?\s*\b|
     \b(?i:checked?(\s+by)?)\s*\b|
     \b(?i:det\.?(\s+by)?)\s*\b|
+    \b(?i:(donated)?\s*by)\s+|
     \b(?i:dupl?\.?(\s+by)?|duplicate(\s+by)?)\s*\b|
     \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
     \b(?i:in?dentified(\s+by)?)\s*\b|
@@ -157,8 +158,7 @@ module DwcAgent
     \b(?i:stet)\s*\b|
     \b(?i:then(\s+by)?)\s+|
     \b(?i:veri?f?\.?\:?(\s+by)?|v(e|é)rifi(e|é)d?(\s+by)?)\s*\b|
-    \b(?i:via|from)\s*\b|
-    \b(?i:(donated)?\s*by)\s+
+    \b(?i:via|from)\s*\b
   }x
 
   CHAR_SUBS = {
@@ -203,14 +203,15 @@ module DwcAgent
   }
 
   SEPARATORS = {
+    "^([A-Z]{1}\\.\\s*[[:alpha:]]{1,}),\\s*?([A-Z.]{1,})$" => "\\1 \\2",
     "^(\\S{4,},\\s+(?:\\S\\.\\s*){1,})\\s+(\\S{4,},\\s+(?:\\S\.\\s*){1,})$" => "\\1 | \\2",
     "(\\S{1}\\.)([[:alpha:]]{2,})" => "\\1 \\2",
     "([[:alpha:]]*),?\\s+(.*)\\s+(van|von)$" => "\\3 \\1, \\2",
     "^([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+([A-Z.\\s]+)\\s+([[:alpha:]]{2,})\\s+([[:alpha:]]{2,})$" => "\\1 \\4 | \\2 \\3 \\4",
     "^([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+([A-Z.\\s]+)\\s+([[:alpha:]]{2,})(.*)$" => "\\1 \\3 | \\2 \\3 | \\4",
-    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{2,})$" => "\\1 | \\2 | \\3",
-    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4",
-    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?[,&]\\s*?([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4 | \\5"
+    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{2,})$" => "\\1 | \\2 | \\3",
+    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4",
+    "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4 | \\5"
   }
 
   BLACKLIST = %r{

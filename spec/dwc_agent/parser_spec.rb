@@ -1881,6 +1881,16 @@ module DwcAgent
       expect(parsed[3].values_at(:given, :family)).to eq(["Smith", nil])
     end
 
+    it "should split what looks like four comma-separated family names with and as last separator" do
+      input = "Chaboo, Bennett, Shin and Smith"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(4)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Chaboo", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Bennett", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["Shin", nil])
+      expect(parsed[3].values_at(:given, :family)).to eq(["Smith", nil])
+    end
+
     it "should split what looks like four comma-separated family names" do
       input = "Chaboo, Bennett, Shin, Smith & Jackson"
       parsed = parser.parse(input)

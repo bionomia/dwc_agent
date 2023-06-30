@@ -946,6 +946,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "David", particle: nil, family: "Jackson", suffix: nil, dropping_particle: nil, nick: "Dave" })
       end
 
+      it "should parse a compound name in reverse order" do
+        input = "A. Cano, E."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "E.", particle: nil, family: "A. Cano", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
     end
 
   end
