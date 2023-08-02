@@ -1978,6 +1978,13 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["Useita", "avantouimareita"])
     end
 
+    it "should parse a name in reverse order with no punctuation and one abbreviated given name" do
+      input = "Groom Q."
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Q.", "Groom"])
+    end
+
     it "should parse a name in reverse order with no punctuation and more than one abbreviated given name separated by spaces" do
       input = "Aznavour G. V."
       parsed = parser.parse(input)
