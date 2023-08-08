@@ -1992,5 +1992,33 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["G. V.", "Aznavour"])
     end
 
+    it "should recognize Dra. as a title" do
+      input = "Dra. Poll"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title)).to eq([nil, "Poll", "Dra."])
+    end
+
+    it "should recognize Profa as a title" do
+      input = "Profa. Marcia Coura"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title)).to eq(["Marcia", "Coura", "Profa."])
+    end
+
+    it "should not mistake Profa as a title when part of a name" do
+      input = "Bob Profant"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title)).to eq(["Bob", "Profant", nil])
+    end
+
+    it "should recognize Profª as a title" do
+      input = "Profª Rita Maria de Carvalho"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :title, :particle)).to eq(["Rita Maria", "Carvalho", "Profª", "de"])
+    end
+
   end
 end

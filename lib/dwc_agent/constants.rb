@@ -199,10 +199,13 @@ module DwcAgent
     ' jr.,' => ' Jr.;',
     ' jr,' => ' Jr.;',
     '-jr' => ' Jr.',
-    '-Jr' => ' Jr.'
+    '-Jr' => ' Jr.',
+    'Dr.' => 'Dr. ',
+    'prof.' => 'Prof. '
   }
 
   SEPARATORS = {
+    "^(\\S{4,}),\\s+(Mrs?\\.|MRS?\\.)\\s+([A-Za-z\\.\\s]{1,})$" => "\\2 \\3 \\1",
     "^([A-Z]{1}\\.\\s*[[:alpha:]]{1,}),\\s*?([A-Z.]{1,})$" => "\\1 \\2",
     "^(\\S{4,},\\s+(?:\\S\\.\\s*){1,})\\s+(\\S{4,},\\s+(?:\\S\.\\s*){1,})$" => "\\1 | \\2",
     "(\\S{1}\\.)([[:alpha:]]{2,})" => "\\1 \\2",
@@ -329,6 +332,8 @@ module DwcAgent
     "inst",
     "nomenclatural",
     "orig",
+    "prof",
+    "professional",
     "qld",
     "registration",
     "science",
@@ -346,7 +351,7 @@ module DwcAgent
     "has not"
   ]
 
-  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|proff?|dr|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|doct(eu|o)r|father|cantor|vicar|père|pastor|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|capt|cmdr|lt|sgt|cpl|pvt|proff?|dr|dra\.|drª|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|doct(eu|o)r|father|cantor|vicar|père|pastor|profa\.?|profª|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
 
   APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
 

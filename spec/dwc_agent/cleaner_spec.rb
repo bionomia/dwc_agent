@@ -754,6 +754,20 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Dr.", appellation: nil, given: "James", particle: nil, family: "Mornay", suffix: "Jr.", dropping_particle: nil, nick: nil })
       end
 
+      it "should add a space after Dr." do
+        input = "Dr.G.A. Williams"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Dr.", appellation: nil, given: "G.A.", particle: nil, family: "Williams", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should still parse Dr. even if two spaces are created as a result of cleaning" do
+        input = "Dr. G.A. Williams"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Dr.", appellation: nil, given: "G.A.", particle: nil, family: "Williams", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
       it "should reject 'Illegible determiner name'" do
         input = "Illegible determiner name"
         parsed = parser.parse(input)
@@ -951,6 +965,27 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "E.", particle: nil, family: "A. Cano", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should recognize a lowercase prof. as a title" do
+        input = "prof.D.Lochman"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: "Prof.", appellation: nil, given: "D.", particle: nil, family: "Lochman", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should recognize an Mrs. as an appellation when in reverse order" do
+        input = "Whitney, Mrs. W. W."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: "Mrs.", given: "W.W.", particle: nil, family: "Whitney", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should recognize a MR. as an appellation when in reverse order and in caps" do
+        input = "WIBLE, MRS. P."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: "MRS.", given: "P.", particle: nil, family: "Wible", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
     end
