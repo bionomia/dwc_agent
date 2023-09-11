@@ -222,7 +222,7 @@ module DwcAgent
     (?i:abundant)|
     (?i:adult|juvenile)|
     (?i:administra(d|t)or)|
-    (?i:anon)|
+    ^(?i:anon)$|
     (?i:australian?)|
     (?i:average)|
     (?i:believe|unclear|ill?egible|none|suggested|(dis)?agrees?)|approach|

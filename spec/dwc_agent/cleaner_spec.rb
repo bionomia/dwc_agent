@@ -988,6 +988,19 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: "MRS.", given: "P.", particle: nil, family: "Wible", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
+      it "should not strip out a name that contains 'anon'" do
+        input = "R. Salanon"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "R.", particle: nil, family: "Salanon", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should recognize 'anon' as a blacklisted name" do
+        input = "anon"
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
+      end
+
     end
 
   end

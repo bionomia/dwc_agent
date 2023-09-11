@@ -2020,5 +2020,12 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :title, :particle)).to eq(["Rita Maria", "Carvalho", "Profª", "de"])
     end
 
+    it "should recognize a name that contains 'anon'" do
+      input = "A. Charpin, P. Hainard & R. Salanon"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[2].values_at(:given, :family)).to eq(["R.", "Salanon"])
+    end
+
   end
 end
