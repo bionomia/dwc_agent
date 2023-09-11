@@ -18,6 +18,7 @@ module DwcAgent
       }
       @namae = Namae::Parser.new(options)
       @strip_out_regex = Regexp.new STRIP_OUT.to_s
+      @tidy_remains_regex = Regexp.new POST_STRIP_TIDY.to_s
       @char_subs_regex = Regexp.new [CHAR_SUBS.keys.join].to_s
       @phrase_subs_regex = Regexp.new PHRASE_SUBS.keys.map{|a| Regexp.escape a }.join('|').to_s
       @residual_terminators_regex = Regexp.new SPLIT_BY.to_s + %r{\s*\z}.to_s
@@ -31,6 +32,7 @@ module DwcAgent
     def parse(name)
       return [] if name.nil? || name == ""
       name.gsub!(@strip_out_regex, ' ')
+      name.gsub!(@tidy_remains_regex, '')
       name.gsub!(Regexp.union(@char_subs_regex, @phrase_subs_regex), CHAR_SUBS.merge(PHRASE_SUBS))
       @separators.each{|k| name.gsub!(k[0], k[1])}
       name.gsub!(@residual_terminators_regex, '')

@@ -2027,5 +2027,12 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["R.", "Salanon"])
     end
 
+    it "should strip out anonymous collector" do
+      input = "anonymous collector & Humboldt,F.W.H.A. von"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family, :particle)).to eq(["F.W.H.A.", "Humboldt", "von"])
+    end
+
   end
 end

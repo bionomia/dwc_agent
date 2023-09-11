@@ -500,7 +500,7 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.C.", particle: nil, family: "Andrade", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
-      it "should ignore a single paricle purported to be a name" do
+      it "should ignore a single particle purported to be a name" do
         input = "Robillard|de"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(2)
