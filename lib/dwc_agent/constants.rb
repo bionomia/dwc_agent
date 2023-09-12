@@ -22,8 +22,9 @@ module DwcAgent
     \b[,;]?\s*(?i:importer|gift)\:?\b|
     \b[,;]?\s*(?i:string)\b|
     \b[,;]?\s*(?i:person\s*string)\b|
+    ^(?i:colln?)\.?\s+|\s*(?i:colln?)\.?\s*$|
+    ^(?i:collection)\:?\s+|\s*(?i:collection)\s*$|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
-    \b[,;]?\s*(?i:colln?)[:.]?(\b|\z)|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
       May|Jun|Jul|Aug|Sept?|
@@ -53,7 +54,7 @@ module DwcAgent
     \d+\s+(?i:Nov|Novemb(er|re))\.?\b|
     \d+\s+(?i:Dec|D(e|é)cemb(er|re))\.?\b|
     \b[.-–,;:/]?\s*(?i:Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Evergreen|Florida|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New\s+Hampshire|New\s+Jersey|New\s+Mexico|New\s+York|North\s+Carolina|North\s+Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Portland|Rhode\s+Island|South\s+Carolina|South\s+Dakota|St\s+Petersburg|Tennessee|Texas|Utah|Vermont|Washington|West\s+Virginia|Wisconsin|Wyoming)\s+(?i:State)\s*\b|
-    \b[.,;:/]?\s*?(?i:Afghanistan|Åland Islands|Albania|Algeria|American Samoa|Andorra|Angola|Anguilla|Antarctica|Antigua and Barbuda|Argentina|Armenia|Aruba|Australia|Azerbaijan|Bahamas|Bahrain|Bangladesh|Barbados|Belarus|Belize|Benin|Bermuda|Bhutan|Bolivia \(Plurinational State of\)|Bonaire, Sint Eustatius and Saba|Bosnia and Herzegovina|Botswana|Bouvet Island|Brazil|British Indian Ocean Territory|Brunei Darussalam|Bulgaria|Burkina Faso|Burundi|Cabo Verde|Cambodia|Cameroon|Canada|Cayman Islands|Central African Republic|Chad|Chile|Christmas Island|Cocos \(Keeling\) Islands|Colombia|Comoros|Congo|Congo \(Democratic Republic of the\)|Cook Islands|Costa Rica|Côte d'Ivoire|Croatia|Cuba|Curaçao|Cyprus|Czechia|Djibouti|Dominica|Dominican Republic|Ecuador|Egypt|El Salvador|Equatorial Guinea|Eritrea|Estonia|Ethiopia|Falkland Islands \(Malvinas\)|Faroe Islands|Fiji|Finland|French Guiana|French Polynesia|French Southern Territories|Gabon|Gambia|Germany|Ghana|Gibraltar|Greece|Greenland|Grenada|Guadeloupe|Guam|Guatemala|Guernsey|Guinea-Bissau|Guyana|Haiti|Heard Island and McDonald Islands|Holy See|Honduras|Hong Kong|Hungary|Iceland|India|Indonesia|Iran \(Islamic Republic of\)|Iraq|Ireland|Isle of Man|Italy|Jamaica|Japan|Jersey|Kazakhstan|Kenya|Kiribati|Korea \(Democratic People\'s Republic of\)|Korea \(Republic of\)|Kuwait|Kyrgyzstan|Lao People\'s Democratic Republic|Latvia|Lebanon|Lesotho|Liberia|Libya|Liechtenstein|Lithuania|Luxembourg|Macao|Macedonia (the former Yugoslav Republic of)|Madagascar|Malawi|Malaysia|Maldives|Malta|Marshall Islands|Martinique|Mauritania|Mauritius|Mayotte|Mexico|Micronesia \(Federated States of\)|Moldova \(Republic of\)|Monaco|Mongolia|Montenegro|Morocco|Mozambique|Myanmar|Namibia|Nauru|Nepal|Netherlands|New Caledonia|New Zealand|Nicaragua|Niger|Nigeria|Niue|Norfolk Island|Northern Mariana Islands|Norway|Oman|Pakistan|Palau|Palestine, State of|Panama|Papua New Guinea|Paraguay|Peru|Philippines|Pitcairn|Poland|Puerto Rico|Qatar|Réunion|Romania|Russian Federation|Russia|Rwanda|Saint Barthélemy|Saint Helena, Ascension and Tristan da Cunha|Saint Kitts and Nevis|Saint Lucia|Saint Martin \(French part\)|Saint Pierre and Miquelon|Saint Vincent and the Grenadines|Samoa|San Marino|Sao Tome and Principe|Saudi Arabia|Senegal|Serbia|Seychelles|Sierra Leone|Singapore|Sint Maarten \(Dutch part\)|Slovakia|Slovenia|Solomon Islands|Somalia|South Africa|South Georgia and the South Sandwich Islands|South Sudan|Sri Lanka|Sudan|Suriname|Svalbard and Jan Mayen|Swaziland|Sweden|Switzerland|Syrian Arab Republic|Taiwan|Tajikistan|Tanzania, United Republic of|Thailand|Timor-Leste|Togo|Tokelau|Tonga|Trinidad and Tobago|Tunisia|Turkey|Turkmenistan|Turks and Caicos Islands|Tuvalu|Uganda|Ukraine|United Arab Emirates|United Kingdom of Great Britain and Northern Ireland|United States of America|United States Minor Outlying Islands|Uruguay|Uzbekistan|Vanuatu|Venezuela \(Bolivarian Republic of\)|Viet Nam|Virgin Islands \(British\)|Virgin Islands \(U\.S\.\)|Wallis and Futuna|Western Sahara|Yemen|Zambia|Zimbabwe)\b|
+    \b[.,;:/]?\s*?(?i:Afghanistan|Åland Islands|Albania|Algeria|American Samoa|Andorra|Angola|Anguilla|Antarctica|Antigua and Barbuda|Argentina|Armenia|Aruba|Australia|Azerbaijan|Bahamas|Bahrain|Bangladesh|Barbados|Belarus|Belize|Benin|Bermuda|Bhutan|Bolivia \(Plurinational State of\)|Bonaire, Sint Eustatius and Saba|Bosnia and Herzegovina|Botswana|Bouvet Island|Brazil|British Indian Ocean Territory|Brunei Darussalam|Bulgaria|Burkina Faso|Burundi|Cabo Verde|Cambodia|Cameroon|Canada|Cayman Islands|Central African Republic|Chad|Chile|Christmas Island|Cocos \(Keeling\) Islands|Colombia|Comoros|Congo|Congo \(Democratic Republic of the\)|Cook Islands|Costa Rica|Côte d'Ivoire|Croatia|Cuba|Curaçao|Cyprus|Czechia|Djibouti|Dominica|Dominican Republic|Ecuador|Egypt|El Salvador|Equatorial Guinea|Eritrea|Estonia|Ethiopia|Falkland Islands \(Malvinas\)|Faroe Islands|Fiji|Finland|French Guiana|French Polynesia|French Southern Territories|Gabon|Gambia|Germany|Ghana|Gibraltar|Greece|Greenland|Grenada|Guadeloupe|Guam|Guatemala|Guernsey|Guinea-Bissau|Guyana|Haiti|Heard Island and McDonald Islands|Holy See|Honduras|Hong Kong|Hungary|Iceland|India|Indonesia|Iran \(Islamic Republic of\)|Iraq|Isle of Man|Italy|Jamaica|Japan|Jersey|Kazakhstan|Kenya|Kiribati|Korea \(Democratic People\'s Republic of\)|Korea \(Republic of\)|Kuwait|Kyrgyzstan|Lao People\'s Democratic Republic|Latvia|Lebanon|Lesotho|Liberia|Libya|Liechtenstein|Lithuania|Luxembourg|Macao|Macedonia (the former Yugoslav Republic of)|Madagascar|Malawi|Malaysia|Maldives|Malta|Marshall Islands|Martinique|Mauritania|Mauritius|Mayotte|Mexico|Micronesia \(Federated States of\)|Moldova \(Republic of\)|Monaco|Mongolia|Montenegro|Morocco|Mozambique|Myanmar|Namibia|Nauru|Nepal|Netherlands|New Caledonia|New Zealand|Nicaragua|Niger|Nigeria|Niue|Norfolk Island|Northern Mariana Islands|Norway|Oman|Pakistan|Palau|Palestine, State of|Panama|Papua New Guinea|Paraguay|Peru|Philippines|Pitcairn|Poland|Puerto Rico|Qatar|Réunion|Romania|Russian Federation|Russia|Rwanda|Saint Barthélemy|Saint Helena, Ascension and Tristan da Cunha|Saint Kitts and Nevis|Saint Lucia|Saint Martin \(French part\)|Saint Pierre and Miquelon|Saint Vincent and the Grenadines|Samoa|San Marino|Sao Tome and Principe|Saudi Arabia|Senegal|Serbia|Seychelles|Sierra Leone|Singapore|Sint Maarten \(Dutch part\)|Slovakia|Slovenia|Solomon Islands|Somalia|South Africa|South Georgia and the South Sandwich Islands|South Sudan|Sri Lanka|Sudan|Suriname|Svalbard and Jan Mayen|Swaziland|Sweden|Switzerland|Syrian Arab Republic|Taiwan|Tajikistan|Tanzania, United Republic of|Thailand|Timor-Leste|Togo|Tokelau|Tonga|Trinidad and Tobago|Tunisia|Turkey|Turkmenistan|Turks and Caicos Islands|Tuvalu|Uganda|Ukraine|United Arab Emirates|United Kingdom of Great Britain and Northern Ireland|United States of America|United States Minor Outlying Islands|Uruguay|Uzbekistan|Vanuatu|Venezuela \(Bolivarian Republic of\)|Viet Nam|Virgin Islands \(British\)|Virgin Islands \(U\.S\.\)|Wallis and Futuna|Western Sahara|Yemen|Zambia|Zimbabwe)\b|
     (?i:autres?\s+de|probab|likely|possibl(e|y)|doubtful)|
     \b\s*(?i:maybe)\s*\b|
     \b\s*(?i:prob)\.\s*\b|
@@ -149,6 +150,7 @@ module DwcAgent
     \b(?i:dupl?\.?(\s+by)?|duplicate(\s+by)?)\s*\b|
     \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
     \b(?i:in?dentified(\s+by)?)\s*\b|
+    \b(?i:in\s+coll\.?\s*\b)|
     \b(?i:in\s+part(\s+by)?)\s*\b|
     \b(?i:och)\s*\b|
     \b(?i:prep\.?\s+(?i:by)?)\s*\b|
@@ -162,7 +164,7 @@ module DwcAgent
   }x
 
   POST_STRIP_TIDY = %r{
-    ^\s*[&,;]\s*
+    ^\s*[&,;.]\s*
   }x
 
   CHAR_SUBS = {
@@ -210,6 +212,7 @@ module DwcAgent
 
   SEPARATORS = {
     "^(\\S{4,}),\\s+(Mrs?\\.|MRS?\\.)\\s+([A-Za-z\\.\\s]{1,})$" => "\\2 \\3 \\1",
+    "^(Mrs?\\.?)\\s+&\\s+(Mrs?\\.?)\\s+(.*)$" => "\\1 \\3 | \\2 \\3",
     "^([A-Z]{1}\\.\\s*[[:alpha:]]{1,}),\\s*?([A-Z.]{1,})$" => "\\1 \\2",
     "^(\\S{4,},\\s+(?:\\S\\.\\s*){1,})\\s+(\\S{4,},\\s+(?:\\S\.\\s*){1,})$" => "\\1 | \\2",
     "(\\S{1}\\.)([[:alpha:]]{2,})" => "\\1 \\2",

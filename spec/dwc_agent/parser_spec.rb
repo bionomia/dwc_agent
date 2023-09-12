@@ -2034,5 +2034,13 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :particle)).to eq(["F.W.H.A.", "Humboldt", "von"])
     end
 
+    it "should split 'Mr. & Mrs. R.E. Moreau'" do
+      input = "Mr. & Mrs. R.E. Moreau"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:appellation, :given, :family)).to eq(["Mr.", "R.E.", "Moreau"])
+      expect(parsed[1].values_at(:appellation, :given, :family)).to eq(["Mrs.", "R.E.", "Moreau"])
+    end
+
   end
 end
