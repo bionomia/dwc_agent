@@ -1001,6 +1001,63 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
+      it "should not ignore a name like 'L.E. Bureau'" do
+        input = "L.E. Bureau"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "L.E.", particle: nil, family: "Bureau", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore a name like 'Guaglianone,E.R.'" do
+        input = "Guaglianone,E.R."
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "E.R.", particle: nil, family: "Guaglianone", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore a name like 'P. Classe'" do
+        input = "P. Classe"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "P.", particle: nil, family: "Classe", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore a name like 'J.B.L. Companyo'" do
+        input = "J.B.L. Companyo"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "J.B.L.", particle: nil, family: "Companyo", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore a name like 'Theodor Schube'" do
+        input = "Theodor Schube"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Theodor", particle: nil, family: "Schube", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should ignore 'staff' as a name" do
+        input = "Jacob Wheeler and staff"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jacob", particle: nil, family: "Wheeler", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should ignore 'Graduate Students' as a name" do
+        input = "Graduate Students, Joanna Smith and R. Jackson"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(3)
+        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "Joanna", particle: nil, family: "Smith", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore a name that contains the text 'staff'" do
+        input = "M.L. Blickenstaff"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "M.L.", particle: nil, family: "Blickenstaff", suffix: nil, dropping_particle: nil, nick: nil })        
+      end
+
     end
 
   end

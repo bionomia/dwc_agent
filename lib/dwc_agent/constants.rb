@@ -232,7 +232,8 @@ module DwcAgent
     ^(?i:anon)$|
     (?i:australian?)|
     (?i:average)|
-    (?i:believe|unclear|ill?egible|none|suggested|(dis)?agrees?)|approach|
+    (?i:believe|unclear|ill?egible|suggested|(dis)?agrees?)|approach|
+    \b\s*(?i:none)\s*\b|
     (?i:barcod)|
     (?i:BgWd)|
     (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
@@ -260,7 +261,7 @@ module DwcAgent
     (?i:geographic)|
     (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
     (?i:univ\.)|
-    (?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fisherm(a|e)n|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|staff|personnel|family|captain|friends|assistant|worker|gamekeeper)|
+    \b\s*(?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fisherm(a|e)n|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|personnel|staff|family|captain|friends|assistant|worker|gamekeeper)\s*\b|
     (?i:non\s+pr(é|e)cis(é|e))|
     (?i:no\s+consta)|
     (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
@@ -272,16 +273,18 @@ module DwcAgent
     (?i:recreation|culture)|
     (?i:renseigné)|
     (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
-    (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|class|commission|consortium|council|club|exposit|alliance|protective|circle)|
-    (?i:commercial|company|control|product)|
+    (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|commission|consortium|council|club|exposit|alliance|protective|circle)|
+    ^(?i:class)\s*\b|
+    (?i:commercial|control|product)|
+    ^(?i:company)\s*\b|
     (?i:sequence\s+data)|
     (?i:size|large|colou?r)\s+|
     (?i:skeleton)|
-    (?i:survey|assessment|station|monitor|stn\.|index|project|bureau|engine|(e|é)x?chang(e|é)s?|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
+    (?i:survey|assessment|station|monitor|stn\.|index|project|engine|(e|é)x?chang(e|é)s?|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
     (?i:submersible)|
     (?i:synonymy?)|
     (?i:systematic|perspective)|
-    ^\s*(?i:off|too|the)\s*|
+    ^\s*(?i:off|too|the)\s*\b|
     (?i:taxiderm(ies|y))|
     (?i:though)|
     (?i:texas\s+instruments?)\s*?(for)?|
@@ -383,6 +386,7 @@ module DwcAgent
     "von",
     "the",
     "of",
+    "van de",
     "van der"
   ]
 
