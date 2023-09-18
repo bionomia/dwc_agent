@@ -2042,5 +2042,22 @@ module DwcAgent
       expect(parsed[1].values_at(:appellation, :given, :family)).to eq(["Mrs.", "R.E.", "Moreau"])
     end
 
+    it "should split 'L. B. and C. W. O\'Brien'" do
+      input = "L. B. and C. W. O'Brien"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["L. B.", "O'Brien"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["C. W.", "O'Brien"])
+    end
+
+    it "should split three family members like 'J. H., A. M. and A. W. Skevington'" do
+      input = "J. H., A. M. and A. W. Skevington"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J. H.", "Skevington"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["A. M.", "Skevington"])
+      expect(parsed[2].values_at(:given, :family)).to eq(["A. W.", "Skevington"])
+    end
+
   end
 end
