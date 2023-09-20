@@ -2059,5 +2059,12 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["A. W.", "Skevington"])
     end
 
+    it "should parse 'Marck,J.W.C.T., von der'" do
+      input = "Marck,J.W.C.T. von der"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :particle, :family)).to eq(["J.W.C.T.", "von der", "Marck"])
+    end
+
   end
 end

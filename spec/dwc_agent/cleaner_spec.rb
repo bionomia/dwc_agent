@@ -540,14 +540,7 @@ module DwcAgent
         input = "Baan M van der"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
-      end
-
-      it "should return a blank name when family name is 'der'" do
-        input = "Baan M van der"
-        parsed = parser.parse(input)
-        expect(parsed.size).to eq(1)
-        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "M.", particle: "van der", family: "Baan", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
       it " should return a blank name when family is 'Catalog'" do
@@ -1056,6 +1049,35 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "M.L.", particle: nil, family: "Blickenstaff", suffix: nil, dropping_particle: nil, nick: nil })        
+      end
+
+      it "should not ignore 'Poindexter, D.B.'" do
+        input = 'Poindexter, D.B.'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "D.B.", particle: nil, family: "Poindexter", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore 'Bieberstein,F.A. Marschall v.'" do
+        input = 'Bieberstein,F.A. Marschall v.'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "F. A. Marschall", particle: "v.", family: "Bieberstein", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore 'Galán,P. & Montenegro,S.M.'" do
+        input = 'Galán,P. & Montenegro,S.M.'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "P.", particle: nil, family: "Galán", suffix: nil, dropping_particle: nil, nick: nil })
+        expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: "S.M.", particle: nil, family: "Montenegro", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore 'N.H. Le'" do
+        input = 'N.H. Le'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "N.H.", particle: nil, family: "Le", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
     end
