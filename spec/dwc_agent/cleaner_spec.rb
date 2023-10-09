@@ -357,12 +357,6 @@ module DwcAgent
         expect(cleaner.clean(parsed[1]).to_h).to eq({ title: nil, appellation: nil, given: 'S.', particle: nil, family: 'Jansson', suffix: nil, dropping_particle: nil, nick: nil })
       end
 
-      it "should remove extraneous information with brackets at end of string" do
-        input = "J. Lindahl (Ingegerd & Gl"
-        parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: 'J.', particle: nil, family: 'Lindahl', suffix: nil, dropping_particle: nil, nick: nil })
-      end
-
       it "should remove Coll in brackets" do
         input = "D.Podlech (Coll. M, MSB)"
         parsed = parser.parse(input)

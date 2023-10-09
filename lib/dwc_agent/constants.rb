@@ -113,8 +113,8 @@ module DwcAgent
     (?i:annot)\.?\s*?\b|
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
-    (\(|\{|\[).{1,}(\)|\]|\})|
-    (\(|\[|\{).{1,}\z|
+    \W([({\[].*?[)}\]])|
+    \W[\(\[\{][A-Za-z]{1,3}$|
     \b(?i:leg)[\.:]?\s*\b|
     (?:[Dd](ed|on))[\.:]|
     \d*[A-Za-z]*\d*-\d*\z|
@@ -128,7 +128,6 @@ module DwcAgent
     \:?\s*(?i:exch)(\b|\z)|
     \s+de\s*$|
     \.{2,}$|
-    \[|\]|
     [^[:alnum:][:blank:][:punct:][∣´|ǀ∣｜│`~$^+|<>]]      # Removes emojis from string
   }x
 
@@ -164,7 +163,8 @@ module DwcAgent
   }x
 
   POST_STRIP_TIDY = %r{
-    ^\s*[&,;.]\s*
+    ^\s*[&,;.]\s*|
+    [\[\]]
   }x
 
   CHAR_SUBS = {
@@ -207,7 +207,8 @@ module DwcAgent
     '-jr' => ' Jr.',
     '-Jr' => ' Jr.',
     'Dr.' => 'Dr. ',
-    'prof.' => 'Prof. '
+    'prof.' => 'Prof. ',
+    ' .;' => '. ;'
   }
 
   SEPARATORS = {

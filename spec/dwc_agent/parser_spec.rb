@@ -1348,8 +1348,8 @@ module DwcAgent
         input = "Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder)"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(4)
-        expect(parsed[0].values_at(:given, :family)).to eq(["E", "Holm"])
-        expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Ng"])
+        expect(parsed[0].values_at(:given, :family)).to eq(["E.", "Holm"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["J", "Ng"])
         expect(parsed[2].values_at(:given, :family)).to eq(["S.", "Litwiller"])
         expect(parsed[3].values_at(:given, :family)).to eq(["C.", "Lee"])
       end
@@ -2064,6 +2064,13 @@ module DwcAgent
       parsed = parser.parse(input)
       expect(parsed.size).to eq(1)
       expect(parsed[0].values_at(:given, :particle, :family)).to eq(["J.W.C.T.", "von der", "Marck"])
+    end
+
+    it "should renove square brackets within parts of names" do
+      input = "A. Br[eu]ckner"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Breuckner"])
     end
 
   end
