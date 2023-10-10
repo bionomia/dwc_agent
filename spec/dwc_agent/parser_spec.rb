@@ -2066,7 +2066,7 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :particle, :family)).to eq(["J.W.C.T.", "von der", "Marck"])
     end
 
-    it "should renove square brackets within parts of names" do
+    it "should remove square brackets within parts of names" do
       input = "A. Br[eu]ckner"
       parsed = parser.parse(input)
       expect(parsed.size).to eq(1)
