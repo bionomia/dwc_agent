@@ -470,7 +470,7 @@ module DwcAgent
       it "should remove extraneous material" do
         input = "Unknown [J. S. Erskine?]"
         parsed = parser.parse(input)
-        expect(parsed.size).to eq(0)
+        expect(parsed).to eq([])
       end
 
       it "should parse name with many given initials" do
@@ -491,7 +491,7 @@ module DwcAgent
         input = "Jack [John] Smith12345"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
-        expect(parsed[0].values_at(:given, :family)).to eq(['Jack', 'Smith'])
+        expect(parsed[0].values_at(:given, :family)).to eq(['Jack John', 'Smith'])
       end
 
       it "should explode names with '/'" do
@@ -1348,8 +1348,8 @@ module DwcAgent
         input = "Holm, E (operator).; Ng, J.(netter); Litwiller, S. (netter); Lee, C. (data recorder)"
         parsed = parser.parse(input)
         expect(parsed.size).to eq(4)
-        expect(parsed[0].values_at(:given, :family)).to eq(["E.", "Holm"])
-        expect(parsed[1].values_at(:given, :family)).to eq(["J", "Ng"])
+        expect(parsed[0].values_at(:given, :family)).to eq(["E", "Holm"])
+        expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Ng"])
         expect(parsed[2].values_at(:given, :family)).to eq(["S.", "Litwiller"])
         expect(parsed[3].values_at(:given, :family)).to eq(["C.", "Lee"])
       end
@@ -2071,6 +2071,13 @@ module DwcAgent
       parsed = parser.parse(input)
       expect(parsed.size).to eq(1)
       expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Breuckner"])
+    end
+
+    it "should remove multiple square braclets within parts of name" do
+      input = "Attila Meste[r]há[zy]"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Attila", "Mesterházy"])
     end
 
   end

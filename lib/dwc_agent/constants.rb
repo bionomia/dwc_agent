@@ -1,7 +1,5 @@
 module DwcAgent
   STRIP_OUT = %r{
-    ^[\[{(]|
-    [\]})]\??$|
     (?i:acc\s?\#)|
     [,;]?\s*(?i:1st|2nd|3rd|[4-9]th)|
     \s*?\d+\.\d+|
@@ -14,7 +12,7 @@ module DwcAgent
     \b[,;]?\s*(?i:etc)\.?|
     \b[,;]?\s*(?i:exp)\.?\s*(\b|\z)|
     \b[,;]?\s*(?i:aboard)[^$]+|
-    \b[,;]?\s*(?i:on)\b|
+    \b[,;]?\s+(?i:on)\b|
     \b[,;]?\s*(?i:unkn?own)\b|
     \b[,;]?\s*(?i:n/a)\b|
     \b[,;]?\s*(?i:ann?onymous)\b|
@@ -113,8 +111,9 @@ module DwcAgent
     (?i:annot)\.?\s*?\b|
     \s+(?i:stet)\s*!?\s*\z|
     \s+(?i:prep)\.?\s*\z|
-    \W([({\[].*?[)}\]])|
-    \W[\(\[\{][A-Za-z]{1,3}$|
+    ([({].*?[)}])|
+    \s+\[([[:word:]]|[[:space:]]|[-\?\.]){10,}\]|
+    [\(\{][A-Za-z]{1,3}$|
     \b(?i:leg)[\.:]?\s*\b|
     (?:[Dd](ed|on))[\.:]|
     \d*[A-Za-z]*\d*-\d*\z|

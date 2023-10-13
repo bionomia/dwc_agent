@@ -119,7 +119,7 @@ FAH Sperling || [{"family":"Sperling", "given":"F.A.H.", "particle":null, "appel
 
 Chris MacQuarrie || [{"family":"MacQuarrie", "given":"Chris", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
+Jack [John] Smith12345 || [{"family":"Smith", "given":"Jack John", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 O.Bennedict/G.J. Spencer || [{"family":"Bennedict", "given":"O.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Spencer", "given":"G.J.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
