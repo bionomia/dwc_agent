@@ -2080,5 +2080,12 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["Attila", "Mesterházy"])
     end
 
+    it "should recognize 'Lucile Capt'" do
+      input = "Lucile Capt"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Lucile", "Capt"])
+    end
+
   end
 end
