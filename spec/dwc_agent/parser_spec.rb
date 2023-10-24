@@ -2087,5 +2087,11 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["Lucile", "Capt"])
     end
 
+    it "should strip out 'UNKNOWN OR ANONYMOUS'" do
+      input = "UNKNOWN OR ANONYMOUS"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(0)
+    end
+
   end
 end
