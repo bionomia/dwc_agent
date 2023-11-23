@@ -4,8 +4,8 @@ module DwcAgent
 
     MAJOR = 3
     MINOR = 0
-    PATCH = 16
-    BUILD = 1
+    PATCH = 17
+    BUILD = 0
 
     def self.version
       [MAJOR, MINOR, PATCH, BUILD].compact.join('.').freeze
