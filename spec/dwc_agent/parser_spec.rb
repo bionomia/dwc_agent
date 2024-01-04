@@ -2093,5 +2093,13 @@ module DwcAgent
       expect(parsed.size).to eq(0)
     end
 
+    it "should parse names all in caps without conflict with the complex separators" do
+      input = "R. SMITH & G. SMITH"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family)).to eq(["R.", "SMITH"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["G.", "SMITH"])
+    end
+
   end
 end
