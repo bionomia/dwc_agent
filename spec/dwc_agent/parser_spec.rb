@@ -2101,5 +2101,14 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["G.", "SMITH"])
     end
 
+    it "should parse names when a ampersand is preceded by a comma" do
+      input = "Weiss, Schenck, & West"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Weiss", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Schenck", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
+    end
+
   end
 end

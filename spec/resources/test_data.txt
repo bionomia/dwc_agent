@@ -319,7 +319,7 @@ White* || [{"family":"White", "given":null, "particle":null, "appellation": null
 
 Huber Moore; communicatd to Terry M. Taylor || [{"family":"Moore", "given":"Huber", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}, {"family":"Taylor", "given":"Terry M.", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
-Jack Wft || [{"family":"Wft", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
+Jack Wft || [{"family":null, "given":null, "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 
 Jack Wit || [{"family":"Wit", "given":"Jack", "particle":null, "appellation": null, "suffix": null, "title": null, "dropping_particle": null, "nick": null}]
 

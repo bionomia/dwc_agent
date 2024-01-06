@@ -78,7 +78,6 @@ module DwcAgent
          parsed_namae.family &&
          parsed_namae.family.length <=3 &&
          parsed_namae.family == parsed_namae.family.upcase &&
-         #parsed_namae.family != NameCase(parsed_namae.family) &&
          parsed_namae.given[-1] != "."
           given = parsed_namae.given
           family = parsed_namae.family
@@ -166,6 +165,11 @@ module DwcAgent
 
       if !given.nil? && @given_blacklist.any?{ |s| s.casecmp(given) == 0 }
         return default
+      end
+
+      if !family.nil? && family.downcase.count(VOWELS) == 0 &&
+         !FAMILY_GREENLIST.any?{ |s| s.casecmp(family) == 0 }
+       return default
       end
 
       name = {

@@ -208,7 +208,8 @@ module DwcAgent
     '-Jr' => ' Jr.',
     'Dr.' => 'Dr. ',
     'prof.' => 'Prof. ',
-    ' .;' => '. ;'
+    ' .;' => '. ;',
+    ', &' => ' &'
   }
 
   SEPARATORS = {
@@ -300,6 +301,18 @@ module DwcAgent
     (?i:workshop|garden|farm|jardin|public)|
     ^\s*?de\s*?$
   }x
+
+  FAMILY_GREENLIST = [
+    "Ng",
+    "Srb",
+    "Srp",
+    "Vlk",
+    "Smrz",
+    "Smrž",
+    "Smrt",
+    "Krc",
+    "Krč"
+  ]
 
   FAMILY_BLACKLIST = [
     "a b",
@@ -402,5 +415,7 @@ module DwcAgent
     "van der",
     "von der"
   ]
+
+  VOWELS = "aeiouäèéêëìíôöü"
 
 end

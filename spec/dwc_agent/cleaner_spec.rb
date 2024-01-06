@@ -270,7 +270,7 @@ module DwcAgent
       it "should ignore a three letter family name without vowels" do
         input = "Jack Wft"
         parsed = parser.parse(input)
-        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Jack", particle: nil, family: "Wft", suffix: nil, dropping_particle: nil, nick: nil })
+        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
       it "should accept a three letter family name with a vowel" do
@@ -1072,6 +1072,21 @@ module DwcAgent
         parsed = parser.parse(input)
         expect(parsed.size).to eq(1)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "N.H.", particle: nil, family: "Le", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should not ignore 'Carla Srb'" do
+        input = 'Carla Srb'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Carla", particle: nil, family: "Srb", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      # Only works when all initials are consonants
+      it "should ignore a string of initialized names" do
+        input = 'TT, TR & DD'
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(2)
+        expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
     end
