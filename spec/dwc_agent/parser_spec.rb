@@ -2093,6 +2093,12 @@ module DwcAgent
       expect(parsed.size).to eq(0)
     end
 
+    it "should strip out 'ContactID'" do
+      input = "ContactID: 4703"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(0)
+    end
+
     it "should parse names all in caps without conflict with the complex separators" do
       input = "R. SMITH & G. SMITH"
       parsed = parser.parse(input)

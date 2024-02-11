@@ -24,6 +24,7 @@ module DwcAgent
     ^(?i:colln?)\.?\s+|\s*(?i:colln?)\.?\s*$|
     ^(?i:collection)\:?\s+|\s*(?i:collection)\s*$|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
+    (?i:contactid)|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
       May|Jun|Jul|Aug|Sept?|
