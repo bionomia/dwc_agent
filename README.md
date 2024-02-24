@@ -66,7 +66,7 @@ Copyright
 
 Authors: [David P. Shorthouse][7]
 
-Copyright (c) 2021
+Copyright (c) 2024
 
 [1]: https://badge.fury.io/rb/dwc_agent.svg
 [2]: http://badge.fury.io/rb/dwc_agent
@@ -77,5 +77,5 @@ Copyright (c) 2021
 [7]: https://github.com/dshorthouse
 [8]: https://img.shields.io/gem/dt/dwc_agent.svg
 [9]: https://rubygems.org/gems/dwc_agent
-[10]: http://rs.tdwg.org/dwc/terms/#recordedBy
-[11]: http://rs.tdwg.org/dwc/terms/#identifiedBy
+[10]: http://rs.tdwg.org/dwc/terms/recordedBy
+[11]: http://rs.tdwg.org/dwc/terms/identifiedBy
