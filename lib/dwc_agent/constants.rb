@@ -165,7 +165,9 @@ module DwcAgent
 
   POST_STRIP_TIDY = %r{
     ^\s*[&,;.]\s*|
-    [\[\]]
+    [\[\]]|
+    ^[`'"`]|
+    [`'"]$
   }x
 
   CHAR_SUBS = {

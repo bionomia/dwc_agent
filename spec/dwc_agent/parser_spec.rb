@@ -2116,5 +2116,32 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
     end
 
+    it "should strip out quotes at the start of a name" do
+      input = "'Weiss, Schenck, & West"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Weiss", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Schenck", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
+    end
+
+    it "should strip out quotes at the end of a name" do
+      input = "Weiss, Schenck, & West'"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Weiss", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Schenck", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
+    end
+
+    it "should strip out quotes wrapped around a name" do
+      input = "'Weiss, Schenck, & West'"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(3)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Weiss", nil])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Schenck", nil])
+      expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
+    end
+
   end
 end
