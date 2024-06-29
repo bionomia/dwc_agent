@@ -1,6 +1,8 @@
 module DwcAgent
   STRIP_OUT = %r{
     (?i:acc\s?\#)|
+    ["'-]{2,}|
+    \-\.\s|
     [,;]?\s*(?i:1st|2nd|3rd|[4-9]th)|
     \s*?\d+\.\d+|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
@@ -103,7 +105,7 @@ module DwcAgent
     (?i:no\s+coll\.?(ector)?)|
     (?i:not?)\s+(?i:name|date|details?|specific)?\s*?(?i:given|name|date|noted)|
     (?i:non?)\s+(?i:specificato)|
-    \b[,;]\s+\d+\z|
+    \b[,;]\s+\d+\.?\z|
     [!@?]|
     [,]?\d+|
     \s+\d+?(\/|\.)?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x)(\/|\.)\d+|

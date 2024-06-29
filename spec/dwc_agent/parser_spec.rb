@@ -2143,5 +2143,25 @@ module DwcAgent
       expect(parsed[2].values_at(:given, :family)).to eq(["West", nil])
     end
 
+    it "should ignore exclamation marks and period at end" do
+      input = '! L.P. Kvist, 1996.'
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["L.P.", "Kvist"])
+    end
+
+    it "should strip out multiple quotes" do
+      input = '"""Antonio Bausa"""'
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(1)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Antonio", "Bausa"])
+    end
+
+    it "should strip out double dashes and extra punctuation" do
+      input = "-- Luke & -. Robertson"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Luke", nil])
+    end
+
   end
 end
