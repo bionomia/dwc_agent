@@ -2176,5 +2176,36 @@ module DwcAgent
       expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Dyer"])
     end
 
+    it "should not split by dupl in Duplessi" do
+      input = "H. Duplessi"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["H.", "Duplessi"])
+    end
+
+    it "should strip out Dupl.," do
+      input = "Dupl., H. Inoue"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["H.", "Inoue"])
+    end
+
+    it "should split by ;," do
+      input = "E. Hassele;,Hassele"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["E.", "Hassele"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["Hassele", nil])
+    end
+
+    it "should remove leg with a date" do
+      input = "Stuhlmann leg. 2.VII.1889"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["Stuhlmann", nil])
+    end
+
+    it "should recognize a family name that ends in leg" do
+      input = "J.W. Gottleg"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J.W.", "Gottleg"])
+    end
+
   end
 end

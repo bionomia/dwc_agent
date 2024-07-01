@@ -28,6 +28,7 @@ module DwcAgent
     ^(?i:collection)\:?\s+|\s*(?i:collection)\s*$|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
     (?i:contactid)|
+    ^(?i:dupl)[.,]{1,}|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
       May|Jun|Jul|Aug|Sept?|
@@ -108,8 +109,8 @@ module DwcAgent
     (?i:non?)\s+(?i:specificato)|
     \b[,;]\s+\d+\.?\z|
     [!@?]|
+    \d{1,4}[\/.]?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii)[\/.]\d{1,4}|
     [,]?\d+|
-    \s+\d+?[\/.]?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii)[\/.]\d+|
     [,;]\z|
     ^\w{0,2}\z|
     ^[A-Z]{2,}\z|
@@ -119,7 +120,7 @@ module DwcAgent
     ([({].*?[)}])|
     \s+\[([[:word:]]|[[:space:]]|[-\?\.]){10,}\]|
     [\(\{][A-Za-z]{1,3}$|
-    \b(?i:leg)[\.:]?\s*\b|
+    \b(?i:leg)[.:]?(\s|\z)|
     (?:[Dd](ed|on))[\.:]|
     \d*[A-Za-z]*\d*-\d*\z|
     \s+[A-Z]*\d+\z|
@@ -136,6 +137,7 @@ module DwcAgent
   }x
 
   SPLIT_BY = %r{
+    [;,]{2,}|
     [–|ǀ∣｜│&+\/;:]|
     \s+-\s+|
     \s+a\.\s+|
@@ -150,7 +152,7 @@ module DwcAgent
     \b(?i:checked?(\s+by)?)\s*\b|
     \b(?i:det\.?(\s+by)?)\s*\b|
     \b(?i:(donated)?\s*by)\s+|
-    \b(?i:dupl?\.?(\s+by)?|duplicate(\s+by)?)\s*\b|
+    \b(?i:dupl?[.,]?(\s+by)?|duplicate(\s+by)?)\s*\b|
     \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
     \b(?i:in?dentified(\s+by)?)\s*\b|
     \b(?i:in\s+coll\.?\s*\b)|
