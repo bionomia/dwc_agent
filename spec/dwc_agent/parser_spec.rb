@@ -2163,5 +2163,18 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["Luke", nil])
     end
 
+    it "should strip out preceding and trailing quotes or commas" do
+      input = "\"H.Pittier,\""
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["H.", "Pittier"])
+    end
+
+    it "should strip out malformed et al" do
+      input = "A. Ward; J. Dyer et.al"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Ward"])
+      expect(parsed[1].values_at(:given, :family)).to eq(["J.", "Dyer"])
+    end
+
   end
 end

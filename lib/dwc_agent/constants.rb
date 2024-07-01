@@ -8,6 +8,7 @@ module DwcAgent
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
     \b[,;]?\s*(?:et\.?\s+al|&\s+al)\.?|
     \b[,;]?\s*(?i:etal)\.?|
+    \b[,;]?\s*(?i:et.al)\.?|
     \b\s+(bis|ter)(\b|\z)|
     \bu\.\s*a\.|
     \b[,;]?\s*(?i:and|&)?\s*(?i:others|party)\s*\b|
@@ -108,7 +109,7 @@ module DwcAgent
     \b[,;]\s+\d+\.?\z|
     [!@?]|
     [,]?\d+|
-    \s+\d+?(\/|\.)?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x)(\/|\.)\d+|
+    \s+\d+?[\/.]?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii)[\/.]\d+|
     [,;]\z|
     ^\w{0,2}\z|
     ^[A-Z]{2,}\z|
@@ -168,8 +169,8 @@ module DwcAgent
   POST_STRIP_TIDY = %r{
     ^\s*[&,;.]\s*|
     [\[\]]|
-    ^[`'"`]|
-    [`'"]$
+    ^[`'".,!?]{1,}|
+    [`'",]{1,}$
   }x
 
   CHAR_SUBS = {
