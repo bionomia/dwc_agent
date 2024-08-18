@@ -2207,5 +2207,35 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["J.W.", "Gottleg"])
     end
 
+    it "should remove collection code-like content with one dash" do
+      input = "A. Payette 46-72a"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["A.", "Payette"])
+    end
+
+    it "should remove collection code-like content with two dashes" do
+      input = "J.W. Groves # 47-I-62A"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J.W.", "Groves"])
+    end
+
+    it "should remove collection code-like content with a number sign" do
+      input = "K. Wilson, #106"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["K.", "Wilson"])
+    end
+
+    it "should remove collection code-like content with brackets" do
+      input = "S.A. Redhead, (#4517)"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["S.A.", "Redhead"])
+    end
+
+    it "should remove collection code-like content with a period" do
+      input = "R.L. Black, 761.4"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["R.L.", "Black"])
+    end
+
   end
 end
