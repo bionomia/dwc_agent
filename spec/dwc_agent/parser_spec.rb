@@ -2237,5 +2237,11 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family)).to eq(["R.L.", "Black"])
     end
 
+    it "should remove 'literatur'" do
+      input = "Literatur- und Herbardaten zum Bayernatlas"
+      parsed = parser.parse(input)
+      expect(parsed).to eq([])
+    end
+
   end
 end
