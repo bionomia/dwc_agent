@@ -14,4 +14,8 @@ module DwcAgent
     Similarity.instance.similarity_score(given1, given2)
   end
 
+  def default
+    Namae::Name.new
+  end
+
 end

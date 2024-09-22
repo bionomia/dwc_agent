@@ -16,7 +16,7 @@ module DwcAgent
     end
 
     def default
-      Namae::Name.new
+      DwcAgent.default
     end
 
     # Cleans the passed-in namae object from the parse method and
@@ -92,7 +92,7 @@ module DwcAgent
          matched = /^(?<family>[A-Za-z]{3,})\s+(?<given>([A-Z]\.\s?){1,})$/.match(parsed_namae.family)
          parsed_namae.family = matched[:family]
          parsed_namae.given = matched[:given]
-       end
+      end
 
       if parsed_namae.given &&
         (parsed_namae.given == parsed_namae.given.upcase ||
