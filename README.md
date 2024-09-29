@@ -41,6 +41,8 @@ else
 end
 ```
 
+There's also a similarity score to compare the structure of two given names. The greater the score, the more likely aliases refer to the "same" name. For instance, "John C." scores a 2 when compared to "John Charles", a 1.1 when compared to "John" alone whereas it scores a 0 when compared to "Joshua" or "John R.". Given two names that share the same family name, this utility method could be used to down-weight search results if the given name portions are unlikely matches.
+
 ```ruby
 require "dwc_agent"
 score = DwcAgent.similarity_score('John C.', 'John')
