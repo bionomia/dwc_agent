@@ -31,6 +31,16 @@ DwcAgent.clean names[0]
 => #<struct Namae::Name family="Chaboo", given=nil, suffix=nil, particle=nil, dropping_particle=nil, nick=nil, appellation=nil, title=nil>
 ```
 
+A cleaned name might produce all nil attributes if it does not pass logic checks. You can use a utility method to see if this is the case:
+
+```ruby
+if cleaned_name != DwcAgent.default
+  # Do something with the Namae::Name attributes
+else
+  # Perhaps use your unparsed input some other way
+end
+```
+
 ```ruby
 require "dwc_agent"
 score = DwcAgent.similarity_score('John C.', 'John')
