@@ -1,7 +1,7 @@
 DwC Agent
 =========
 
-Ruby 3.0 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [identifiedBy][11] prior to passing to its dependent Namae gem, which executes the parsing. It also produces similarity scores between two given names.
+Ruby 3.0 gem that cleanses messy Darwin Core terms like [recordedBy][10] or [identifiedBy][11] prior to passing to its dependent [Namae gem][12], which executes the parsing. It also produces similarity scores between two given names.
 
 [![Gem Version][1]][2]
 [![Gem Downloads][8]][9]
@@ -91,3 +91,4 @@ Copyright (c) 2024
 [9]: https://rubygems.org/gems/dwc_agent
 [10]: http://rs.tdwg.org/dwc/terms/recordedBy
 [11]: http://rs.tdwg.org/dwc/terms/identifiedBy
+[12]: https://github.com/berkmancenter/namae
