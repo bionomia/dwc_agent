@@ -4,7 +4,7 @@ module DwcAgent
     let(:cleaner) { Cleaner.instance }
 
     before(:all) do
-      @blank_name = { title: nil, appellation: nil, given: nil, particle: nil, family: nil, suffix: nil, dropping_particle: nil, nick: nil }
+      @blank_name = DwcAgent.default.to_h
     end
 
     describe "Clean results from the Parser" do

@@ -26,6 +26,8 @@ module DwcAgent
     # @return Namae::Name [Object] a new Namae object
     def clean(parsed_namae)
 
+      return default if !parsed_namae.instance_of?(Namae::Name)
+
       if parsed_namae.family &&
          parsed_namae.family == NameCase(parsed_namae.family) &&
          parsed_namae.display_order.split.join == parsed_namae.initials
