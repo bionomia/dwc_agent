@@ -2243,5 +2243,17 @@ module DwcAgent
       expect(parsed).to eq([])
     end
 
+    it "should remove 'et al.' at the end of a string" do
+      input = "Andrade, JC;Andrade, J.C.,et al."
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["JC", "Andrade"])
+    end
+
+    it "should strip digits from the beginning of a string" do
+      input = "1, J. R. Mendelson"
+      parsed = parser.parse(input)
+      expect(parsed[0].values_at(:given, :family)).to eq(["J. R.", "Mendelson"])
+    end
+
   end
 end

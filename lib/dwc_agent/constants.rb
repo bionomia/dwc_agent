@@ -10,7 +10,7 @@ module DwcAgent
     [,]?\s*\#*\s+\d+\-(?i:[A-Z]|\d)+\-?\d*[A-Za-z]*\z|
     \d*[A-Za-z]*\d*-\d*\z|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
-    \b[,;]?\s*(?:et\.?\s+al|&\s+al)\.?|
+    [,;\s]{1,}(?:et\.?\s+al|&\s+al)l?\.?|
     \b[,;]?\s*(?i:etal)\.?|
     \b[,;]?\s*(?i:et.al)\.?|
     \b\s+(bis|ter)(\b|\z)|
@@ -113,7 +113,7 @@ module DwcAgent
     (?i:not?)\s+(?i:name|date|details?|specific)?\s*?(?i:given|name|date|noted)|
     (?i:non?)\s+(?i:specificato)|
     \b[,;]\s+\d+\.?\z|
-    [!@?]|
+    [!@?]\s*\-?\s*|
     \d{1,4}[\/.]?(?i:i|ii|iii|iv|v|vi|vii|viii|ix|x|xi|xii)[\/.]\d{1,4}|
     [,]?\d+|
     [,;]\z|
