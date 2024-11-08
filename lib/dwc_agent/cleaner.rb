@@ -2,17 +2,25 @@ module DwcAgent
 
   class Cleaner
 
+    @defaults = {
+      blacklist: BLACKLIST,
+      given_blacklist: GIVEN_BLACKLIST,
+      family_blacklist: FAMILY_BLACKLIST,
+      particles: PARTICLES
+    }
+
     class << self
+      attr_reader :defaults
+
       def instance
         Thread.current[:dwc_agent_cleaner] ||= new
       end
     end
 
-    def initialize
-      @blacklist = BLACKLIST
-      @given_blacklist = GIVEN_BLACKLIST
-      @family_blacklist = FAMILY_BLACKLIST
-      @particles = PARTICLES
+    attr_reader :options
+
+    def initialize(options = {})
+      @options = self.class.defaults.merge(options)
     end
 
     def default
@@ -35,7 +43,7 @@ module DwcAgent
       end
 
       if parsed_namae.given &&
-         @given_blacklist.any?{ |s| s.casecmp(parsed_namae.given) == 0 }
+         options[:given_blacklist].any?{ |s| s.casecmp(parsed_namae.given) == 0 }
         return
       end
 
@@ -55,7 +63,7 @@ module DwcAgent
         return default
       end
 
-      if parsed_namae.display_order =~ @blacklist
+      if parsed_namae.display_order =~ options[:blacklist]
         return default
       end
 
@@ -113,7 +121,7 @@ module DwcAgent
       end
 
       if parsed_namae.family &&
-         @family_blacklist.any?{ |s| s.casecmp(parsed_namae.family) == 0 }
+         options[:family_blacklist].any?{ |s| s.casecmp(parsed_namae.family) == 0 }
         return default
       end
 
@@ -140,7 +148,7 @@ module DwcAgent
       if !family.nil? &&
          given.nil? &&
          !particle.nil? &&
-         !@particles.include?(particle.downcase)
+         !options[:particles].include?(particle.downcase)
         given = particle.sub(/[a-z]\./, &:upcase).sub(/^(.)/) { $1.capitalize }
         particle = nil
       end
@@ -161,11 +169,11 @@ module DwcAgent
         return default
       end
 
-      if !family.nil? && @family_blacklist.any?{ |s| s.casecmp(family) == 0 }
+      if !family.nil? && options[:family_blacklist].any?{ |s| s.casecmp(family) == 0 }
         return default
       end
 
-      if !given.nil? && @given_blacklist.any?{ |s| s.casecmp(given) == 0 }
+      if !given.nil? && options[:given_blacklist].any?{ |s| s.casecmp(given) == 0 }
         return default
       end
 
