@@ -11,6 +11,10 @@ module DwcAgent
       [MAJOR, MINOR, PATCH, BUILD].compact.join('.').freeze
     end
 
+    def self.date
+      '2024-11-27'
+    end
+
   end
 
 end

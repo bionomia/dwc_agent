@@ -10,7 +10,7 @@ module DwcAgent
     [,]?\s*\#*\s+\d+\-(?i:[A-Z]|\d)+\-?\d*[A-Za-z]*\z|
     \d*[A-Za-z]*\d*-\d*\z|
     \b\d+\(?(?i:[[:alpha:]])\)?\b|
-    [,;\s]{1,}(?:et\.?\s+al|&\s+al)l?\.?|
+    [,;\s]+(?:et\.?\s+al|&\s+al)l?\.?|
     \b[,;]?\s*(?i:etal)\.?|
     \b[,;]?\s*(?i:et.al)\.?|
     \b\s+(bis|ter)(\b|\z)|
@@ -32,7 +32,7 @@ module DwcAgent
     ^(?i:collection)\:?\s+|\s*(?i:collection)\s*$|
     \b[,;]?\s*(?i:colls)\.(\b|\z)|
     (?i:contactid)|
-    ^(?i:dupl)[.,]{1,}|
+    ^(?i:dupl)[.,]+|
     \b[,;]?\s*(?i:stet)[,!]?\s*\d*\z|
     [,;]?\s*\d+[-/\s+](?i:\d+|Jan|Feb|Mar|Apr|
       May|Jun|Jul|Aug|Sept?|
@@ -141,42 +141,42 @@ module DwcAgent
   }x
 
   SPLIT_BY = %r{
-    [;,]{2,}|
-    [–|ǀ∣｜│&+\/;:]|
-    \s+-\s+|
-    \s+a\.\s+|
-    \b(con|e|y|i|en|et|or|per|for|und)\s*\b|
-    \b(?i:and|with)\s*\b|
-    \b(?i:annotated(\s+by)?)\s*\b|
-    \b(?i:coll\.)\s*\b|
-    \b(?i:comm\.?)\s*\b|
-    \b(?i:communicate?d(\s+to)?)\s*\b|
-    \b(?i:conf\.?(\s+by)?|confirmed(\s+by)?)\s*\b|
-    \b(?i:confirmada)(\s+por)?\s*\b|
-    \b(?i:checked?(\s+by)?)\s*\b|
-    \b(?i:det\.?(\s+by)?)\s*\b|
-    \b(?i:(donated)?\s*by)\s+|
-    \b(?i:dupl?[.,]?(\s+by)?|duplicate(\s+by)?)\s*\b|
-    \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b|
-    \b(?i:in?dentified(\s+by)?)\s*\b|
-    \b(?i:in\s+coll\.?\s*\b)|
-    \b(?i:in\s+part(\s+by)?)\s*\b|
-    \b(?i:och)\s*\b|
-    \b(?i:prep\.?\s+(?i:by)?)\s*\b|
-    \b(?i:purchased?)(\s+by)?\s*\b|
-    \b(?i:redet\.?(\s+by?)?)\s*\b|
-    \b(?i:reidentified(\s+by)?)\s*\b|
-    \b(?i:stet)\s*\b|
-    \b(?i:then(\s+by)?)\s+|
-    \b(?i:veri?f?\.?\:?(\s+by)?|v(e|é)rifi(e|é)d?(\s+by)?)\s*\b|
-    \b(?i:via|from)\s*\b
+    [;,]{2,} |                                            # Multiple semicolons or commas
+    [–|ǀ∣｜│&+\/;:] |                                     # Various separators
+    \s+-\s+ |                                             # Dash surrounded by spaces
+    \s+a\.\s+ |                                           # "a." surrounded by spaces
+    \b(con|e|y|i|en|et|or|per|for|und)\s*\b |             # Short conjunctions or prepositions
+    \b(?i:and|with)\s*\b |                                # Case-insensitive "and", "with"
+    \b(?i:annotated(\s+by)?)\s*\b |                       # "annotated (by)"
+    \b(?i:coll\.)\s*\b |                                  # "coll."
+    \b(?i:comm\.?)\s*\b |                                 # "comm."
+    \b(?i:communicate?d(\s+to)?)\s*\b |                   # "communicated (to)"
+    \b(?i:conf\.?(\s+by)?|confirmed(\s+by)?)\s*\b |       # "conf.", "confirmed (by)"
+    \b(?i:confirmada)(\s+por)?\s*\b |                     # "confirmada (por)"
+    \b(?i:checked?(\s+by)?)\s*\b |                        # "checked (by)"
+    \b(?i:det\.?(\s+by)?)\s*\b |                          # "det."
+    \b(?i:(donated)?\s*by)\s+ |                           # "donated by"
+    \b(?i:dupl?[.,]?(\s+by)?|duplicate(\s+by)?)\s*\b |    # "dupl.", "duplicate"
+    \b(?i:ex\.?(\s+by)?|examined(\s+by)?)\s*\b |          # "ex.", "examined (by)"
+    \b(?i:in?dentified(\s+by)?)\s*\b |                    # "identified (by)"
+    \b(?i:in\s+coll\.?\s*\b) |                            # "in coll."
+    \b(?i:in\s+part(\s+by)?)\s*\b |                       # "in part (by)"
+    \b(?i:och)\s*\b |                                     # "och"
+    \b(?i:prep\.?\s+(?i:by)?)\s*\b |                      # "prep. by"
+    \b(?i:purchased?)(\s+by)?\s*\b |                      # "purchased (by)"
+    \b(?i:redet\.?(\s+by?)?)\s*\b |                       # "redet."
+    \b(?i:reidentified(\s+by)?)\s*\b |                    # "reidentified"
+    \b(?i:stet)\s*\b |                                    # "stet"
+    \b(?i:then(\s+by)?)\s+ |                              # "then (by)"
+    \b(?i:veri?f?\.?\:?(\s+by)?|v(e|é)rifi(e|é)d?(\s+by)?)\s*\b | # "verif."
+    \b(?i:via|from)\s*\b                                  # "via", "from"
   }x
 
   POST_STRIP_TIDY = %r{
-    ^\s*[&,;.]\s*|
-    [\[\]]|
-    ^[`'".,!?]{1,}|
-    [`'",]{1,}$
+    ^\s*[&,;.]\s* |                                       # Leading whitespace followed by any combination of &, ;, or .
+    [\[\]] |                                              # Any standalone square brackets
+    ^[`'".,!?]+ |                                         # Leading repeated punctuation (` ' " . , ! ?)
+    [`'",]+$                                              # Trailing repeated punctuation (` ' ")
   }x
 
   CHAR_SUBS = {
@@ -225,93 +225,95 @@ module DwcAgent
   }
 
   SEPARATORS = {
-    "^(\\S{4,}),\\s+(Mrs?\\.|MRS?\\.)\\s+([A-Za-z\\.\\s]{1,})$" => "\\2 \\3 \\1",
+    "^(\\S{4,}),\\s+(Mrs?\\.|MRS?\\.)\\s+([A-Za-z\\.\\s]+)$" => "\\2 \\3 \\1",
     "^(Mrs?\\.?)\\s+&\\s+(Mrs?\\.?)\\s+(.*)$" => "\\1 \\3 | \\2 \\3",
-    "^([A-Z]{1}\\.\\s*[[:alpha:]]{1,}),\\s*?([A-Z.]{1,})$" => "\\1 \\2",
-    "^(\\S{4,},\\s+(?:\\S\\.\\s*){1,})\\s+(\\S{4,},\\s+(?:\\S\.\\s*){1,})$" => "\\1 | \\2",
+    "^([A-Z]{1}\\.\\s*[[:alpha:]]+),\\s*?([A-Z.]+)$" => "\\1 \\2",
+    "^(\\S{4,},\\s+(?:\\S\\.\\s*)+)\\s+(\\S{4,},\\s+(?:\\S\.\\s*)+)$" => "\\1 | \\2",
     "(\\S{1}\\.)([[:alpha:]]{2,})" => "\\1 \\2",
-    "^([[:alpha:]]{2,})(?:\\s+)((?:\\S{1}\\.\\s?){1,})$" => "\\1, \\2",
+    "^([[:alpha:]]{2,})(?:\\s+)((?:\\S{1}\\.\\s?)+)$" => "\\1, \\2",
     "([[:alpha:]]*),?\\s*(.*)\\s+(van|von|v\\.|v(a|o)n\\s+der?)$" => "\\3 \\1, \\2",
-    "^((?i:[A-Z]\\.\\s?){1,})\\s?(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?){1,})\\s+([[:alpha:]’`'-]{2,})\\s+([[:alpha:]’`'-]{2,})$" => "\\1 \\4 | \\2 \\3 \\4",
-    "^((?i:[A-Z]\\.\\s?){1,})\\s?(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?){1,})\\s+([[:alpha:]’`'-]{2,})(.*)$" => "\\1 \\3 | \\2 \\3 | \\4",
+    "^((?i:[A-Z]\\.\\s?)+)\\s?(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?)+)\\s+([[:alpha:]’`'-]{2,})\\s+([[:alpha:]’`'-]{2,})$" => "\\1 \\4 | \\2 \\3 \\4",
+    "^((?i:[A-Z]\\.\\s?)+)\\s?(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?)+)\\s+([[:alpha:]’`'-]{2,})(.*)$" => "\\1 \\3 | \\2 \\3 | \\4",
     "^([A-Z]{1,3})\\s+(?:and|&|et|e)\\s+([A-Z]{1,3})\\s+([[:alpha:]’`'-]{2,})(.*)$" => "\\1 \\3 | \\2 \\3 | \\4",
-    "^((?i:[A-Z]\\.\\s?){1,}),\\s+([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?){1,})\\s+([[:alpha:]’`'-]{2,})(.*)$" => "\\1 \\4 | \\2 \\4 | \\3 \\4 | \\5",
+    "^((?i:[A-Z]\\.\\s?)+),\\s+([A-Z.\\s]+)\\s+(?:and|&|et|e)\\s+((?i:[A-Z]\\.\\s?)+)\\s+([[:alpha:]’`'-]{2,})(.*)$" => "\\1 \\4 | \\2 \\4 | \\3 \\4 | \\5",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{2,})$" => "\\1 | \\2 | \\3",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4 | \\5"
   }
 
   BLACKLIST = %r{
-    (?i:abundant)|
-    (?i:adult|juvenile)|
-    (?i:administra(d|t)or)|
-    ^(?i:anon)$|
-    (?i:australian?)|
-    (?i:average)|
-    (?i:believe|unclear|ill?egible|suggested|(dis)?agrees?)|approach|
-    \b\s*(?i:none)\s*\b|
-    (?i:barcod)|
-    (?i:BgWd)|
-    (?i:biolog|botan|zoo|ecolog|mycol|(in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture)|
-    (?i:bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america)|
-    (?i:carex|salix)|
-    (?i:catalog(ue)?)|
-    (?i:conservator)|
-    (?i:herbarium|herbier|collection|collected|publication|specimen|species|describe|an(a|o)morph|isolated|recorded|inspection|define|status|lighthouse)|
-    \b\s*(?i:help)\s*\b|
-    (?i:data\s+not\s+captured)|
-    (?i:description|drawing|identification|remark|original|illustration|checklist|intermedia|measurement|indisting|series|imperfect)|
-    (?i:desconocido)|
-    (?i:exc?s?icc?at(a|i))|
-    (?i:evidence)|
-    (?i:exporter)|
-    (?i:foundation)|
-    (?i:ichthyology)|
-    (?i:inconn?u)|
-    (?i:internation|gou?vern|ministry|extension|unit|district|provincial|na(c|t)ional|military|region|environ|natur(e|al)|naturelles|division|program|direction|national)|
-    (?i:label)|
-    (?i:o?\.?m\.?n\.?r\.?)|
-    (?i:measurement)|
-    (?i:ent(o|y)mology)|
-    (?i:malacology)|
-    (?i:geographic)|
-    (?i:mus(eum|ée)|universit(y|é|e|at)|college|institute?|acad(e|é)m|school|écol(e|iers?)|laboratoi?r|projec?t|polytech|dep(t|art?ment)|research|clinic|hospital|cientifica|sanctuary|safari)|
-    (?i:univ\.)|
-    \b\s*(?i:graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fisherm(a|e)n|police|taxonomist|consultant|participante?s?|team|(é|e)quipe|memb(er|re)|crew|group|personnel|staff|family|captain|friends|assistant|worker|gamekeeper)\s*\b|
-    (?i:non\s+pr(é|e)cis(é|e))|
-    (?i:no\s+consta)|
-    (?i:no\s+(agent)?\s?(data|disponible)(\s+available)?)|
-    (?i:not?\s+(entered|stated))|
-    (?i:nomenclatur(e|al)\s+adjustment)|
-    (?i:not\s+available)|
-    (?i:ontario|qu(e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?)|
-    (?i:popa\s+observers?)|
-    (?i:recreation|culture)|
-    (?i:renseigné)|
-    (?i:shaped|dark|pale|areas|phase|spotting|interior|between|closer)|
-    (?i:soci(e|é)t(y|é)|cent(er|re)|community|history|conservation|conference|assoc|commission|consortium|council|club|exposit|alliance|protective|circle)|
-    ^(?i:class)\s*\b|
-    (?i:commercial|control|product)|
-    ^(?i:company)\s*\b|
-    (?i:sequence\s+data)|
-    (?i:size|large|colou?r)\s+|
-    (?i:skeleton)|
-    (?i:survey|assessment|station|monitor|stn\.|project|engine|(e|é)x?chang(e|é)s?|ex(c|k)ursi(e|o|ó)n?|exped\.?|exp(e|i)di(c|t)i(e|o|ó)n?|experiment|explora(d|t)|festival|generation|inventory|marine|service)|
-    ^(?i:index)\s*\b|
-    (?i:submersible)|
-    (?i:synonymy?)|
-    (?i:systematic|perspective)|
-    ^\s*(?i:off|too|the)\s*\b|
-    (?i:taxiderm(ies|y))|
-    (?i:though)|
-    (?i:texas\s+instruments?)\s*?(for)?|
-    (?:tropical)|
-    (?i:toward|seen\s+at)|
-    (?i:unidentified|unspecified|unk?nown?|unnamed|unread|unmistak|no agent)|
-    (?i:urn\:)|
-    (?i:usda|ucla)|
-    (?i:workshop|garden|farm|jardin|public)|
-    ^\s*?de\s*?$
+    (?i:
+      abundant |
+      adult | juvenile |
+      administra(?:d|t)or |
+      ^anon$ |
+      australian? |
+      average |
+      believe | unclear | ill?egible | suggested | (dis)?agrees? | approach |
+      \bnone\b |
+      barcod |
+      bgwd |
+      (biolog|botan|zoo|ecolog|mycol|(?:in)?vertebrate|fisheries|genetic|animal|mushroom|wildlife|plumage|flower|agriculture) |
+      (bris?tish|canadi?an?|chinese|arctic|japan|russian|north\s+america) |
+      carex | salix |
+      catalog(?:ue)? |
+      conservator |
+      (herbarium|herbier|collection|collected|publication|specimen|species|describe|an(?:a|o)morph|isolated|recorded|inspection|define|status|lighthouse) |
+      \bhelp\b |
+      data\s+not\s+captured |
+      (description|drawing|identification|remark|original|illustration|checklist|intermedia|measurement|indisting|series|imperfect) |
+      desconocido |
+      exc(?:s?icc?at(?:a|i)) |
+      evidence |
+      exporter |
+      foundation |
+      ichthyology |
+      inconn?u |
+      (internation|gou?vern|ministry|extension|unit|district|provincial|na(?:c|t)ional|military|region|environ|natur(?:e|al)|naturelles|division|program|direction) |
+      label |
+      o\.?m\.?n\.?r\.? |
+      measurement |
+      ent(?:o|y)mology |
+      malacology |
+      geographic |
+      (mus(?:eum|ée)|universit(?:y|é|e|at)|college|institute?|acad(?:e|é)m|school|écol(?:e|iers?)|laboratoi?r|project|polytech|dep(?:t|artment)|research|clinic|hospital|cientifica|sanctuary|safari) |
+      univ\. |
+      \b(graduate|student|élèves?|éleveur|étudiants|estudi?antes?|labo\.|storekeep|supervisor|superint|rcmp|coordinator|minority|fisherm(?:a|e)n|police|taxonomist|consultant|participant(?:es)?|team|(?:é|e)quipe|memb(?:er|re)|crew|group|personnel|staff|family|captain|friends|assistant|worker|gamekeeper)\b |
+      non\s+pr(?:é|e)cis(?:é|e) |
+      no\s+consta |
+      no\s+(agent\s+)?(?:data|disponible)(?:\s+available)? |
+      not?\s+(entered|stated) |
+      nomenclatur(?:e|al)\s+adjustment |
+      not\s+available |
+      (ontario|qu(?:e|é)bec|saskatchewan|new brunswick|sault|newfoundland|assurance|vancouver|u\.?s\.?s\.?r\.?) |
+      popa\s+observers? |
+      recreation | culture |
+      renseigné |
+      (shaped|dark|pale|areas|phase|spotting|interior|between|closer) |
+      soci(?:e|é)t(?:y|é) | cent(?:er|re) | community | history | conservation | conference | assoc | commission | consortium | council | club | exposit | alliance | protective | circle |
+      ^class\b |
+      commercial | control | product |
+      ^company\b |
+      sequence\s+data |
+      size | large | colou?r |
+      skeleton |
+      survey | assessment | station | monitor | stn\. | project | engine | (e|é)x?chang(?:e|é)s? | ex(?:c|k)urs(?:e|o|ó)n? | exped\.? | exp(?:e|i)di(?:c|t)i(?:e|o|ó)n? | experiment | explora(?:d|t) | festival | generation | inventory | marine | service |
+      ^index\b |
+      submersible |
+      synonymy? |
+      systematic | perspective |
+      ^(?:off|too|the)\b |
+      taxiderm(?:ies|y) |
+      though |
+      texas\s+instruments?(?:\s+for)? |
+      tropical |
+      toward | seen\s+at |
+      unidentified | unspecified | unk?nown? | unnamed | unread | unmistak | no agent |
+      urn: |
+      usda | ucla |
+      workshop | garden | farm | jardin | public |
+      ^de$
+    )
   }x
 
   FAMILY_GREENLIST = [
@@ -402,7 +404,7 @@ module DwcAgent
 
   APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
 
-  SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|[IVX]{2,})(\.|\b)/
+  SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|ESQ|esq|[IVX]{2,})(\.|\b)/
 
   PARTICLES = [
     "ap",
