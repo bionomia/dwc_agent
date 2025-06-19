@@ -126,9 +126,8 @@ module DwcAgent
       end
 
       if parsed_namae.family.nil? &&
-         !parsed_namae.given.nil? &&
-         !parsed_namae.given.include?(".")
-        parsed_namae.family = parsed_namae.given
+         !parsed_namae.given.nil?
+        parsed_namae.family = parsed_namae.given.delete_suffix(".")
         parsed_namae.given = nil
       end
 

@@ -27,10 +27,16 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:"R.C.", particle: nil, family:"Smith", suffix: nil, dropping_particle: nil, nick: nil })
       end
 
-      it "should clean family names with extraneous period" do
+      it "should clean family names with a given initial and an extraneous period" do
         input = "C. Tanner."
         parsed = parser.parse(input)
         expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given:'C.', particle: nil, family: 'Tanner', suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
+      it "should clean a single family names with extraneous period" do
+        input = "Tanner."
+        parsed = parser.parse(input)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: nil, particle: nil, family: 'Tanner', suffix: nil, dropping_particle: nil, nick: nil })
       end
 
       it "should remove extraneous capitalized letters within brackets" do
