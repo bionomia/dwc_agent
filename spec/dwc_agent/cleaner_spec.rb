@@ -1095,6 +1095,13 @@ module DwcAgent
         expect(cleaner.clean(parsed[0]).to_h).to eq(@blank_name)
       end
 
+      it "should recognize a name with many accented vowels" do
+        input = "Gyula M. László"
+        parsed = parser.parse(input)
+        expect(parsed.size).to eq(1)
+        expect(cleaner.clean(parsed[0]).to_h).to eq({ title: nil, appellation: nil, given: "Gyula M.", particle: nil, family: "László", suffix: nil, dropping_particle: nil, nick: nil })
+      end
+
     end
 
   end

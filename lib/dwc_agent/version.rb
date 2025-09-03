@@ -4,7 +4,7 @@ module DwcAgent
 
     MAJOR = 3
     MINOR = 4
-    PATCH = 0
+    PATCH = 1
     BUILD = 0
 
     def self.version
@@ -12,7 +12,7 @@ module DwcAgent
     end
 
     def self.date
-      '2025-08-20'
+      '2025-09-03'
     end
 
   end

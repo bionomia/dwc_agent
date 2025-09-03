@@ -11,7 +11,7 @@ module DwcAgent
       strip_out_regex: Regexp.new(STRIP_OUT.to_s),
       tidy_remains_regex: Regexp.new(POST_STRIP_TIDY.to_s),
       subs_regex: Regexp.new(CHAR_SUBS.keys.map{|a| Regexp.escape a }.join('|').to_s),
-      complex_separators_regex: COMPLEX_SEPARATORS.map{|k,v| [ Regexp.new(k), v] },
+      complex_separators_regex: COMPLEX_SEPARATORS.map{|k,v| [Regexp.new(k), v] },
       residual_terminators_regex: Regexp.new(SPLIT_BY.to_s + %r{\s*\z}.to_s)
     }
 

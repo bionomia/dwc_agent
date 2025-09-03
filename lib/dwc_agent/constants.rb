@@ -427,6 +427,6 @@ module DwcAgent
     "von der"
   ]
 
-  VOWELS = "aeiouäèéêëìíôöü"
+  VOWELS = "aeiouäáèéêëìíôöüó"
 
 end
