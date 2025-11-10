@@ -138,7 +138,7 @@ module DwcAgent
     \s+de\s*$|
     \.{2,}$|
     [^[:alnum:][:blank:][:punct:][∣´|ǀ∣｜│`~$^+|<>]]      # Removes emojis from string
-  }x
+  }x.freeze
 
   SPLIT_BY = %r{
     [;,]{2,} |                                            # Multiple semicolons or commas
@@ -170,14 +170,14 @@ module DwcAgent
     \b(?i:then(\s+by)?)\s+ |                              # "then (by)"
     \b(?i:veri?f?\.?\:?(\s+by)?|v(e|é)rifi(e|é)d?(\s+by)?)\s*\b | # "verif."
     \b(?i:via|from)\s*\b                                  # "via", "from"
-  }x
+  }x.freeze
 
   POST_STRIP_TIDY = %r{
     ^\s*[&,;.]\s* |                                       # Leading whitespace followed by any combination of &, ;, or .
     [\[\]] |                                              # Any standalone square brackets
     ^[`'".,!?]+ |                                         # Leading repeated punctuation (` ' " . , ! ?)
     [`'",]+$                                              # Trailing repeated punctuation (` ' ")
-  }x
+  }x.freeze
 
   CHAR_SUBS = {
     '"' => '\'',
@@ -219,7 +219,7 @@ module DwcAgent
     'prof.' => 'Prof. ',
     ' .;' => '. ;',
     ', &' => ' &'
-  }
+  }.freeze
 
   COMPLEX_SEPARATORS = {
     "^(\\S{4,}),\\s+(Mrs?\\.|MRS?\\.)\\s+([A-Za-z\\.\\s]+)$" => "\\2 \\3 \\1",
@@ -236,7 +236,7 @@ module DwcAgent
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{2,})$" => "\\1 | \\2 | \\3",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4",
     "^([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,}),\\s*?([A-Z][[:alpha:]]{2,})\\s*?(?i:and|&|et|e|,)\\s+([A-Z][[:alpha:]]{3,})$" => "\\1 | \\2 | \\3 | \\4 | \\5"
-  }
+  }.freeze
 
   BLACKLIST = %r{
     (?i:
@@ -311,9 +311,9 @@ module DwcAgent
       workshop | garden | farm | jardin | public |
       ^de$
     )
-  }x
+  }x.freeze
 
-  FAMILY_GREENLIST = [
+  FAMILY_GREENLIST = Set.new([
     "Ng",
     "Srb",
     "Srp",
@@ -323,9 +323,9 @@ module DwcAgent
     "Smrt",
     "Krc",
     "Krč"
-  ]
+  ]).freeze
 
-  FAMILY_BLACKLIST = [
+  FAMILY_BLACKLIST = Set.new([
     "a b",
     "a e",
     "a g",
@@ -390,20 +390,20 @@ module DwcAgent
     "zw",
     "zz",
     "z-"
-  ]
+  ]).freeze
 
-  GIVEN_BLACKLIST = [
+  GIVEN_BLACKLIST = Set.new([
     "not any",
     "has not"
-  ]
+  ]).freeze
 
-  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|cmdr|lt|sgt|cpl|pvt|proff?|dr|dra\.|drª|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|doct(eu|o)r|father|cantor|vicar|père|pastor|profa\.?|profª|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i
+  TITLE = /\s*\b(sir|count(ess)?|colonel|(gen|adm|col|maj|cmdr|lt|sgt|cpl|pvt|proff?|dr|dra\.|drª|md|ph\.?d|rev|mme|abbé|ptre|bro|esq)\.?|doct(eu|o)r|father|cantor|vicar|père|pastor|profa\.?|profª|rabbi|reverend|pere|soeur|sister|professor)(\s+|$)/i.freeze
 
-  APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i
+  APPELLATION = /\s*\b((mrs?|ms|fr|hr)\.?|miss|herr|frau)(\s+|$)/i.freeze
 
-  SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|ESQ|esq|[IVX]{2,})(\.|\b)/
+  SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|ESQ|esq|[IVX]{2,})(\.|\b)/.freeze
 
-  PARTICLES = [
+  PARTICLES = Set.new([
     "ap",
     "da",
     "de",
@@ -425,7 +425,7 @@ module DwcAgent
     "van de",
     "van der",
     "von der"
-  ]
+  ]).freeze
 
   VOWELS = "aeiouàáâäǎæãåāèéêëěẽēėęìíîïǐĩīıįòóôöǒœøõōùúûüǔũūűů"
 
