@@ -1,3 +1,5 @@
+require "set"
+
 module DwcAgent
   STRIP_OUT = %r{
     (?i:acc\s?\#)|
@@ -313,7 +315,7 @@ module DwcAgent
     )
   }x.freeze
 
-  FAMILY_GREENLIST = ::Set.new([
+  FAMILY_GREENLIST = Set.new([
     "Ng",
     "Srb",
     "Srp",
@@ -325,7 +327,7 @@ module DwcAgent
     "Krč"
   ]).freeze
 
-  FAMILY_BLACKLIST = ::Set.new([
+  FAMILY_BLACKLIST = Set.new([
     "a b",
     "a e",
     "a g",
@@ -392,7 +394,7 @@ module DwcAgent
     "z-"
   ]).freeze
 
-  GIVEN_BLACKLIST = ::Set.new([
+  GIVEN_BLACKLIST = Set.new([
     "not any",
     "has not"
   ]).freeze
@@ -403,7 +405,7 @@ module DwcAgent
 
   SUFFIX = /\s*\b(JR|Jr|jr|SR|Sr|sr|ESQ|esq|[IVX]{2,})(\.|\b)/.freeze
 
-  PARTICLES = ::Set.new([
+  PARTICLES = Set.new([
     "ap",
     "da",
     "de",
