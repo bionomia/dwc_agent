@@ -78,7 +78,7 @@ Copyright
 
 Authors: [David P. Shorthouse][7]
 
-Copyright (c) 2024
+Copyright (c) 2025
 
 [1]: https://badge.fury.io/rb/dwc_agent.svg
 [2]: http://badge.fury.io/rb/dwc_agent
