@@ -1777,6 +1777,14 @@ module DwcAgent
       expect(parsed[0].values_at(:given, :family, :particle)).to eq(["A.", "Humboldt", "von"])
     end
 
+    it "should recognize multiple placements of 'von' at the end of two names" do
+      input = "Hayek AA von; Hayek F von"
+      parsed = parser.parse(input)
+      expect(parsed.size).to eq(2)
+      expect(parsed[0].values_at(:given, :family, :particle)).to eq(["AA", "Hayek", "von"])
+      expect(parsed[1].values_at(:given, :family, :particle)).to eq(["F", "Hayek", "von"])
+    end
+
     it "should construct two names from shared Family name, separated by 'and'" do
       input = "M.R. and J.D. Shorthouse"
       parsed = parser.parse(input)
